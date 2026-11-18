@@ -1,0 +1,890 @@
+
+body {
+  font-family: var(--font-famaly-all);
+}
+
+#app .hud-radmir-radar {
+  left: 7vh;
+}
+
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-radmir-wanted {
+  display: none;
+}
+
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: ALSRubl;
+  src: url(./fonts/ALSRubl.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+:root {
+  --bg: #000;
+    --bg-20: #00000033;
+    --bg-40: #00000066;
+    --bg-50: #00000080;
+    --bg-60: #00000099;
+    --bg-75: #000000bf;
+    --bg-80: #000000cc;
+    
+  --color: #fff;
+    --color-10: #ffffff1a;
+    --color-30: #ffffff4d;
+
+  --font-famaly-all: GothamPro, "Open Sans";
+}
+
+.ONEAS-hud {  
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes gerland1 {
+  
+    0% {      opacity: 0;}
+    25% {      opacity: 0.5;}
+    50% {      opacity: 0.7;}
+    75% {      opacity: 1;}
+    to {      opacity: 0.5;  }}
+
+@keyframes gerland2 {
+  
+    0% {      opacity: 0.2;}
+    25% {      opacity: 0.5;}
+    50% {      opacity: 1;}
+    75% {      opacity: 0.5;}
+    to {      opacity: 0;  }}
+
+@keyframes gerland3 {
+
+    0% {      opacity: 0.5;}
+    25% {      opacity: 1;}
+    50% {      opacity: 0.5;}
+    75% {      opacity: 0;}
+    to {      opacity: 0.2;  }}
+
+@keyframes gerland4 {
+
+    0% {      opacity: 1;}
+    25% {      opacity: 0.5;}
+    50% {      opacity: 0;}
+    75% {      opacity: 0.3;}
+    to {      opacity: 0.7;}}
+
+#garland-1, #garland-2 {
+  z-index: 2;
+  position: absolute;
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+}
+#garland-1 {
+  background-image: url(oneas-img/hud/1_garland-back.png);
+  left: 0;
+  bottom: 0;
+}
+
+#garland-2 {
+  background-image: url(oneas-img/hud/2_garland-back.png);
+  top: 0;
+}
+
+#image_1 {animation: gerland1 1s linear 0s infinite alternate}
+#image_2 {animation: gerland2 1s linear 0s infinite alternate}
+#image_3 {animation: gerland3 1s linear 0s infinite alternate}
+#image_4 {animation: gerland4 1s linear 0s infinite alternate}
+
+ #garland-1 img,  #garland-2 img  {
+    position: absolute;
+    left: 0;
+    top: 1.9vh;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s;
+    z-index: 3;
+    
+ }
+ #garland-1 img {
+  top: 0;
+ }
+ #garland-2 #image_5 {
+  top: 0vh;
+ }
+.oneas-lamps-2 #garland-2 {
+  background-image: url(oneas-img/hud/2_garland-back-2.png);
+}
+.oneas-lamps-2 #garland-1 {
+  background-image: url(oneas-img/hud/1_garland-back-2.png);
+}
+
+.oneas-lamps-2 #image_5 {
+  filter: hue-rotate(126deg) contrast(3);
+  opacity: 0;
+}
+.oneas-lamps-2 #image_4 {
+  filter: hue-rotate(50deg) contrast(3);
+}
+.oneas-lamps-2 #image_3 {
+  filter: hue-rotate(150deg) contrast(3);
+}
+.oneas-lamps-2 #image_2 {  
+  filter: contrast(3);
+}
+.oneas-lamps-2 #image_1 {  
+  filter: hue-rotate(-50deg) contrast(2);
+}
+
+.oneas-lamps-3 #image_5 {
+  filter: hue-rotate(126deg) contrast(2);
+}
+.oneas-lamps-3 #image_4 {
+  filter: hue-rotate(50deg) contrast(3);
+}
+.oneas-lamps-3 #image_3 {
+  filter: hue-rotate(50deg) contrast(3);
+}
+.oneas-lamps-3 #image_2 {  
+  filter: hue-rotate(150deg) contrast(3);
+}
+.oneas-lamps-3 #image_1 {  
+  filter: hue-rotate(150deg) contrast(3);
+}
+
+.oneas-lamps-4 #garland-2 img,
+.oneas-lamps-4 #garland-1 img {  
+  display: none;
+}
+
+ .ONEAS-hud__bottom {
+    position: absolute;
+    right: 3.5vh;
+    bottom: 4.5vh;
+    transform-origin: bottom right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    transition: all .35s ease;
+}
+
+.ONEAS-hud__top {
+  position: absolute;
+  top: 1.2vh;
+  right: 1.5vh;
+  transform-origin: 100% 0% 0.0000vh;
+  width: 27.7778vh;
+  height: 23.1481vh;
+}
+
+.ONEAS-hud__green-zone {
+    position: absolute;
+    left: 2vh;
+    bottom: 19vh;
+    transform-origin: bottom left;
+    transition: all .35s ease;
+}
+
+.ONEAS-hud__radar-border {
+    position: absolute;
+    transform-origin: bottom left;
+    
+    transition: all .35s ease;
+    width: 27.9259vh;
+    height: 27.3704vh;
+    left: 6.2vh;
+    bottom: 0.5vh;
+}
+
+.ONEAS-radar__images {
+  width: 100%;
+  height: 100%;
+}
+
+.ONEAS-green-zone__image {  
+  width: 5.9259vh;
+  height: 7.1296vh;
+}
+
+.ONEAS-hud__logo {
+  display: flex;
+  flex-direction: row-reverse;
+  z-index: 1;
+  margin-top: 1.2vh;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5vh;
+}
+.ONEAS-logo__image {  
+  width: 14.0741vh;
+  height: 3.8889vh;
+}
+.ONEAS-bonus__image {
+  width: 3.7963vh;
+  height: 4.0741vh;
+}
+
+.ONEAS-hud__weapon {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ONEAS-weapon__icon {
+
+width: 19.4444vh;
+height: 13.6111vh;
+  z-index: 0;
+  transition: all .35s ease;
+  margin-left: 1.5vh;
+  margin-top: 0.3vh;
+}
+.ONEAS-weapon-back {  
+  background-image: url(oneas-img/hud/weapon-back.png);
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+}
+
+.ONEAS-logo__bonus {
+  width: 7vh;
+  margin-bottom: -0.5vh;
+}
+
+.ONEAS-weapon__ammo {
+  position: absolute;
+  top: 4vh;
+  left: -11.5vh;
+  width: 15.0926vh;
+  height: 11.9444vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.9473vh;
+  line-height: 1.8519vh;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  text-shadow: 0.0000vh 0.0000vh 0.4868vh rgb(0 0 0 / 50%);
+  transition: all .35s ease;
+}
+
+#ONEAS-ammo__in-clip:after {
+    content: '';
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
+    width: 5.8333vh;
+    height: 0.2778vh;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+#ONEAS-ammo__in-clip {
+  margin-top: 0.5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.ONEAS-weapon__ammo-back {
+  background-image: url(oneas-img/hud/weapon-ammo-back.png);
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -2;
+  left: -1vh;
+}
+
+.ONEAS-param {
+  position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 9.4444vh;
+    height: 4.4444vh;
+    transition: all .35s ease;
+}
+.ONEAS-param__icon,
+.ONEAS-cash__icon,
+.ONEAS-wanted__icon {
+  width: 3.7037vh;
+  height: 3.7037vh;
+}
+.ONEAS-param-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(oneas-img/hud/info_bg_2.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.ONEAS-param__amount, .ONEAS-wanted__amount, #ONEAS-cash__value {
+    width: 4.8148vh;
+    height: 3.6111vh;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.3977vh;
+    line-height: 1.2963vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    text-shadow: 0.0000vh 0.0000vh 0.3449vh rgba(0, 0, 0, 0.5);
+    justify-content: center;
+}
+
+.ONEAS-hud__params {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all .35s ease;
+}
+
+.ONEAS-param__freeze .ONEAS-param-back {
+    background-image: url(oneas-img/hud/info_bg_3.png);
+    
+}
+
+.ONEAS-param__health .ONEAS-param-back {
+    background-image: url(oneas-img/hud/info_bg_1.png);    
+    
+    bottom: 0.2vh;
+}
+
+.ONEAS-hud__wanted {
+  position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 9.4444vh;
+    height: 4.4444vh;
+    transition: all .35s ease;
+}
+
+.ONEAS-hud__cash {
+  position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    width: 15.1852vh;
+    height: 4.4444vh;
+    transition: all .35s ease;
+}
+.ONEAS-hud__cash .ONEAS-param-back {
+  background-image: url(oneas-img/hud/info_bg_4.png);  
+}
+
+#ONEAS-cash__value {
+    width: 10.3704vh;
+}
+
+.ONEAS-speedometer__speed {
+    width: 7.5926vh;
+    margin-left: 0.2778vh;
+}
+
+.ONEAS-speedometer__procents {
+    width: 6.8519vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0.9259vh;
+    margin-top: 0.6481vh;
+}
+.ONEAS-speedometer__procents > div {
+  margin-bottom: 0.2778vh;
+}
+.ONEAS-speedometer__damage {
+  margin-bottom: 0;
+}
+
+.ONEAS-spedometer-param__key {
+    margin-left: -4.6296vh;
+    margin-top: 0.4630vh;
+}
+
+.ONEAS-spedometer-param__lights {
+    margin-left: -3.0556vh;
+    
+}
+
+.ONEAS-spedometer-param__rem {
+    margin-left: -2.0370vh;
+    
+}
+
+.ONEAS-speedometer {
+    display: flex;
+    position: absolute;
+    bottom: -64.8148vh;
+    right: -5.9%;
+    transform: translateX(-50%);
+    transition: all .35s ease;
+    transform-origin: bottom right;
+    width: 27.3148vh;
+    height: 14.0741vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+}
+.ONEAS-speedometer-back {
+  z-index: -1;
+  background-image: url(oneas-img/speed/speed_bg.png);
+  background-size: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: -0.5vh;
+  top: -0.5vh;
+}
+
+.ONEAS-speedometer-data {
+display: flex;
+font-weight: 600;
+line-height: 100%;
+color: rgb(243, 240, 221);
+text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+justify-content: flex-start;
+font-size: 1.5889vh;
+align-items: center;
+}
+.ONEAS-speedometer-data > div {
+  margin-left: 0.4630vh;
+}
+.ONEAS-speedometer-fuel__icon,
+.ONEAS-speedometer-wash__icon,
+.ONEAS-speedometer-damage__icon {
+  margin-left: 0;
+}
+  
+  .ONEAS-speedometer-data__text {
+    margin-left: -0.1852vh;
+    color: rgba(243, 240, 221, 0.7);
+  }
+  
+  .ONEAS-speedometer-icon {
+    width: 1.3vh;
+    height: 2vh;
+    margin-top: 0.1852vh;
+    filter: drop-shadow(0 0.1852vh 0.1852vh #0000001f);
+  }
+
+  .ONEAS-speedometer-speed__data {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  .ONEAS-speedometer-speed__value {
+    font-size: 2.8704vh;
+    color: rgb(243, 240, 221);
+    text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+    font-weight: 900;
+  }
+  
+  .ONEAS-speedometer-speed__text {
+    font-size: 1.8519vh;
+    color: rgba(243, 240, 221, 0.7);
+    text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+    
+    font-weight: 400;
+    line-height: 0.9259vh;
+}
+
+  .ONEAS-speedometer__mileage {
+    font-size: 1.5889vh;
+    text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+    color: rgb(243, 240, 221);
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5vh;
+  }
+  
+  .ONEAS-speedometer-mileage__text {
+    color: rgba(243, 240, 221, 0.7);
+  }
+
+  .ONEAS-speedometer__turns {
+    display: flex;
+  
+  }
+  
+  .ONEAS-speedometer__turns>div {
+    width: 3.2407vh;
+    height: 1.3889vh;
+    background: url(oneas-img/speed/turn.svg);
+    background-repeat: no-repeat;
+    opacity: 0.2;
+    background-size: contain;
+  }
+  
+  .ONEAS-speedometer-turn__right {
+    transform: rotate(180deg);
+  }
+  
+  .ONEAS-speedometer-turn--active {
+    animation: turn .4s linear 0s infinite alternate;
+  }
+
+  @keyframes turn {
+    0% {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .ONEAS-speedometer__params {
+    margin-left: 2.9630vh;
+    margin-top: 0.8333vh;
+    
+}
+  
+.ONEAS-speedometer-params {
+    display: flex;
+    transform: scale(0.7);
+    align-items: center;
+    flex-direction: column-reverse;
+}
+  
+  .ONEAS-speedometer-params > div {
+    transition: all .35s ease;
+    margin-bottom: 0.9259vh;
+  }
+  .ONEAS-spedometer-param__doors {
+    margin-bottom: 0;
+  }
+  
+  .ONEAS-speedometer-params div {
+    opacity: 0.35;
+  }
+  
+  .ONEAS-speedometer-param--active {
+    opacity: 1 !important;
+  }
+
+  .ONEAS-speedometer-damage__text, .ONEAS-speedometer-wash__text {
+    font-size: 1.2185vh;
+    
+    margin-top: 0.4630vh;
+  }
+
+  .ONEAS-damage__icon {
+    width: 1.4vh;
+  }
+
+  .ONEAS-speedometer-danger div {
+    color: #ea4f3e;
+  }
+  .ONEAS-speedometer-danger .ONEAS-speedometer-data__text {  
+    color: #ea4f3eb3;
+  }
+  .ONEAS-speedometer-danger path {
+    fill: #ea4f3e;
+  }
+
+.ONEAS-speedometer__tachometer {
+  display: flex;
+  
+  flex-direction: column;
+  align-items: flex-start;
+
+  border-left: 0.2778vh solid #f3f0dd;
+  
+  margin-top: 1.0185vh;
+  width: 8.3333vh;
+}
+#ONEAS-tachometer-rpm {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3889vh;
+  color: rgba(243, 240, 221, 0.7);
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  font-weight: 400;
+  padding-left: 1.0185vh;
+}
+.ONEAS-tachometer-value {
+  margin-right: 0.2778vh;
+}
+#ONEAS-tachometer-gear {
+  font-size: 1.8519vh;
+  color: rgb(243, 240, 221);
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  font-weight: 900;
+  text-transform: capitalize;
+  padding-left: 1.0185vh;
+}
+.ONEAS-tachometer-glow > div {
+  color: #65c466 !important;
+  text-shadow: 0 0 1.8519vh #65c466 !important;
+}
+
+#app .vignette {
+  display: none;
+}
+
+#app .overlay-container {
+  display: none;
+}
+
+#app .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #173954 0%, #061c40 100%);
+  border: 1.5vh solid #2962B6;
+  border-radius: 1.85vh;
+  padding: 2.22vh;
+  box-shadow: none;
+  transform: scale(0.8);
+}
+#app .window .modal-container {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+#app .window .modal__pattern-wrapper {
+  display: none;
+}
+#app .window .modal__title {
+  font-family:  var(--font-famaly-all) ;
+  font-weight: 600;
+  font-size: 2.22vh;
+  line-height: 3.33vh;
+  font-style: normal;
+  color:  var(--color) ;
+  text-transform: none;
+}
+#app .window .window__subtitle {
+  font-family:  var(--font-famaly-all) ;
+  margin: 0 2.96vh;
+}
+#app .window .window__image {
+  border-radius: 0;
+}
+#app .window .scrollable-container__container {
+  mask-image: none !important;
+}
+#app .window .window__content-container {
+  min-width: 45vh;
+}
+#app .window .window-table__item {  
+  background: #000000cc;
+  border: 0 !important;
+  border-radius: 0.46vh;
+  margin-top: 0.93vh;
+  height: 5vh;
+  color: var(--color);
+  box-shadow: none;
+}
+#app .window .window-table__item:hover {
+  background: #424242cc;
+}
+#app .window .window-table__item.selected {  
+  background: #ffb200 !important;
+  color: #000000 !important;
+}
+#app .window .window-table__col {  
+  justify-content: center;
+  padding: 0 0.96vh;
+}
+#app .window .window-table__item.selected p {
+  color: #000000 !important;
+}
+#app .window .window__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.2);
+}
+#app .window .window__buttons .controls-button__container {
+  position: relative;
+}
+#app .window .window__buttons .controls-button {
+  position: absolute;
+  width: 100%;
+}
+#app .window .window__buttons .controls-button-shadow {
+  display: none;
+}
+#app .window .window__buttons .controls-button-background,
+#app .window .window__buttons .controls-button--text,
+#app .window .window__buttons .controls-button-icon {
+  opacity: 0 !important;
+}
+#app .window .window__buttons .controls-button__container-text {
+  background: none !important;
+  background: linear-gradient(45deg, #e9651b, #f5be09) !important;
+  color: white;
+  border-radius: 0.93vh;
+  padding: 0 1.2vh;
+  line-height: 2.31vh;
+  font-weight: 500;
+  font-size: 1.11vh;
+  font-family:  var(--font-famaly-all) ;
+  opacity: 0.5;
+}
+#app .window .window__buttons .controls-button__container:hover .controls-button__container-text {
+  opacity: 1;
+  box-shadow: none;
+}
+#app .window .window__buttons .controls-button__container_disabled {
+  pointer-events: none;
+}
+#app .window .window__buttons .controls-button__container_disabled .controls-button__container-text {
+  opacity: .25;
+}
+#app .window .input-field {
+  background: #000000cc;
+  box-shadow: 1.39vh 1.39vh 1.85vh #0003;
+  border-radius: 0.93vh;
+  border: none;
+}
+#app .window .input-field_hoverable:hover {  
+  background: #0f0f0fcc;
+}
+#app .window .input-field_focused,
+#app .window .input-field_hoverable:hover.input-field_focused  {
+  background: #222222;
+}
+#app .window .input-field input,
+#app .window .input-field__placeholder {  
+  font-family:  var(--font-famaly-all);
+  font-weight: 500;
+}
+#app .window .input-field_focused input,
+#app .window .input-field_hoverable:hover.input-field_focuse input,
+#app .window .input-field_focused .input-field__placeholder,
+#app .window .input-field_hoverable:hover.input-field_focuse .input-field__placeholder {  
+  color: #fff;
+}
+
+body.oneas-fon-2 .ONEAS-param-back,
+body.oneas-fon-2 .ONEAS-green-zone__image,
+body.oneas-fon-2 .ONEAS-radar__images,
+body.oneas-fon-2 .ONEAS-weapon-back,
+body.oneas-fon-2 .ONEAS-weapon__ammo-back,
+body.oneas-fon-2 .ONEAS-speedometer-back {
+  filter: hue-rotate(145deg);
+}
+body.oneas-fon-2 .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #541717 0%, #400606 100%) !important;
+  border: 1.5vh solid #921E1E !important;
+}
+body.oneas-fon-3 .ONEAS-param-back,
+body.oneas-fon-3 .ONEAS-green-zone__image,
+body.oneas-fon-3 .ONEAS-radar__images,
+body.oneas-fon-3 .ONEAS-weapon-back,
+body.oneas-fon-3 .ONEAS-weapon__ammo-back,
+body.oneas-fon-3 .ONEAS-speedometer-back {
+  filter: hue-rotate(45deg);
+}
+
+body.oneas-fon-3 .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #2e1754 0%, #1c0640 100%) !important;
+  border: 1.5vh solid #784AC0 !important;
+}
+body.oneas-fon-4 .ONEAS-param-back,
+body.oneas-fon-4 .ONEAS-green-zone__image,
+body.oneas-fon-4 .ONEAS-radar__images,
+body.oneas-fon-4 .ONEAS-weapon-back,
+body.oneas-fon-4 .ONEAS-weapon__ammo-back,
+body.oneas-fon-4 .ONEAS-speedometer-back {
+  filter: hue-rotate(260deg);
+}
+body.oneas-fon-4 .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #17541f 0%, #06400e 100%) !important;
+  border: 1.5vh solid #0C7A1A !important;
+}
+body.oneas-fon-5 .ONEAS-param-back,
+body.oneas-fon-5 .ONEAS-green-zone__image,
+body.oneas-fon-5 .ONEAS-radar__images,
+body.oneas-fon-5 .ONEAS-weapon-back,
+body.oneas-fon-5 .ONEAS-weapon__ammo-back,
+body.oneas-fon-5 .ONEAS-speedometer-back {
+  filter: hue-rotate(300deg);
+}
+body.oneas-fon-5 .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #175445 0%, #064032 100%) !important;
+  border: 1.5vh solid #007B5D !important;
+}
+body.oneas-fon-6 .ONEAS-param-back,
+body.oneas-fon-6 .ONEAS-green-zone__image,
+body.oneas-fon-6 .ONEAS-radar__images,
+body.oneas-fon-6 .ONEAS-weapon-back,
+body.oneas-fon-6 .ONEAS-weapon__ammo-back,
+body.oneas-fon-6 .ONEAS-speedometer-back {
+  filter: hue-rotate(125deg);
+}
+body.oneas-fon-6 .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #541720 0%, #40060f 100%) !important;
+  border: 1.5vh solid #C33E52 !important;
+}
+body.oneas-fon-7 .ONEAS-param-back,
+body.oneas-fon-7 .ONEAS-green-zone__image,
+body.oneas-fon-7 .ONEAS-radar__images,
+body.oneas-fon-7 .ONEAS-weapon-back,
+body.oneas-fon-7 .ONEAS-weapon__ammo-back,
+body.oneas-fon-7 .ONEAS-speedometer-back {
+  filter: grayscale(1) contrast(1.5);
+}
+body.oneas-fon-7 .window .modal-container-wrapper {
+  background: radial-gradient(75.01% 66.84% at 43.05% 45.61%, #474444 0%, #333 100%) !important;
+  border: 1.5vh solid #4A4A4A !important;
+}

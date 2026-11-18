@@ -1,0 +1,1229 @@
+
+body {
+  font-family: var(--font-famaly-all);
+}
+
+#app .hud-radmir-radar {
+  left: 4.58vh;
+}
+
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-radmir-wanted {
+  display: none;
+}
+
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+font-weight: 900;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+font-weight: 900;
+font-style: italic;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+font-weight: 500;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+font-family: ALSRubl;
+src: url(./fonts/ALSRubl.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: Technology;
+font-weight: 400;
+font-style: normal;
+src: url(./fonts/Technology-Regular.ttf) format("truetype");
+}
+@font-face {
+font-family: Technology;
+font-weight: 400;
+font-style: italic;
+src: url(./fonts/Technology-Italic.ttf) format("truetype");
+}
+@font-face {
+font-family: Technology;
+font-weight: 700;
+font-style: normal;
+src: url(./fonts/Technology-Bold.ttf) format("truetype");
+}
+@font-face {
+font-family: Technology;
+font-weight: 700;
+font-style: italic;
+src: url(./fonts/Technology-BoldItalic.ttf) format("truetype");
+}
+
+:root {
+--bg: #000;
+  --bg-20: #00000033;
+  --bg-40: #00000066;
+  --bg-50: #00000080;
+  --bg-60: #00000099;
+  --bg-80: #000000cc;
+  
+--color: #fff;
+  --color-10: #ffffff1a;
+  --color-30: #ffffff4d;
+
+--font-famaly-all: GothamPro, "Open Sans";
+--font-famaly-speed: Technology;
+
+--all-bg5: #00000099;
+--border-1: #323232;
+--all-bg-3: #000000;
+--all-bg-2: #000000cc;
+--all-bg: repeating-linear-gradient(315deg, #000000, #000000 0.9259vh , #323232 0.9259vh , #323232 1.8519vh );
+--add-bg: repeating-linear-gradient(315deg, #000000cc, #000000cc 1.2963vh , #151515cc 1.2963vh , #151515cc 2.5000vh );
+--add-bg-2: #000000b3;
+--add-text: white;
+--add-text-2: #b1ae89;
+--buttom: #282828;
+--bottom-2: repeating-linear-gradient(315deg, #000000cc, #000000cc 1.2963vh , #3a3a3acc 1.2963vh , #3a3a3acc 2.5000vh );
+--buttom-hover: #505050;
+--buttom-active-2: linear-gradient(180deg, #1a120780, #d596384d);
+--buttom-active: #3e3f35;
+--buttom-off: #542442;
+--text-buttom: white;
+--text-buttom-2: #b1ae89;
+--text-buttom-hover: #cdcdcd;
+--text-buttom-active: #d59638;
+--text-buttom-off: #ffffff26;
+--box-shadow-inv: inset 0.0000vh  0.0000vh  1.8519vh  #ffffff;
+--box-shadow-bt-active: 0 0.0000vh  1.8519vh  0.2778vh  #ffffff4d;
+--filter-shadow-img: drop-shadow(0 0 0.7407vh  #ffffff80);
+}
+
+.ONEAS-hud {  
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.ONEAS-hud__bottom {
+  position: absolute;
+  transform-origin: bottom left;
+  left: 5.9vh;
+  bottom: 3.75vh;
+  z-index: -1;
+}
+.ONEAS-hud__top {
+  position: absolute;
+  top: 3vh;
+  right: 4vh;
+  transform-origin: top right;
+  display: flex;
+}
+
+.ONEAS-hud__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.ONEAS-hud__info > div {
+  margin-bottom: 0.2778vh;
+  width: 24.0741vh;
+}
+.ONEAS-hud__info > div:last-child {
+  margin-bottom: 0;
+}
+
+.ONEAS-radar__border {
+  width: 23.4259vh;
+  height: 21.7593vh;
+  height: 23.4259vh;
+}
+
+.ONEAS-hud__green-zone {
+  transition: all .35s ease;
+  bottom: 4vh;
+  right: 4vh;
+  position: absolute;
+  width: 18.1481vh;
+  height: 5.0926vh;
+  background-color: #0000004d;
+  border-radius: 1.4245vh;
+
+  transform-origin: bottom right;
+  z-index: -1;
+}
+.ONEAS-green-zone__text {
+  
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.4245vh;
+  line-height: 1.3889vh;
+  
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffc66b;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.0185vh  0.0000vh;
+}
+.ONEAS-green-zone__text > span:last-child {
+  color: #ffffff;
+  margin-top: 0.2778vh;
+}
+
+.ONEAS-hud__logo {
+
+  height: 4.2593vh;
+  position: relative;
+  background-image: url(/oneas-img/hud/logo-back.svg);
+  background-position: top right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.ONEAS-logo__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6667vh;
+  line-height: 1.6667vh;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffc66b;
+  justify-content: space-between;
+  height: 4.2620vh;
+}
+#ONEAS-logo__title-1 {
+  
+  margin-left: 2.6vh;
+  
+}
+#ONEAS-logo__title-2 {
+  margin-right: 1.2963vh;
+  
+}
+.ONEAS-logo__bonus {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3889vh;
+  line-height: 1.3889vh;
+  
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 12.4074vh;
+  height: 4.2620vh;
+}
+
+.ONEAS-hud__weapon {
+  transition: all .35s ease;
+  z-index: -1;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url(/oneas-img/hud/weapon-back.svg);
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  
+  margin-right: -2.18vh;  
+  width: 16.1111vh;
+  height: 12.7778vh;
+}
+.ONEAS-weapon__icon {
+  transition: all .35s ease;
+  width: 9.2593vh;
+  height: 9.2593vh;
+  margin-right: 0.8333vh;
+  margin-top: 0.4630vh;
+
+}
+.ONEAS-weapon__icon-bg {
+  transition: all .35s ease;
+  background-color: #00000080;
+  
+  width: 8.0556vh;
+  height: 8.0556vh;
+  position: absolute;
+  top: 1.1111vh;
+  margin-right: 0.9259vh;
+  z-index: -1;
+  border-radius: 50%;
+
+}
+.ONEAS-weapon__ammo {
+  transition: all .35s ease;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8519vh;
+  line-height: 1.7593vh;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.0000vh;
+  width: 80%;
+  margin-right: 2.1296vh;
+  
+}
+.ONEAS-weapon__ammo > span:first-child {
+  margin-right: 0.3704vh;
+}
+#ONEAS-ammo__total::before {
+    content: "/";
+    margin-right: 0.3704vh;
+}
+
+.ONEAS-hud__wanted {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5741vh;
+  line-height: 1.4815vh;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffffff;
+  justify-content: space-between;
+    
+  height: 3.9815vh;
+  position: relative;
+  background-image: url(/oneas-img/hud/wanted-back.svg);
+  background-position: top right;  
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ONEAS-wanted__text {
+  
+  margin-left: 1.8vh;
+}
+.ONEAS-wanted__text-none {
+  margin-right: 1.2963vh;
+  opacity: 0;
+}
+.ONEAS-wanted__row {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  right: 1.1111vh;
+}
+.ONEAS-wanted__inactive {
+  opacity: 0;
+}
+.ONEAS-wanted__inactive,
+.ONEAS-wanted__active {
+  width: 2.3148vh;
+  height: 2.3148vh;
+  margin: 0 -0.2315vh;
+}
+.ONEAS-hud__wanted--always-show .ONEAS-wanted__inactive {
+  opacity: 0;
+}
+
+.ONEAS-hud__cash {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5741vh;
+  line-height: 1.4815vh;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffffff;
+  justify-content: space-between;
+  background-image: url(/oneas-img/hud/cash-back.svg);
+  background-position: top right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 3.9815vh;
+}
+#ONEAS-cash__value {
+  margin-right: 1.2963vh;
+}
+#ONEAS-cash__text {
+  
+  margin-left: 2.2vh;
+}
+
+.ONEAS-hud__params {
+  position: absolute;
+  
+  top: -1.88vh;
+  left: -1.6vh;
+}
+.ONEAS-param--bars__bg {
+  z-index: -1;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.1852vh  #00000080);
+}
+.ONEAS-param--bars {
+  position: absolute;
+  z-index: 1;
+}
+.ONEAS-param__amount {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.8519vh;
+  line-height: 1.7593vh;
+
+  color: #ffffff;
+  text-shadow: 0 0 1.3889vh  #000000;
+  width: 3.7037vh;
+  text-align: center;
+}
+.ONEAS-param__icon {
+  filter: drop-shadow(0.1852vh  0.1852vh  0.1852vh  #000000cc);
+  margin-right: 0.2778vh;
+  z-index: 2;
+}
+.ONEAS-param {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.ONEAS-param > div:last-child {
+  position: relative;
+}
+.ONEAS-param__data {
+  display: flex;
+  align-items: center;
+}
+
+.ONEAS-param-health__data {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 4.5vh;
+    margin-right: -1.8vh;
+}
+.ONEAS-param-health__data .ONEAS-param__amount,
+.ONEAS-param-armour__data .ONEAS-param__amount {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.2778vh;
+}
+
+.ONEAS-param__hunger .ONEAS-param-bar__icon {
+  margin: 0;    
+  bottom: 3.5185vh;
+  right: -0.1852vh;
+}
+.ONEAS-param-bar__icon {
+  position: absolute;
+
+  z-index: 2;
+  margin-top: 2.9630vh;
+  margin-left: -0.1852vh;
+  display: none !important;
+}
+.ONEAS-param__hunger.ONEAS-param {
+  position: absolute;  
+  top: 6.25vh;
+  right: -1.6vh;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+.ONEAS-param-hunger__data {
+  margin-bottom: 4.5vh;
+  margin-left: -1vh;
+}
+
+.ONEAS-param__armour .ONEAS-param-bar__icon {
+  margin-top: 2.4074vh;
+  margin-left: -0.1852vh;
+}
+.ONEAS-param__armour.ONEAS-param {
+  position: absolute;
+  top: -1.7593vh;
+  left: 0.3704vh;
+}
+.ONEAS-param-armour__data {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 3.2vh;
+  margin-right: -1.8vh;
+}
+
+.ONEAS-param__breath {
+  position: absolute;
+  bottom: -2vh;
+  left: 29vh;
+  background-color: #0000004d;
+  border-radius: 1.4245vh;
+  padding: 2vh;
+}
+.ONEAS-param__breath .ONEAS-param__icon {
+  transform: scale(1.2);
+}
+.ONEAS-param__breath .ONEAS-param__amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ONEAS-param__freeze.ONEAS-param {
+  position: absolute;
+  top: 7.5vh;
+  right: 0vh;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+.ONEAS-param-freeze__data {
+  margin-bottom: 3vh;
+  margin-left: -1.3vh;
+}
+.ONEAS-param__freeze .ONEAS-param-bar__icon {
+  margin: 0;
+  bottom: 2.0370vh;
+  right: -0.1852vh;
+}
+
+.ONEAS-speedometer {
+  transition: all .35s ease;
+  
+  position: absolute;
+  transform-origin: bottom right;
+  right: 6vh;
+  bottom: -64.8148vh;
+  z-index: -1;
+}
+
+body.speed-1 .fon1 {
+  display: none;
+}
+body.speed-1 .ONEAS-speedometer-speed__arrow {
+  display: none;
+}
+body.speed-1 .ONEAS-speedometer__mileage {
+  display: none;
+}
+
+body.speed-2 .fon2 {
+  display: none;
+  }
+body.speed-2 .ONEAS-speedometer__tachometer {
+  display: none;
+}
+
+.ONEAS-speedometer__bars {
+  position: absolute;
+  top: -0.5556vh;
+  right: -2.1296vh;
+}
+.ONEAS-speedometer-bg {
+  width: 22.5000vh;
+  height: 22.5000vh;
+  transition: all .35s ease;
+}
+.ONEAS-speedometer-bars__icon {
+  position: absolute;
+  z-index: 2;
+}
+.ONEAS-speedometer--bars {
+  position: absolute;
+  z-index: 1;
+}
+.ONEAS-speedometer--bars-bg {
+  z-index: -1;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.1852vh  #00000080);
+}
+.ONEAS-param__icon,
+.ONEAS-param-bar__icon,
+.ONEAS-speedometer-bars__icon,
+.ONEAS-bars__icon {
+    filter: drop-shadow(0 0 0.4630vh  #000000);
+}
+
+.ONEAS-speedometer-speed__arrow {
+  position: absolute;
+  bottom: -3.9815vh;
+  right: -7.4074vh;
+
+  width: 21.5741vh;
+  height: 21.7593vh;
+}
+.ONEAS-speedometer__speed {
+  position: absolute;
+  bottom: 4.6296vh;
+  right: 7.7778vh;
+}
+.ONEAS-speedometer-speed__value {
+  font-family: "Technology";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.2407vh;
+  line-height: 2.5000vh;
+  letter-spacing: 0.13em;
+  color: #000000;
+  text-align: center;
+  width: 6.4815vh;
+  margin-left: 0.3704vh;
+  display: flex;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-speed__text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2037vh;
+
+  color: #ffffff;
+  text-shadow: 0.0000vh  0.0000vh  0.3704vh  #00000080;
+  
+  text-align: center;
+  width: 6.7593vh;
+  display: flex;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-speed__data {
+  width: 6.7593vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ONEAS-speedometer__params {
+  position: absolute;
+  bottom: 1.8519vh;
+  right: 3.7037vh;
+  width: 14.8898vh;
+  height: 5.3972vh;
+}
+.ONEAS-speedometer-params > div {
+  transition: all .25s ease;
+}
+  
+.ONEAS-speedometer-params > div {
+  opacity: 0.35;
+  filter: brightness(0);
+}
+.ONEAS-speedometer-param--active {
+  opacity: 1 !important;
+  filter: brightness(1) !important;
+}
+
+.ONEAS-spedometer-param__key {
+  margin-top: 1.8519vh;
+}
+
+.ONEAS-spedometer-param__doors {
+  margin-bottom: 2.2222vh;
+  margin-right: 8.1481vh;
+}
+
+.ONEAS-spedometer-param__rem {
+  margin-top: 1.5741vh;
+  margin-right: -0.4630vh;
+}
+
+.ONEAS-spedometer-param__lights {
+  margin-bottom: 2.2222vh;
+  margin-right: -0.9259vh;
+}
+
+.ONEAS-speedometer-params {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  width: 14.8898vh;
+  height: 4.0602vh;
+}
+.ONEAS-speedometer-params > div svg {
+
+  filter: drop-shadow(0.0000vh  0.0000vh  0.3704vh  #00000080);
+  
+}
+.ONEAS-speedometer-bars {
+  position: relative;
+}
+
+.ONEAS-speedometer__fuel {
+  position: absolute;
+  bottom: 0;
+  right: 2.7778vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 9.2593vh;
+}
+.ONEAS-speedometer-fuel__data {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5741vh;
+  line-height: 1.0185vh;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.3704vh  #00000080);
+  text-align: center;
+  
+}
+.ONEAS-speedometer-fuel__value,
+.ONEAS-speedometer-fuel__icon {
+  margin-right: 0.2778vh;
+}
+.ONEAS-speedometer-fuel__icon > svg {
+  width: 1.5741vh;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.3704vh  #00000080);
+}
+
+.ONEAS-speedometer__wash {
+  margin-top: -1.0185vh;
+}
+.ONEAS-speedometer__wash .ONEAS-speedometer-bars__icon {
+  top: 0;
+  left: -0.2778vh;
+
+}
+.ONEAS-speedometer-wash__icon {
+  margin-top: -0.2778vh;
+  margin-bottom: 0.1852vh;
+  margin-left: -1.2963vh;
+}
+
+.ONEAS-speedometer__damage {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.ONEAS-speedometer-damage__icon {
+  margin-top: 10.1852vh;
+  margin-left: -0.4630vh;
+}
+.ONEAS-speedometer__damage .ONEAS-speedometer-bars__icon {
+
+  top: 8.7037vh;
+  right: -0.2778vh;
+}
+
+.ONEAS-speedometer__mileage {
+  position: absolute;
+  top: 6.5741vh;
+  left: 8.5185vh;
+  width: 5.5556vh;
+  height: 1.8519vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ONEAS-speedometer-mileage__value {
+  font-family: "Technology";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6667vh;
+  margin-top: 0.0926vh;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.ONEAS-speedometer__tachometer {
+  position: absolute;
+  bottom: 0.3704vh;
+  right: 0.3704vh;
+}
+.ONEAS-speedometer-tachometer__arrow {
+  position: relative;  
+  width: 21.5741vh;
+  height: 21.7593vh;
+}
+.ONEAS-speedometer-speed__arrow,
+.ONEAS-speedometer-tachometer__arrow {
+  filter: drop-shadow(0.0000vh  0.0000vh  0.9259vh  #000000);
+  transform: rotate(-112deg);
+  z-index: 1;
+  transition: 200ms;
+}
+#ONEAS-tachometer-gear {
+  font-family: "Technology";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5926vh;
+  line-height: 2.5926vh;
+  text-align: center;
+  color: #000000;
+}
+.ONEAS-tachometer__data {
+  top: 6.0185vh;
+  left: 8.7963vh;
+  width: 3.7963vh;
+  height: 2.3148vh;
+  position: absolute;
+}
+
+#app .scrollable-container_type_1 .scrollable-container__rail_y {
+  display: none;
+}
+#app .radmir-chat-input__input {
+  padding: 0 1vh;
+  background-color: #00000066;
+}
+#app .radmir-chat-input__input input {
+  color: white !important;
+}
+#app .radmir-chat-input__input-lang {
+  padding: 0 0.4630vh  0.3704vh  0.4630vh;
+  color: white !important;
+}
+#app .radmir-chat:before {
+  width: 70vw !important;
+  background-image: linear-gradient(148deg, #141414d1 10%, #14141400 50%) !important;
+}
+#app .radmir-chat-input__input {
+  padding: 0 0.93vh !important;
+}
+#app .radmir-chat_inactive {
+  opacity: 1 !important;
+}
+
+#app .vignette {
+  display: none;
+}
+
+#app .overlay-container {
+  display: none;
+}
+
+#app .quests-progress-info {
+  top: 40%;
+}
+
+#app .game-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  bottom: 0;
+  top: 15.8vh;
+  align-items: flex-end;
+  margin-left: -4vh;
+  transition: all .35s ease;
+}
+#app .game-text--content {
+  background: #00000080;
+  padding: 1vh 2vh;
+  
+  transform: scale(1) !important;
+  position: unset;
+  border-radius: 1vh;
+  display: flex;
+  justify-content: flex-end;
+  transition: all .35s ease;
+  width: auto;
+  margin-bottom: 0.3vh;
+  flex-direction: column;
+  align-items: flex-end;
+  position: relative;
+  top: auto;
+  bottom: auto;
+  left: auto;
+  right: auto;
+}
+#app .game-text--data .title {
+  text-shadow: 0 0 .5vh #00000080;
+  text-align: right;
+}
+#app .game-text--content .game-text--data .title > div {
+  font-size: 1.5vh !important;
+}
+#app .game-text--background {
+  display: none;
+}
+#app .game-text--data {
+  text-align: right;
+}
+
+#app .authorization {
+  background: none;
+}
+#app .authorization__gradient {
+  background-image: url(./oneas-img/interfaces/MW_GRIT_02.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -26vh;
+  left: 3vh;
+}
+#app .registration__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6vh;
+}
+#app .registration__container:before {
+  content: '';
+  background-image: url(./oneas-img/interfaces/MW_GRIT_02.png);
+  background-size: auto;
+  background-repeat: no-repeat no-repeat;
+  background-position-x: 53%;
+  background-position-y: -20vh;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotateZ(-174deg);
+  top: 14vh;
+}
+#app .registration-personalization:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(./oneas-img/interfaces/MW_GRIT_02.png);
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  background-position-x: 0vh;
+  background-position-y: 7vh;
+  top: -28vh;
+  transform: rotateZ(168deg) scale3d(1.3, 1.3, 1);
+  z-index: -5;
+  left: -1vh;
+}
+#app .login-head__subtitle {
+  color: transparent;
+  opacity: 1;
+}
+#app .login-auth .login-head__subtitle:after {
+content: "Ввод данных";
+color: #fff;
+font-style: normal;
+display: block;
+font-size: 4vh;
+font-weight: 700;
+}
+#app .login-head__username,
+#app .authorization-field {
+  height: 4.63vh;
+  box-sizing: border-box;
+  border-radius: 0.3vh;
+  
+	font-size: 1.8vh;
+  width: 46.48vh;
+  position: relative;
+  font-weight: 400;
+  font-family: var(--font-famaly-all);
+	background: #00000038;
+}
+#app .login-auth .login-head__username,
+#app .login-auth .authorization-field {
+  margin-top: 7.89vh;
+}
+#app .login-head-icon {
+  display: none;
+}
+#app .login-head__username,
+#app .authorization-field__box {
+  padding: 0.5vh 1.67vh 0.4vh;
+}
+#app .authorization-field__box {
+  border: none;
+}
+#app .authorization-field__lang,
+#app .authorization-field__icon {
+  right: 1.5vh;
+}
+#app .authorization-field,
+#app .authorization-field__input,
+#app .login-head__username:before,
+#app .authorization-field:before,
+#app .authorization-field__lang,
+#app .login-form__suggestion {
+  color: #ffffffd6 !important;
+}
+#app .login-head__username,
+#app .authorization-field {
+  border: 0.19vh solid #fff;
+  background-color: #00000054;
+}
+#app .authorization-field__input {
+  font-size: 1.3vh;
+  border: none !important;
+  font-family: var(--font-famaly-all);
+  padding-bottom: 0;
+}
+#app .authorization-field__input-placeholder {
+  opacity: 0;
+}
+.login-form__suggestion-wrapper .login-form-push {
+  background-color: var(--bg-60);
+  border-radius: 0.3vh;
+}
+.login-form__suggestion-wrapper .login-form-push:before {
+  border-right-width: 1.11vh;
+  border-right-style: solid;
+  border-right-color:  var(--bg-60);
+  left: 0.05vh;
+  top: 0;
+  opacity: 1;
+}
+#app .login-form__button,
+#app .registration-form__button,
+#app .registration-personalization__button,
+#app .registration-bonuses__button {
+  padding: 0;
+  height: 6.11vh;
+  border-radius: 0;
+  font-family: var(--font-famaly-all);
+  line-height: 6.11vh;
+  font-size: 2.04vh;
+  font-weight: 500;
+  width: 17vh;
+  text-transform: inherit;
+  background-color: var(--buttom) !important;
+  position: relative;
+  opacity: 1;
+}
+#app .registration-personalization__button {
+  width: 24vh;
+}
+#app .registration-bonuses__button {
+  width: 36vh;
+}
+#app .registration-form__button-background,
+#app .registration-bonuses__button-background {  
+  display: none;
+}
+#app .login-form__button,
+#app .registration-form__button-text,
+#app .registration-bonuses__button-text,
+#app .registration-personalization__button {  
+  color: var(--text-buttom) !important;
+  opacity: 1;
+}
+
+#app .login-form__button:hover,
+#app .registration-form__button:hover .registration-form__button-text,
+#app .registration-bonuses__button:hover .registration-bonuses__button-text,
+#app .registration-personalization__button:hover {
+  color: #ffb200 !important;
+}
+
+#app .login-form__button:hover,
+#app .registration-form__button:hover,
+#app .registration-personalization__button:hover,
+#app .registration-bonuses__button:hover {
+  opacity: 1;  
+  background-color: var(--buttom-active) !important;
+}
+#app .login-form__button_active::after, 
+#app .registration-form__button_active::after, 
+#app .registration-personalization__button_active::after, 
+#app .registration-bonuses__button_active::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+border-image-source: url(./oneas-img/interfaces/border-button.png);
+border-image-slice: 37 26 37 26;
+border-image-width: 1vh 1vh 1vh 1vh;
+transform: scale3d(1.15, 1.35, 1);
+animation: auth-btn 0.5s linear 0s infinite alternate;  
+}
+#app .login-form__button:hover::after,
+#app .registration-form__button:hover::after,
+#app .registration-personalization__button:hover::after,
+#app .registration-bonuses__button:hover::after {
+  border-image-source: url(./oneas-img/interfaces/border-button_active.png);
+}
+
+@keyframes auth-btn {
+  0% {
+    transform: scale3d(1.15, 1.35, 1);
+    opacity: 0.5;
+  }
+  to {
+      transform: scale3d(1.25, 1.45, 1);
+      opacity: 1;
+  }
+}
+#app .login-form,
+#app .registration-form,
+#app .registration-personalization,
+#app .registration-bonuses {
+  align-items: center;
+  width: 46.48vh;
+}
+#app .registration-form {  
+  margin-bottom: -10vh;
+}
+#app .registration-form__input {
+  margin-top: 0;
+}
+#app .registration-personalization-switcher__button {
+  width: 6.11vh;
+  height: 6.11vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.74vh;
+  cursor: pointer;
+  margin-left: 1.11vh;
+  transition-duration: .25s;
+  padding: 0;
+}
+#app .registration-personalization-switcher__text {
+  display: none;
+}
+#app .registration-personalization-switcher__icon {
+  width: 2vh;
+  height: 2vh;
+  margin: 0;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button:first-child {
+  border: 0.19vh solid #527ff1;
+  background: none;
+  margin: 0;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button_active:first-child {
+  background: #527ff1 !important;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button:last-child {
+  border: 0.19vh solid #d152f1;
+  background: none;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button_active:last-child {
+  background: #d152f1 !important;
+}
+#app .registration-personalization-switcher__icon {
+  fill: white;
+}
+#app .registration-personalization-container {  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+#app .registration-personalization-item {
+  width: 13.33vh;
+  height: 16.85vh;
+  border-radius: 0.74vh;
+  border: 0.19vh solid #ffffff69;
+  background: none;
+  margin: 1.48vh 1.48vh 0 0;
+}
+#app .registration-personalization-item:hover {
+  border: 0.19vh solid #ffffff;
+  background: none !important;
+}
+#app .registration-personalization-item_active {
+  border: 0.19vh solid #ffb200 !important;
+  background: none !important;
+}
+#app .login-head__username:before,
+#app .authorization-field:before {
+  content: "Введите логин*";
+  position: absolute;
+  left: 0;
+  top: -3vh;
+  font-size: 1.67vh;
+  line-height: 100%;
+  color: #ffffffb3;
+  background: none;
+  width: 100%;
+  margin-bottom: 1.11vh;
+  height: auto;
+}
+#app .login-auth .authorization-field:before {
+  content: "Введите пароль*";
+}
+#app .login-code .authorization-field:before {
+  content: "Введите значение*";
+}
+#app .registration-bonuses .authorization-field:before {
+  content: "Введите ник пригласившего (или пропустите)*";
+}
+#app .registration-form > div:nth-child(1) .authorization-field:before {
+  content: "Введите e-mail*";
+}
+#app .registration-form > div:nth-child(2) .authorization-field:before {
+  content: "Придумайте пароль (мин. 6 символов)*";
+}
+#app .registration-form > div:nth-child(3) .authorization-field:before {
+  content: "Повторите пароль*";
+}
+#app .authorization .login {
+	align-items: center;
+	justify-content: center;
+}
+#app .registration__title {
+  color: #ffffff;
+  z-index: 3;
+  margin-top: 18vh;
+}
+#app .registration__title-icon {
+  display: none;
+}
+#app .registration .authorization-field {
+  margin-top: 6vh;
+}
+#app .registration-personalization-switcher {
+  margin-top: 2vh;
+}
+#app .registration-form__confirm {
+  align-items: flex-start;
+  flex-direction: column;
+}
+#app .login-auth .login-head {
+  margin: 0;
+}
+#app .login > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

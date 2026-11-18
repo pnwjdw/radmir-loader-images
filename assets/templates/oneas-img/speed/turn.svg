@@ -1,0 +1,17 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 400 237"
+>
+  <linearGradient id="turns">
+    <stop offset="4%" stop-color="#e9651b" />
+    <stop offset="100%" stop-color="#f5be09" />
+  </linearGradient>
+  <g id="Слой_2" data-name="Слой 2">
+    <g id="Слой_1-2" data-name="Слой 1">
+      <path
+        fill="url(#turns)"
+        d="M364.5,105H47.3l81.1-81.1A14,14,0,0,0,108.6,4.1L4.1,108.6a14,14,0,0,0,0,19.8l.5.5h0l104,104a14,14,0,0,0,19.8-19.8L48.3,133H364.5a14,14,0,0,0,0-28Z"
+      />
+    </g>
+  </g>
+</svg>

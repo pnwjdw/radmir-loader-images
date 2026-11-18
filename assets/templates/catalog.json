@@ -1,0 +1,242 @@
+[
+  {
+    "id": "11-happy-new-year-free",
+    "name": "Happy News Year",
+    "edition": "Free",
+    "hash": "924cb6c90a1b440bc5caf1292e98b7c0e7c11a1a00917219c37d5be013205955"
+  },
+  {
+    "id": "01-black-minimal-maximum",
+    "name": "Black Minimal",
+    "edition": "Maximum",
+    "hash": "02b15a87aec24238c2867d0819cf9b653d5cb048a4445c88580bca6c050d1c89"
+  },
+  {
+    "id": "02-purple-spring-gta-maximum",
+    "name": "Purple Spring GTA",
+    "edition": "Maximum",
+    "hash": "d27560ff5eeab3c10d9619a85b38814d0973d7e8b1fe7584e5aa1f594c56eec4"
+  },
+  {
+    "id": "03-hasel-online-basic",
+    "name": "Hasel Online",
+    "edition": "Basic",
+    "hash": "060d8bcc707658d123e03373e815c2bb42b69ab8f6aa06411629a68b9d73bb00"
+  },
+  {
+    "id": "03-hasel-online-maximum",
+    "name": "Hasel Online",
+    "edition": "Maximum",
+    "hash": "0a62f100b71e85ebb3920128804aace8d02c5948d96f02e1bffd07bd3d111b3c"
+  },
+  {
+    "id": "04-radmir-go-basic",
+    "name": "RADMIR:GO",
+    "edition": "Basic",
+    "hash": "b54cf756405f2d1227b019b0d1fef6e1f71e0ee6081594a194f36047eed071b9"
+  },
+  {
+    "id": "04-radmir-go-maximum",
+    "name": "RADMIR:GO",
+    "edition": "Maximum",
+    "hash": "1252b605ea5bba65255d717b0c29e552e66183552751b62d24705ae707effa89"
+  },
+  {
+    "id": "05-nfs-most-wanted-basic",
+    "name": "NFS Most Wanted",
+    "edition": "Basic",
+    "hash": "1d4fedf89a9ed432e20804eaeb4db6e1dee159ee17d2e92b510b0a31d171b409"
+  },
+  {
+    "id": "05-nfs-most-wanted-maximum",
+    "name": "NFS Most Wanted",
+    "edition": "Maximum",
+    "hash": "670dd8c58a0a10d86f1e1f9887d2fee842fa91164ab50b4dd58907b009935ea6"
+  },
+  {
+    "id": "06-old-style-basic",
+    "name": "OLD style",
+    "edition": "Basic",
+    "hash": "0015117a2fe3bdab7a3880b0ae6143f52472ad220cc901854f4a0d250f39c1c9"
+  },
+  {
+    "id": "06-old-style-maximum",
+    "name": "OLD style",
+    "edition": "Maximum",
+    "hash": "8366f0c039eb86095079938dfc39cfe21a6757cd326697f77e72e26e75a333de"
+  },
+  {
+    "id": "10-ghetto-love-basic",
+    "name": "Ghetto Love",
+    "edition": "Basic",
+    "hash": "933ace8e77d4a63d3156af0cd61bc8728dc191f15cc7225ed63d8c65bc9e8496"
+  },
+  {
+    "id": "10-ghetto-love-maximum",
+    "name": "Ghetto Love",
+    "edition": "Maximum",
+    "hash": "0194ff5a801a860d9b30d4506dbd9a1f2ef11232baa2bf0ffe7a0d723b38881e"
+  },
+  {
+    "id": "08-windows-style-free",
+    "name": "Windows Style",
+    "edition": "Free",
+    "hash": "49265728cf602aec37a259b7c258f69d8830f8a26bb2c6d36191744a8b93949f"
+  },
+  {
+    "id": "12-radmir-classic-01-default-game",
+    "name": "Radmir Classic",
+    "edition": "Default Game",
+    "hash": "2110b43fd8f4c160483d04bc58055d5827f9eb40bfe716590a578dcf89b003c8"
+  },
+  {
+    "id": "12-radmir-classic-02-mo-lyashov",
+    "name": "Radmir Classic",
+    "edition": "MO Lyashov",
+    "hash": "0f555d76e5a75e9320821c7d5185e6d75a201dd2f68973819d7c4f0dc047c252"
+  },
+  {
+    "id": "12-radmir-classic-03-lyashov-team",
+    "name": "Radmir Classic",
+    "edition": "Lyashov Team",
+    "hash": "a19b24cfbf011764f6904a3b2ff51429943b9d9842f98f254a07c3f5ce186a5d"
+  },
+  {
+    "id": "12-radmir-classic-04-first-blue",
+    "name": "Radmir Classic",
+    "edition": "First Blue",
+    "hash": "bcebf3d678512cf38afb697ee274d040dad8eb063558dd1e2b2daf7f7cfa5846"
+  },
+  {
+    "id": "12-radmir-classic-05-ala-rp-game",
+    "name": "Radmir Classic",
+    "edition": "à la RP Game",
+    "hash": "1336bd71851511605ce7e61f9e5e2a51315333a4ccfed6380632f7b730b2ce5c"
+  },
+  {
+    "id": "12-radmir-classic-06-demartini-game",
+    "name": "Radmir Classic",
+    "edition": "Demartini Game",
+    "hash": "90580fc08d6a4bf93f75a25147d9e9d6d0195afd6c23ca178387cdf5ddcfdd7b"
+  },
+  {
+    "id": "12-radmir-classic-07-beautiful-sunset",
+    "name": "Radmir Classic",
+    "edition": "Beautiful Sunset",
+    "hash": "da55e22fe3ecfbe6ff2b38095ecd3e5570b0da59b2878e23688c6209ac186a1b"
+  },
+  {
+    "id": "12-radmir-classic-08-reborn-sborka-1",
+    "name": "Radmir Classic",
+    "edition": "Reborn Sborka #1",
+    "hash": "99be3285cbb9dd15d2b0f9226247b024366f22c12da0aeea970ea86b83d0ebef"
+  },
+  {
+    "id": "12-radmir-classic-09-fuckborn-boyz",
+    "name": "Radmir Classic",
+    "edition": "Fuckborn Boyz",
+    "hash": "8c9c9f36fa7fa0af8507b94734b6f9486dbd117deaa73a963f794b2d58a57727"
+  },
+  {
+    "id": "12-radmir-classic-10-simon-ghost",
+    "name": "Radmir Classic",
+    "edition": "Simon Ghost",
+    "hash": "b6e5d82915cfdaf6a9755a404c4e2d7ac58ed18e3a6703b141fe9f22427bb98f"
+  },
+  {
+    "id": "12-radmir-classic-11-juyitsu-lan",
+    "name": "Radmir Classic",
+    "edition": "Juyitsu clan",
+    "hash": "a7ec8aaa2e9f0323b808b1068b26610268ffce8f6fe0cb5ca725faa1c6867828"
+  },
+  {
+    "id": "12-radmir-classic-12-pletnev-style",
+    "name": "Radmir Classic",
+    "edition": "Pletnev Style",
+    "hash": "d26acccac8939e7066aab95cf80d2e740bbeca4239d31abc3ed543edff173853"
+  },
+  {
+    "id": "13-pacific-noise-maximum",
+    "name": "Pacific Noise",
+    "edition": "Maximum",
+    "hash": "cc901660ee08fb8ba3556a5205343e3df2f22450a7653466d2cbbc57e4a9cbab"
+  },
+  {
+    "id": "14-teddy-guevara-1-maximum",
+    "name": "Teddy Guevara",
+    "edition": "Private",
+    "hash": "6c41cc6b4f9a5ffca844f7076fba0e010f64d3c7146a864a20c7c4b6cd3452d3"
+  },
+  {
+    "id": "15-capture-death-free",
+    "name": "CAPTURE DEATH",
+    "edition": "Free",
+    "hash": "cf98aca58446521b59f2644bfc6d2b92be92a52950d1d128c7bafdaa5b33e491"
+  },
+  {
+    "id": "18-forza-five-basic",
+    "name": "Forza Five",
+    "edition": "Basic",
+    "hash": "b0f9f974eed281cda1a9b08cde40d0f9a77f2b91a8b9031277a3fd7255aa019d"
+  },
+  {
+    "id": "18-forza-five-maximum",
+    "name": "Forza Five",
+    "edition": "Maximum",
+    "hash": "77087a04c6a2ded2415b4afe3ddd2e3b4c21197ce6bd401e4176ce98b84c1994"
+  },
+  {
+    "id": "16-nalomal-drova-free",
+    "name": "Nalomal Drova",
+    "edition": "Free",
+    "hash": "fbdbd05c707f30253ea2d913995d9125604390edd69f3e558d4c54f481728534"
+  },
+  {
+    "id": "17-greeen-spirit-maximum",
+    "name": "Greeen Spirit",
+    "edition": "Maximum",
+    "hash": "8612dffe9d71add71920e4f8745072e23fa034aeb629d3eda29b8c4fe4f258c8"
+  },
+  {
+    "id": "17-greeen-spirit-basic",
+    "name": "Greeen Spirit",
+    "edition": "Basic",
+    "hash": "63bc161fc9cd8e0bc0544c69f48e2f31355e2630bd772429f15695ba322e23ce"
+  },
+  {
+    "id": "19-dark-edition-full",
+    "name": "Dark Edition",
+    "edition": "Full",
+    "hash": "0650408cb8a357eb67ff776842c7156cdc2b8c8b890334223b7366f2bd51f55d"
+  },
+  {
+    "id": "22-the-ariz-one-free",
+    "name": "The Ariz ONE",
+    "edition": "Free",
+    "hash": "a9ddafc3623fce6bc3cd5c38cbb7e5ecd8569cd0e009b0607d10a5f0b0bdd9d6"
+  },
+  {
+    "id": "00-test-test",
+    "name": "Слот для тестов",
+    "edition": "test",
+    "hash": "b934c88cf2a4262a1a72f15cc7ef5a85d5123d28fc4ab8c26545e398167d1607"
+  },
+  {
+    "id": "23-point-switch-maximum",
+    "name": "Point Switch",
+    "edition": "Maximum",
+    "hash": "43ebdda216b8aec77c06becec2caacf8944d1636e16fceadcb716f7cd9788eb0"
+  },
+  {
+    "id": "28-fate-dark-basic",
+    "name": "Fate Dark",
+    "edition": "Basic",
+    "hash": "17f89fecca5516a0c4226fcf8f2612280f771c8f61051d62c35eaf10d70f2508"
+  },
+  {
+    "id": "28-fate-dark-maximum",
+    "name": "Fate Dark",
+    "edition": "Maximum",
+    "hash": "b425fc9ffcdb7825ffa20f0ad6b6b383140b55319d905b25253c141e0fba7d05"
+  }
+]

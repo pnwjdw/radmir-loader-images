@@ -1,0 +1,3085 @@
+
+body {
+  font-family: var(--font-famaly-all);
+}
+
+#app .hud-radmir-radar {
+  left: 4.58vh;
+}
+
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-radmir-wanted {
+  display: none;
+}
+
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+font-weight: 900;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+font-weight: 900;
+font-style: italic;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+font-weight: 500;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+font-family: ALSRubl;
+src: url(./fonts/ALSRubl.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: Technology;
+font-weight: 400;
+font-style: normal;
+src: url(./fonts/Technology-Regular.ttf) format("truetype");
+}
+@font-face {
+font-family: Technology;
+font-weight: 400;
+font-style: italic;
+src: url(./fonts/Technology-Italic.ttf) format("truetype");
+}
+@font-face {
+font-family: Technology;
+font-weight: 700;
+font-style: normal;
+src: url(./fonts/Technology-Bold.ttf) format("truetype");
+}
+@font-face {
+font-family: Technology;
+font-weight: 700;
+font-style: italic;
+src: url(./fonts/Technology-BoldItalic.ttf) format("truetype");
+}
+
+:root {
+--bg: #000;
+  --bg-20: #00000033;
+  --bg-40: #00000066;
+  --bg-50: #00000080;
+  --bg-60: #00000099;
+  --bg-80: #000000cc;
+  
+--color: #fff;
+  --color-10: #ffffff1a;
+  --color-30: #ffffff4d;
+
+--font-famaly-all: GothamPro, "Open Sans";
+--font-famaly-speed: Technology;
+
+--all-bg5: #00000099;
+--border-1: #323232;
+--all-bg-3: #000000;
+--all-bg-2: #000000cc;
+--all-bg: repeating-linear-gradient(315deg, #000000, #000000 0.9259vh , #323232 0.9259vh , #323232 1.8519vh );
+--add-bg: repeating-linear-gradient(315deg, #000000cc, #000000cc 1.2963vh , #151515cc 1.2963vh , #151515cc 2.5000vh );
+--add-bg-2: #000000b3;
+--add-text: white;
+--add-text-2: #b1ae89;
+--buttom: #282828;
+--bottom-2: repeating-linear-gradient(315deg, #000000cc, #000000cc 1.2963vh , #3a3a3acc 1.2963vh , #3a3a3acc 2.5000vh );
+--buttom-hover: #505050;
+--buttom-active-2: linear-gradient(180deg, #1a120780, #d596384d);
+--buttom-active: #3e3f35;
+--buttom-off: #542442;
+--text-buttom: white;
+--text-buttom-2: #b1ae89;
+--text-buttom-hover: #cdcdcd;
+--text-buttom-active: #d59638;
+--text-buttom-off: #ffffff26;
+--box-shadow-inv: inset 0.0000vh  0.0000vh  1.8519vh  #ffffff;
+--box-shadow-bt-active: 0 0.0000vh  1.8519vh  0.2778vh  #ffffff4d;
+--filter-shadow-img: drop-shadow(0 0 0.7407vh  #ffffff80);
+}
+
+.ONEAS-hud {  
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.ONEAS-hud__bottom {
+  position: absolute;
+  transform-origin: bottom left;
+  left: 5.9vh;
+  bottom: 3.75vh;
+  z-index: -1;
+}
+.ONEAS-hud__top {
+  position: absolute;
+  top: 3vh;
+  right: 4vh;
+  transform-origin: top right;
+  display: flex;
+}
+
+.ONEAS-hud__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.ONEAS-hud__info > div {
+  margin-bottom: 0.2778vh;
+  width: 24.0741vh;
+}
+.ONEAS-hud__info > div:last-child {
+  margin-bottom: 0;
+}
+
+.ONEAS-radar__border {
+  width: 23.4259vh;
+  height: 21.7593vh;
+  height: 23.4259vh;
+}
+
+.ONEAS-hud__green-zone {
+  transition: all .35s ease;
+  bottom: 4vh;
+  right: 4vh;
+  position: absolute;
+  width: 18.1481vh;
+  height: 5.0926vh;
+  background-color: #0000004d;
+  border-radius: 1.4245vh;
+
+  transform-origin: bottom right;
+  z-index: -1;
+}
+.ONEAS-green-zone__text {
+  
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.4245vh;
+  line-height: 1.3889vh;
+  
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffc66b;
+  flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.0185vh  0.0000vh;
+}
+.ONEAS-green-zone__text > span:last-child {
+  color: #ffffff;
+  margin-top: 0.2778vh;
+}
+
+.ONEAS-hud__logo {
+
+  height: 4.2593vh;
+  position: relative;
+  background-image: url(/oneas-img/hud/logo-back.svg);
+  background-position: top right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.ONEAS-logo__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6667vh;
+  line-height: 1.6667vh;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffc66b;
+  justify-content: space-between;
+  height: 4.2620vh;
+}
+#ONEAS-logo__title-1 {
+  
+  margin-left: 2.6vh;
+  
+}
+#ONEAS-logo__title-2 {
+  margin-right: 1.2963vh;
+  
+}
+.ONEAS-logo__bonus {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.3889vh;
+  line-height: 1.3889vh;
+  
+  display: flex;
+  align-items: center;
+  text-align: right;
+  color: #ffffff;
+  position: absolute;
+  top: 0;
+  right: 12.4074vh;
+  height: 4.2620vh;
+}
+
+.ONEAS-hud__weapon {
+  transition: all .35s ease;
+  z-index: -1;
+  display: flex;
+
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url(/oneas-img/hud/weapon-back.svg);
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  
+  margin-right: -2.18vh;  
+  width: 16.1111vh;
+  height: 12.7778vh;
+}
+.ONEAS-weapon__icon {
+  transition: all .35s ease;
+  width: 9.2593vh;
+  height: 9.2593vh;
+  margin-right: 0.8333vh;
+  margin-top: 0.4630vh;
+
+}
+.ONEAS-weapon__icon-bg {
+  transition: all .35s ease;
+  background-color: #00000080;
+  
+  width: 8.0556vh;
+  height: 8.0556vh;
+  position: absolute;
+  top: 1.1111vh;
+  margin-right: 0.9259vh;
+  z-index: -1;
+  border-radius: 50%;
+
+}
+.ONEAS-weapon__ammo {
+  transition: all .35s ease;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.8519vh;
+  line-height: 1.7593vh;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.0000vh;
+  width: 80%;
+  margin-right: 2.1296vh;
+  
+}
+.ONEAS-weapon__ammo > span:first-child {
+  margin-right: 0.3704vh;
+}
+#ONEAS-ammo__total::before {
+    content: "/";
+    margin-right: 0.3704vh;
+}
+
+.ONEAS-hud__wanted {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5741vh;
+  line-height: 1.4815vh;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffffff;
+  justify-content: space-between;
+    
+  height: 3.9815vh;
+  position: relative;
+  background-image: url(/oneas-img/hud/wanted-back.svg);
+  background-position: top right;  
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.ONEAS-wanted__text {
+  
+  margin-left: 1.8vh;
+}
+.ONEAS-wanted__text-none {
+  margin-right: 1.2963vh;
+  opacity: 0;
+}
+.ONEAS-wanted__row {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  right: 1.1111vh;
+}
+.ONEAS-wanted__inactive {
+  opacity: 0;
+}
+.ONEAS-wanted__inactive,
+.ONEAS-wanted__active {
+  width: 2.3148vh;
+  height: 2.3148vh;
+  margin: 0 -0.2315vh;
+}
+.ONEAS-hud__wanted--always-show .ONEAS-wanted__inactive {
+  opacity: 0;
+}
+
+.ONEAS-hud__cash {
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5741vh;
+  line-height: 1.4815vh;
+  display: flex;
+  align-items: center;
+  text-align: right;
+  text-transform: uppercase;
+  color: #ffffff;
+  justify-content: space-between;
+  background-image: url(/oneas-img/hud/cash-back.svg);
+  background-position: top right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 3.9815vh;
+}
+#ONEAS-cash__value {
+  margin-right: 1.2963vh;
+}
+#ONEAS-cash__text {
+  
+  margin-left: 2.2vh;
+}
+
+.ONEAS-hud__params {
+  position: absolute;
+  
+  top: -1.88vh;
+  left: -1.6vh;
+}
+.ONEAS-param--bars__bg {
+  z-index: -1;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.1852vh  #00000080);
+}
+.ONEAS-param--bars {
+  position: absolute;
+  z-index: 1;
+}
+.ONEAS-param__amount {
+  font-style: normal;
+  font-weight: 900;
+  font-size: 1.8519vh;
+  line-height: 1.7593vh;
+
+  color: #ffffff;
+  text-shadow: 0 0 1.3889vh  #000000;
+  width: 3.7037vh;
+  text-align: center;
+}
+.ONEAS-param__icon {
+  filter: drop-shadow(0.1852vh  0.1852vh  0.1852vh  #000000cc);
+  margin-right: 0.2778vh;
+  z-index: 2;
+}
+.ONEAS-param {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.ONEAS-param > div:last-child {
+  position: relative;
+}
+.ONEAS-param__data {
+  display: flex;
+  align-items: center;
+}
+
+.ONEAS-param-health__data {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 4.5vh;
+    margin-right: -1.8vh;
+}
+.ONEAS-param-health__data .ONEAS-param__amount,
+.ONEAS-param-armour__data .ONEAS-param__amount {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.2778vh;
+}
+
+.ONEAS-param__hunger .ONEAS-param-bar__icon {
+  margin: 0;    
+  bottom: 3.5185vh;
+  right: -0.1852vh;
+}
+.ONEAS-param-bar__icon {
+  position: absolute;
+
+  z-index: 2;
+  margin-top: 2.9630vh;
+  margin-left: -0.1852vh;
+  display: none !important;
+}
+.ONEAS-param__hunger.ONEAS-param {
+  position: absolute;  
+  top: 6.25vh;
+  right: -1.6vh;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+.ONEAS-param-hunger__data {
+  margin-bottom: 4.5vh;
+  margin-left: -1vh;
+}
+
+.ONEAS-param__armour .ONEAS-param-bar__icon {
+  margin-top: 2.4074vh;
+  margin-left: -0.1852vh;
+}
+.ONEAS-param__armour.ONEAS-param {
+  position: absolute;
+  top: -1.7593vh;
+  left: 0.3704vh;
+}
+.ONEAS-param-armour__data {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 3.2vh;
+  margin-right: -1.8vh;
+}
+
+.ONEAS-param__breath {
+  position: absolute;
+  bottom: -2vh;
+  left: 29vh;
+  background-color: #0000004d;
+  border-radius: 1.4245vh;
+  padding: 2vh;
+}
+.ONEAS-param__breath .ONEAS-param__icon {
+  transform: scale(1.2);
+}
+.ONEAS-param__breath .ONEAS-param__amount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ONEAS-param__freeze.ONEAS-param {
+  position: absolute;
+  top: 7.5vh;
+  right: 0vh;
+  flex-direction: row-reverse;
+  align-items: flex-end;
+}
+.ONEAS-param-freeze__data {
+  margin-bottom: 3vh;
+  margin-left: -1.3vh;
+}
+.ONEAS-param__freeze .ONEAS-param-bar__icon {
+  margin: 0;
+  bottom: 2.0370vh;
+  right: -0.1852vh;
+}
+
+.ONEAS-speedometer {
+  transition: all .35s ease;
+  
+  position: absolute;
+  transform-origin: bottom right;
+  right: 6vh;
+  bottom: -64.8148vh;
+  z-index: -1;
+}
+
+body.speed-1 .fon1 {
+  display: none;
+}
+body.speed-1 .ONEAS-speedometer-speed__arrow {
+  display: none;
+}
+body.speed-1 .ONEAS-speedometer__mileage {
+  display: none;
+}
+
+body.speed-2 .fon2 {
+  display: none;
+  }
+body.speed-2 .ONEAS-speedometer__tachometer {
+  display: none;
+}
+
+.ONEAS-speedometer__bars {
+  position: absolute;
+  top: -0.5556vh;
+  right: -2.1296vh;
+}
+.ONEAS-speedometer-bg {
+  width: 22.5000vh;
+  height: 22.5000vh;
+  transition: all .35s ease;
+}
+.ONEAS-speedometer-bars__icon {
+  position: absolute;
+  z-index: 2;
+}
+.ONEAS-speedometer--bars {
+  position: absolute;
+  z-index: 1;
+}
+.ONEAS-speedometer--bars-bg {
+  z-index: -1;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.1852vh  #00000080);
+}
+.ONEAS-param__icon,
+.ONEAS-param-bar__icon,
+.ONEAS-speedometer-bars__icon,
+.ONEAS-bars__icon {
+    filter: drop-shadow(0 0 0.4630vh  #000000);
+}
+
+.ONEAS-speedometer-speed__arrow {
+  position: absolute;
+  bottom: -3.9815vh;
+  right: -7.4074vh;
+
+  width: 21.5741vh;
+  height: 21.7593vh;
+}
+.ONEAS-speedometer__speed {
+  position: absolute;
+  bottom: 4.6296vh;
+  right: 7.7778vh;
+}
+.ONEAS-speedometer-speed__value {
+  font-family: "Technology";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3.2407vh;
+  line-height: 2.5000vh;
+  letter-spacing: 0.13em;
+  color: #000000;
+  text-align: center;
+  width: 6.4815vh;
+  margin-left: 0.3704vh;
+  display: flex;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-speed__text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.2037vh;
+
+  color: #ffffff;
+  text-shadow: 0.0000vh  0.0000vh  0.3704vh  #00000080;
+  
+  text-align: center;
+  width: 6.7593vh;
+  display: flex;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-speed__data {
+  width: 6.7593vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ONEAS-speedometer__params {
+  position: absolute;
+  bottom: 1.8519vh;
+  right: 3.7037vh;
+  width: 14.8898vh;
+  height: 5.3972vh;
+}
+.ONEAS-speedometer-params > div {
+  transition: all .25s ease;
+}
+  
+.ONEAS-speedometer-params > div {
+  opacity: 0.35;
+  filter: brightness(0);
+}
+.ONEAS-speedometer-param--active {
+  opacity: 1 !important;
+  filter: brightness(1) !important;
+}
+
+.ONEAS-spedometer-param__key {
+  margin-top: 1.8519vh;
+}
+
+.ONEAS-spedometer-param__doors {
+  margin-bottom: 2.2222vh;
+  margin-right: 8.1481vh;
+}
+
+.ONEAS-spedometer-param__rem {
+  margin-top: 1.5741vh;
+  margin-right: -0.4630vh;
+}
+
+.ONEAS-spedometer-param__lights {
+  margin-bottom: 2.2222vh;
+  margin-right: -0.9259vh;
+}
+
+.ONEAS-speedometer-params {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+
+  width: 14.8898vh;
+  height: 4.0602vh;
+}
+.ONEAS-speedometer-params > div svg {
+
+  filter: drop-shadow(0.0000vh  0.0000vh  0.3704vh  #00000080);
+  
+}
+.ONEAS-speedometer-bars {
+  position: relative;
+}
+
+.ONEAS-speedometer__fuel {
+  position: absolute;
+  bottom: 0;
+  right: 2.7778vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 9.2593vh;
+}
+.ONEAS-speedometer-fuel__data {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5741vh;
+  line-height: 1.0185vh;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.3704vh  #00000080);
+  text-align: center;
+  
+}
+.ONEAS-speedometer-fuel__value,
+.ONEAS-speedometer-fuel__icon {
+  margin-right: 0.2778vh;
+}
+.ONEAS-speedometer-fuel__icon > svg {
+  width: 1.5741vh;
+  filter: drop-shadow(0.0000vh  0.0000vh  0.3704vh  #00000080);
+}
+
+.ONEAS-speedometer__wash {
+  margin-top: -1.0185vh;
+}
+.ONEAS-speedometer__wash .ONEAS-speedometer-bars__icon {
+  top: 0;
+  left: -0.2778vh;
+
+}
+.ONEAS-speedometer-wash__icon {
+  margin-top: -0.2778vh;
+  margin-bottom: 0.1852vh;
+  margin-left: -1.2963vh;
+}
+
+.ONEAS-speedometer__damage {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.ONEAS-speedometer-damage__icon {
+  margin-top: 10.1852vh;
+  margin-left: -0.4630vh;
+}
+.ONEAS-speedometer__damage .ONEAS-speedometer-bars__icon {
+
+  top: 8.7037vh;
+  right: -0.2778vh;
+}
+
+.ONEAS-speedometer__mileage {
+  position: absolute;
+  top: 6.5741vh;
+  left: 8.5185vh;
+  width: 5.5556vh;
+  height: 1.8519vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.ONEAS-speedometer-mileage__value {
+  font-family: "Technology";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.6667vh;
+  margin-top: 0.0926vh;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #000000;
+}
+
+.ONEAS-speedometer__tachometer {
+  position: absolute;
+  bottom: 0.3704vh;
+  right: 0.3704vh;
+}
+.ONEAS-speedometer-tachometer__arrow {
+  position: relative;  
+  width: 21.5741vh;
+  height: 21.7593vh;
+}
+.ONEAS-speedometer-speed__arrow,
+.ONEAS-speedometer-tachometer__arrow {
+  filter: drop-shadow(0.0000vh  0.0000vh  0.9259vh  #000000);
+  transform: rotate(-112deg);
+  z-index: 1;
+  transition: 200ms;
+}
+#ONEAS-tachometer-gear {
+  font-family: "Technology";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2.5926vh;
+  line-height: 2.5926vh;
+  text-align: center;
+  color: #000000;
+}
+.ONEAS-tachometer__data {
+  top: 6.0185vh;
+  left: 8.7963vh;
+  width: 3.7963vh;
+  height: 2.3148vh;
+  position: absolute;
+}
+
+  #app .scrollable-container_type_1 .scrollable-container__rail_y {
+    display: none;
+  }
+  #app .radmir-chat-input__input {
+    padding: 0 1vh;
+    background-color: #00000066;
+  }
+  #app .radmir-chat-input__input input {
+    color: white !important;
+  }
+  #app .radmir-chat-input__input-lang {
+    padding: 0 0.4630vh  0.3704vh  0.4630vh;
+    color: white !important;
+  }
+  #app .radmir-chat:before {
+    width: 70vw !important;
+    background-image: linear-gradient(148deg, #141414d1 10%, #14141400 50%) !important;
+  }
+  #app .radmir-chat-input__input {
+    padding: 0 0.93vh !important;
+  }
+  #app .radmir-chat_inactive {
+    opacity: 1 !important;
+  }
+
+  #app .vignette {
+    display: none;
+  }
+
+  #app .overlay-container {
+    display: none;
+  }  
+
+  #app .container {
+    background: none;
+    background-color: #000000b3;
+    border-radius: 0;
+  }
+
+#app .window .modal-container-wrapper {
+  background: none;
+  background-image: var(--all-bg);
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  transform: scale(0.8);
+}
+
+#app .window .modal-container-wrapper:before {
+  content: "";
+  border-image-slice: 45;
+  border-image-width: 2vh;
+  border-image-source: url(oneas-img/interfaces/border-button.png);
+  width: 100%;
+  height: 100%;
+  transform: scale3d(1.05, 1.05, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#app .window .modal-container {
+  border: none;
+  padding: 2.22vh 0;
+  border-radius: 0;
+}
+#app .window .modal__pattern-wrapper {
+  display: none;
+}
+#app .window .modal__title {
+  font-family:  var(--font-famaly-all) ;
+  font-style: normal;
+  text-transform: none;
+  margin: 0 2.96vh;
+  
+  line-height: 3vh;
+  font-weight: 500;
+  color: var(--add-text);
+  font-size: 1.8vh;
+}
+#app .window .window__subtitle {
+  font-family:  var(--font-famaly-all) ;
+  margin: 0 2.96vh;
+}
+#app .window .window__image {
+  border-radius: 0;
+}
+#app .window .scrollable-container__container {
+  mask-image: none !important;
+  width: auto;
+}
+#app .window .window__content-container {
+  min-width: 50vh;
+}
+#app .window .window__content-container,
+#app .window .window__content {
+  border-top: solid;
+  border-top-width: 0.4630vh;
+  border-top-color: var(--border-1);
+  border-bottom: solid;
+  border-bottom-width: 0.4630vh;
+  border-bottom-color: var(--border-1);
+  background-color: var(--all-bg-2);
+}
+#app .window .window__content {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+#app .window .window__content-container .window__content {
+  margin: 0;
+  border: none;
+  background: none;
+}
+#app .window .window-table__item {  
+  background: none;
+  border: 0 !important;
+  border-radius: 0;
+  margin-top: -1vh;
+  height: 5vh;
+  color: var(--text-buttom-2);
+  transition: all .35s ease;
+  box-shadow: none;
+}
+#app .window .window-table__item:first-child {
+  margin-top: 0;
+}
+#app .window .window-table__item:hover {
+  color: var(--text-buttom-hover);
+}
+#app .window .window-table__item.selected {  
+  background-image: var(--buttom-active-2) !important;
+  color: var(--text-buttom-active) !important;  
+}
+#app .window .window-table__col {  
+  justify-content: flex-start;
+  padding-left: 2.96vh;
+}
+#app .window .window-table__item.selected p {
+  color: var(--text-buttom-active) !important;
+}
+#app .window .window__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--all-bg-3);
+  padding-top: 0.4630vh;
+  padding-bottom: 0.4630vh;
+}
+#app .window .window__buttons .controls-button__container {
+  position: relative;
+}
+#app .window .window__buttons .controls-button {
+  position: absolute;
+  width: 100%;
+}
+#app .window .window__buttons .controls-button-shadow {
+  display: none;
+}
+#app .window .window__buttons .controls-button-background,
+#app .window .window__buttons .controls-button--text,
+#app .window .window__buttons .controls-button-icon {
+  opacity: 0 !important;
+}
+#app .window .window__buttons .controls-button__container-text {
+  background-color: var(--buttom);
+  color: var(--text-buttom);
+  border-radius: 0;
+  padding: 0.2vh 1.8vh;
+  line-height: 2.31vh;
+  font-weight: 500;
+  font-size: 1.2vh;
+  font-family:  var(--font-famaly-all) ;
+}
+#app .window .window__buttons .controls-button__container:hover .controls-button__container-text {
+  background-color: var(--buttom-active) !important;
+  color: #ffb200 !important;
+}
+#app .window .window__buttons .controls-button__container_disabled {
+  pointer-events: none;
+}
+#app .window .window__buttons .controls-button__container_disabled .controls-button__container-text {
+  opacity: .25;
+}
+#app .window .window-input__text-wrapper,
+#app .window .window-input,
+#app .window .window-text__item,
+#app .window .window__paginate,
+#app .window .window__description {
+  padding-left: 2.96vh;
+  padding-right: 2.96vh;
+}
+#app .window .input-field {
+  background-color: var(--buttom);
+  box-shadow: 1.3889vh 1.3889vh 1.8519vh #00000033;
+  border-radius: 0;
+  border: none;
+}
+#app .window .input-field_hoverable:hover {  
+  background-color:  var(--buttom-hover) ;
+}
+#app .window .input-field_focused,
+#app .window .input-field_hoverable:hover.input-field_focused  {
+  background-color: var(--buttom-active);
+}
+#app .window .input-field input,
+#app .window .input-field__placeholder {  
+  font-family:  var(--font-famaly-all);
+  font-weight: 500;
+}
+#app .window .input-field_focused input,
+#app .window .input-field_hoverable:hover.input-field_focuse input,
+#app .window .input-field_focused .input-field__placeholder,
+#app .window .input-field_hoverable:hover.input-field_focuse .input-field__placeholder {  
+  color: var(--text-buttom);
+}
+#app .window .scrollable-container__rail_y {
+  right: 0px;
+  width: 1vh;
+}
+
+  #app .inventory {
+    background-image: var(--overlay-interface);
+    box-sizing: border-box;
+  }
+  #app .inventory__container {
+    justify-content: center;
+  }
+  #app .inventory-main,
+  #app .inventory-extra__container,
+  #app .inventory-action__modal {
+    background-color: #000000b3;
+    padding: 2vh;
+    border: none;
+  }
+  #app .inventory-action__modal {
+    background: var(--buttom);
+  }
+  #app .inventory-extra {
+    margin-bottom: 0;
+    margin-left: 1vh;
+  }
+  #app .inventory-main__before,
+  #app .inventory-main__after {
+    display: none;
+  }
+  #app .inventory-container__box {
+    background-color: #3f4035b3;
+  }
+  #app .inventory-container__slot {
+    background-color: #d5963880;
+  }
+  #app .inventory-player {
+    border: none;
+  }
+  #app .inventory-capacity,
+  #app .inventory-action .inventory-item-value, 
+  #app .inventory-action .inventory-wear {
+    box-sizing: border-box;
+  }
+  #app .inventory-action .inventory-wear {
+    height: 4vh;
+  }
+  #app .inventory-capacity__bar__fill,
+  #app .inventory-wear__bar__fill {
+    border-radius: 1vh;
+  }
+  #app .inventory-capacity__bar,
+  #app .inventory-wear__bar {
+    background-color: #f4f1e133;
+    border-radius: 1vh;
+    position: relative;
+    bottom: -0.5vh;
+  }
+  #app .inventory-extra__content {
+    padding-bottom: 0.833vw;
+  }
+  .inventory-container__info__container-wrapper > div {
+    background-color: var(--bg-60);
+    padding-top: 0.8vh;
+    border: none;
+  }
+  #app .inventory-extra__container:not(:first-child) {
+      margin-left: 1vh;
+  }
+
+  #app .trade-items {
+    background: none;
+  }
+  #app .trade-items__container {
+    margin-bottom: 5vh;
+  }
+  #app .trade-items-main__content {  
+    background-color: #000000b3;
+    padding: 2vh;
+  }
+
+  #app .quests-progress-info {
+    top: 40%;
+  }
+
+  #app .trade {
+    background: none;
+    background-color: var(--all-bg5);
+    border-radius: 0.7407vh;
+  }
+  #app .trade__close,
+  #app .trade__attention,
+  #app .modal__close[data-v-85eb9678] {
+    filter: grayscale(1);
+  }
+  #app .trade__card,
+  #app .modal__card[data-v-85eb9678] {
+    background-color: #3c3c3c80;
+    border-radius: 0.3704vh;
+  }
+  #app .trade__card.you {
+    background-color: #ffffffcc ;
+  }
+  #app .modal__card[data-v-85eb9678]:hover {
+    background-color: #3c3c3c80;
+  }
+  #app .trade__card-text {
+    color: #202020;
+  }
+  #app .trade__button {
+    border-radius: 0.3704vh;
+    background: none;
+    background-color: var(--color);
+    color: var(--bg);
+  }
+  #app .trade__button img {
+    filter: invert(1);
+  }
+  #app .trade__card-button {
+    filter: grayscale(1);
+  }
+  #app .modal[data-v-85eb9678],
+  #app .modal__cards-container[data-v-85eb9678]:before {
+    background-color: var(--bg);
+  }
+  #app .modal__input[data-v-85eb9678] {  
+    background-color: var(--color);
+  }
+  #app .modal__input[data-v-85eb9678] input {
+    color: var(--bg);
+  }
+  #app .modal__input[data-v-85eb9678] svg {
+    fill: var(--bg);
+  }
+  #app.trade__attention,
+  #app .trade__card.you .trade__card-button {
+      background-color: var(--all-bg5);
+  }
+  #app .trade__card.player .trade__card-button {
+      background-color: #ffffffcc;
+      color: #121212;
+  }
+  #app .modal__button[data-v-85eb9678] {  
+    background-color: #494949;
+    color: white;
+  }
+  #app .modal__button[data-v-85eb9678]:hover {  
+    background-color: var(--color);
+    color: var(--bg);
+  }
+  #app .modal__close[data-v-85eb9678]:hover,
+  #app .trade__close:hover {
+      filter: grayscale(1) drop-shadow(0 0 0.74vh #ffffffb3);
+  }
+
+  #app .trade-skin__bg {
+    filter: grayscale(1);
+  }
+  #app .trade-skin__buttons .button--main {
+    background-color: var(--color);
+    color: var(--bg);
+  }
+  #app .trade-skin__buttons .button--main:hover {
+    box-shadow: 0 1.11vh 2.04vh var(--color-30);
+  }
+
+  #app .buy-car-number {
+    background: none;
+    background-color: var(--all-bg5);
+    border-radius: 0.3704vh;
+    width: 120vh;
+    padding: 4vh 8vh;
+    height: 73vh;
+  }
+  #app .buy-car-number .close-button:hover {
+    filter: drop-shadow(0 0 0.74vh #ffffffb3);
+  }
+  #app .buy-car-number .close-button {
+    top: 4.6vh;
+    right: 5vh;
+    transition-duration: 0.2s;
+  }
+  #app .buy-car-number .title {
+    text-align: left;
+  }
+  #app .buy-car-number .number-types button.active {
+    background-color: #fff !important;
+    color: #000;
+  }
+  #app .buy-car-number .number-types button {
+    background-color: #000 ;
+    color: #fff;
+    transition: all .25s ease;
+  }
+  #app .buy-car-number .number-types button:hover {
+    
+    background-color: #666;
+  }
+  #app .car-number-plate-container {
+    background: black;
+  }
+  #app .buy-car-number .close-button-icon {
+    fill: white;
+  }
+  #app .buy-car-number .available-symbols, #app .buy-car-number .number-format {
+    color: #ffffffb3;
+    animation: blink1 .3s infinite;
+    animation-play-state: paused
+  }
+  @keyframes blink1 {
+    0%{color:#ffffffb3}
+    50%{color:#ffffff}
+    to{color:#4e4e4e}
+  }
+
+#app .fuel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#app .fuel__container-before {
+  background-image: url(oneas-img/interfaces/MW_GRIT_01.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 94vh;
+  height: 94vh;
+  transform: translateX(-50%) translateY(50%);
+  
+    bottom: 45%;
+}
+#app .fuel__content {
+  width: 33vh;
+}
+#app .fuel__title {
+  border: 0;
+  text-align: center;
+  font-size: 2.5vh;
+  color: #f4f4e1;
+  text-shadow: 0 0 0.3704vh rgb(0 0 0 / 50%);
+  font-weight: 700;
+  padding: 0.8333vh 0;
+}
+#app .fuel-classification__wrapper {  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#app .fuel-classification__subtitle {  
+  width: 29vh;
+  height: 3.5vh;
+  color: transparent;
+  font-size: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+#app .fuel-volume__value_active {
+  display: flex;
+  margin-right: 0.5vh;
+}
+#app .fuel-volume__value {  
+  text-transform: lowercase;
+  font-weight: 600;
+  font-size: 1.8vh;
+  line-height: 3.33vh;
+  font-style: normal;
+  text-shadow: 0 0 0.3704vh rgb(0 0 0 / 50%);
+}
+#app .fuel-volume__icon {
+  height: 1.8vh;
+}
+#app .fuel-volume__value_active:before {
+  content: "В баке";
+  padding-right: 11.5vh;
+  text-transform: initial;
+  color: #b4b58f;
+  text-shadow: 0.1852vh 0.1852vh 0.1852vh rgb(0 0 0 / 80%);
+}
+#app .fuel-classification > div:nth-child(2) .fuel-classification__subtitle:before {
+  content: "На сколько заправить";
+  font-weight: 600;
+  font-size: 1.8vh;
+  line-height: 3.33vh;
+  color: #b4b58f;
+  font-style: normal;
+  width: 29vh;
+  
+  text-shadow: 0.1852vh 0.1852vh 0.1852vh rgb(0 0 0 / 80%);
+}
+#app .fuel-classification > div:nth-child(1) .fuel-classification__subtitle:before {
+  content: "Классификация";
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.5vh;
+  color: #f4f4e1;
+  text-shadow: 0 0 0.3704vh rgb(0 0 0 / 50%);
+  line-height: 3.33vh;
+  font-style: normal;
+}
+#app .fuel__subtitle,
+#app .fuel-tank__fill--after,
+#app .fuel-tank__fill--before,
+#app .fuel-classification__title,
+#app .fuel-classification__marker {
+  display: none;
+}
+#app .fuel-classification__column-before,
+#app .fuel-classification_electro .fuel-classification__marker {
+  opacity: 0;
+  border-image-slice: 37;
+  border-image-width: 1vh;
+  border-image-source: url("oneas-img/interfaces/border-button.png");
+  background: none !important;
+  transform: scale(1.3);
+  z-index: 1;
+}
+#app .fuel-classification_electro .fuel-classification__marker {
+  width: 5.56vh;
+  height: 5vh;
+  display: flex;
+}
+#app .fuel-classification__column:hover .fuel-classification__column-before,
+#app .fuel-classification__column.fuel-classification__column_active .fuel-classification__column-before,
+#app .fuel-classification__column_electro:hover .fuel-classification__marker,
+#app .fuel-classification__column_electro-active .fuel-classification__marker  {
+  opacity: 1;
+}
+#app .fuel-classification__column.fuel-classification__column_active .fuel-classification__column-before,
+#app .fuel-classification__column_electro-active .fuel-classification__marker  {
+  border-image-source: url("oneas-img/interfaces/border-button_active.png");
+  animation: fuel-btn 0.5s linear 0s infinite alternate;  
+}
+#app .fuel-classification {
+  flex-direction: column-reverse;
+}
+#app .fuel-classification .fuel-classification__wrapper:first-child {
+  margin-top: 5vh;
+}
+#app .fuel-classification .fuel-classification__wrapper:last-child,
+#app .fuel__content > div:nth-child(3) {
+  border-image-slice: 37;
+  border-image-width: 1.5vh;
+  border-image-source: url(oneas-img/interfaces/border-button.png);
+  padding-top: 1vh;
+  padding-bottom: 2.25vh;
+}
+#app .fuel__content > div:nth-child(3) {  
+  margin-bottom: 2vh;
+  padding-top: 0.5vh;
+  padding-bottom: 1vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#app .fuel-volume {  
+  width: 29vh;
+}
+#app .fuel-volume-bar {  
+  background: #ff9b0040;
+  height: 1vh;
+}
+#app .fuel-volume-bar__progress {
+  background: #ff9b0073; 
+}
+#app .fuel-volume-bar__progress_active {
+  background: #ffca78 !important;
+}
+#app .fuel-classification__content {  
+  margin-top: 4vh;
+  height: auto;
+}
+#app .fuel-classification__tank {
+  transform: rotate(90deg);
+  width: 1vh;
+  height: 1vh;
+  margin: 0;
+}
+#app .fuel-tank {  
+  background: #ff9b0040;
+  overflow: visible;
+  width: 1vh;
+  height: 29vh;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#app .fuel__tank-empty {
+  width: 100%;
+  transform: rotate(-90deg);
+  top: -12.3vh;
+  left: -2.4vh;
+  position: relative;
+  background: none;
+}
+#app .fuel-tank__volume {
+  transform: rotate(-90deg);
+  left: -2.4vh;
+  top: -12.8vh;
+  font-size: 1.8vh;
+  text-transform: lowercase;
+  justify-content: flex-end;
+  text-shadow: 0 0 0.3704vh rgb(0 0 0 / 50%);
+}
+#app .fuel-tank__fill {
+  background: #ffca78;
+}
+#app .fuel-tank__fill:before {
+  content: "";
+  width: 1.6vh;
+  background: white;
+  box-shadow: 0 0 0.9259vh 0 #000;
+  height: 1vh;
+  animation: none;
+  margin-top: -0.5vh;
+  display: flex;
+  
+}
+#app .fuel-classification__column {
+  width: 5.56vh;
+  height: 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 0;
+  background: none;
+  background-color: var(--buttom);
+  border: 0;
+  
+  margin-right: 3vh;
+}
+#app .fuel-classification__column:last-child {
+  margin-right: 0;
+}
+#app .fuel-classification__number {
+  margin: 0;
+  font-size: 2vh;
+  color: #f4f1e1d4;
+}
+#app .fuel-classification__column:hover .fuel-classification__number {
+  color: #fff;
+}
+#app .fuel-classification__column.fuel-classification__column_active .fuel-classification__number {
+  color: #ffb200 !important;
+  font-size: 2.5vh !important;
+}
+#app .fuel-button {
+    background-color: var(--buttom) !important;
+    color: var(--text-buttom) !important;
+    padding: 0;
+    height: 4.31vh;
+    line-height: 39.9vh;
+    font-weight: 500;
+    font-size: 1.2vh;
+    text-transform: inherit;
+    position: relative;
+    margin-top: 7vh;
+    width: 31.3vh;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#app .fuel-button:before {
+  content: '';
+  border-image-slice: 37;
+  border-image-width: 1vh;
+  border-image-source: url(oneas-img/interfaces/border-button_active.png);
+  width: 100%;
+  height: 100%;
+  transform: scale3d(1.05, 1.3, 1);
+  position: absolute;
+  opacity: 0;
+}
+#app .fuel-button:hover:before {
+  opacity: 1;
+  animation: fuel-btn-2 0.5s linear 0s infinite alternate;  
+}
+#app .fuel-button:hover {
+  
+  color: #ffb200 !important;
+  opacity: 1;
+}
+#app .fuel-button__wrapper {  
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#app .fuel__close {
+  left: 50% !important;
+  top: auto !important;    
+  bottom: -9vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  transform: translateX(-50%);
+}
+#app .fuel-message {
+  background-color: var(--bg);
+}
+#app .fuel-message .fuel__subtitle {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.8vh;
+  line-height: 3.33vh;
+  font-style: normal;
+}
+#app .fuel-tank__battery {
+  background: none;
+  mask: none;
+  overflow: visible;
+}
+#app .fuel-classification__icon--electro {
+  margin-bottom: 0;
+}
+
+@keyframes fuel-btn {
+  0% {
+      transform: scale(1.3);
+      opacity: 0.5;
+  }
+  to {
+      transform: scale(1.5);
+      opacity: 1;
+  }
+}
+
+  #app .st-card__container, 
+  #app .manage__container, 
+  #app .manage__modal,
+  #app .stall__container {  
+    border-radius: 0.7407vh;
+    background: none;
+    background-color: var(--all-bg5) ;
+  }
+  #app .st-card__close,
+  #app .manage__close,
+  #app .manage-card__stat,
+  #app .manage__modal-close,
+  #app .manage__modal-item {  
+    filter: grayscale(1);
+  }
+  #app .manage__modal-item:hover {  
+    filter: brightness(1);
+    background-color: #303030;
+    box-shadow: 0 1.11vh 2.04vh var(--color-30);
+  }
+  #app .st-card__item-image,
+  #app .manage-row__text,
+  #app .manage-item__image {
+    filter: grayscale(1) brightness(3); 
+  }
+  #app .st-card__item,
+  #app .manage__banner,
+  #app .manage-row,
+  #app .manage-card,
+  #app .manage-item {
+    background: none;
+    background-color: #ffffff40;
+  }
+  #app .st-card__item:hover,
+  #app .manage-item:hover,
+  #app .stall__goods {
+    background-color: #ffffff40;
+  }
+  #app .manage__banner-title,
+  #app .manage__banner-text,
+  #app .manage-card__text,
+  #app .manage__modal-item .text,
+  #app .stall__back,
+  #app .stall__good-data .data .seller,
+  #app .stall__good-data .data .name,
+  #app .stall__good-data .data .amount {
+    color: var(--color);
+  }
+  #app .manage-row.owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  #app .manage__modal button,
+  #app .stall__button {
+    background: none;
+    background-color: #fff;
+    color: #000;
+  }
+  #app .manage__modal button:hover {
+    box-shadow: 0 0 1.8519vh #ffffff40 !important;
+  }
+  #app .stall__head {
+    filter: grayscale(1) brightness(1.5);
+  }
+  #app .stall__goods-list__col {
+    transform: scale(1.5);
+    margin-left: 6vh;
+  }
+  #app .stall__goods-list__row .price {
+    margin-top: 0;
+  }
+  #app .stall__goods-list__row {
+    margin-top: 4vh;
+  }
+  #app .stall__goods-list__row:first-child {
+    margin: 0;
+  }
+  #app .stall__goods-list__col:first-child {
+    margin-left: 0;
+  }
+  #app .stall__back img {
+    filter: invert(1);
+  }
+  #app .stall__good-data .data > div {
+    margin-top: 1vh;
+  }
+  #app .stall__goods-container {
+    margin: 0;
+    height: 25vh;
+  }
+  #app .stall__goods-list {
+    padding: 4.17vh 0 2.3vh;
+  }
+
+  #app .info-card {  
+    background: none;
+    background-color: var(--all-bg5);
+    border-radius: 0.9259vh;
+  }
+  #app .info-card__data {
+    filter: grayscale(1);
+    border-radius: 0;
+  }
+  #app .info-card__head img.icon {
+    display: none;
+  }
+  #app .info-card .text {
+      color: #ffffff54;
+  }
+
+  #app .capture-table__col .name,
+  #app .capture-table__col-kills,
+  #app .capture-table__timer {
+    font-style: normal ;
+  }
+  #app .capture-table {
+    background: #00000080;
+    border-radius: 0;
+    padding: 0.5vh;
+    bottom: 3vh;
+  }
+  #app .capture-table__col-kills {
+    background: #00000080;
+  }
+  #app .capture-table__timer {
+    background-image: var(--all-bg);
+  }
+  #app .capture-table:before {
+    content: '';
+    border-image-slice: 72 37 72 37;
+    border-image-width: 1.3vh;
+    border-image-source: url(oneas-img/interfaces/border-capture.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale3d(1.04, 1.8, 1);
+    margin-left: 0.5vh;
+  }
+
+  #app .cars-shop:before {
+    content: '';
+    background-image: url(oneas-img/interfaces/GRIT_VINETTE_07.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 19vh;
+    width: 100%;
+  }
+  #app .cars-shop__cars {    
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: 0%;
+    background-position-y: 50%;
+    background-image: url(oneas-img/interfaces/GRIT_VINETTE_06.png);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    bottom: auto;
+    top: 0vh;
+    height: 33vh;
+  }
+  #app .cars-shop__cars-list {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0vh;
+    margin-left: 0vh;
+    width: 91.5vh;
+    z-index: 2;
+    margin-top: -10vh;
+    height: 15vh;
+  }
+  #app .cars-shop__cars-list .item {
+    font-size: 0.1vh;
+    width: 0vh;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    margin: 0vh;
+    margin-top: 0vh !important;
+    pointer-events: none;
+  }
+  
+  #app .cars-shop__cars-list .active[cars-list-item-active="true"] {
+    margin-left: 15vh !important;
+  }
+  #app .cars-shop__cars-list .item.type-2 {
+    width: 12vh !important;
+    pointer-events: auto !important;
+    opacity: 1 !important;
+    font-size: 2vh !important;
+    color: transparent;
+}
+  #app .cars-shop__cars-list .item.active {
+    opacity: 1;
+    font-size: 4.6vh;
+    width: 61vh;
+    height: 100%;
+    margin-left: 3vh;
+    margin-right: 3vh;
+  }
+  #app .cars-shop__cars-list .item.active .text {
+    line-height: 6vh;
+    width: 38vh;
+  }
+  #app .cars-shop__cars-list .item .item-logo {
+    position: relative;
+    margin-right: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20.41vh;
+  }
+  #app .cars-shop__cars-list .item .item-logo img {
+    height: 10vh;
+    width: 80%;
+  }
+  #app .cars-shop__cars-list .item .item-logo:before {
+    content: "";
+    border-image-slice: 40;
+    border-image-width: 2vh;
+    border-image-source: url(oneas-img/interfaces/border-button_active.png);
+    width: 100%;
+    height: 140%;
+    position: absolute;
+    margin-top: -1.5vh;
+  }
+  #app .cars-shop__cars:before,
+  #app .cars-shop__cars:after {
+    content: "";
+    width: 11vh;
+    height: 7vh;
+    background: url(/oneas-img/interfaces/arrow-cars-shop.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-left: -12vh;
+    margin-top: -10vh;
+  }
+  #app .cars-shop__cars:before {
+    margin-right: -11.5vh;
+    margin-left: 5vh;
+    transform: rotateZ(180deg);
+  }
+  #app .cars-shop__info {
+    z-index: 2;
+    left: auto;
+    right: 2.5vw;
+    top: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    width: 44vh;
+    padding: 0;
+    padding-top: 10vh;
+    background-color:  var(--all-bg5);
+  }
+  #app .cars-shop__info:before {
+    content: "";
+    border-image-slice: 40;
+    border-image-width: 2vh;
+    border-image-source: url(oneas-img/interfaces/border-button.png);
+    width: 100%;
+    height: 24vh;
+    transform: scale3d(1.05, 1.1, 1);
+    position: absolute;
+    top: 0.0000vh;
+  }
+  #app .cars-shop__info-model {
+    margin-right: 2.96vh;
+  }
+  #app .cars-shop__info-model .logo,
+  #app .cars-shop__info-model .data-name {
+    display: none;
+  }
+  #app .cars-shop__info--text {    
+    margin-right: 2.96vh;
+  }
+  #app .cars-shop__info-colors {   
+    padding-right: 2.96vh;
+    background-color: var(--all-bg5);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    border-top-color: initial;
+    border-top-style: solid;
+    border-top-width: medium;
+    border-top-width: 0.4630vh;
+    border-top-color: var(--border-1);
+    z-index: 3;
+  }
+  #app .cars-shop__info-colors .color,
+  #app .cars-shop__info-colors .color-bl {
+    border-radius: 0;
+  }
+  #app .cars-shop__info-buttons {    
+    position: absolute;
+    bottom: -70.25vh;
+    right: 12vh;
+    margin-top: 0.0000vh;
+  }
+  #app .cars-shop__info-buttons .button,
+  #app .cars-shop__result-buttons > div {
+    background: none;
+    background-color: var(--buttom);
+    color: var(--text-buttom);
+    border-radius: 0;
+    height: 2.31vh;
+    line-height: 2.31vh;
+    font-weight: 500;
+    font-size: 1.2vh;
+    text-transform: capitalize;
+    text-transform: initial;
+    height: 3.7vh;
+    width: 13.69vh;
+    box-shadow: none;
+    margin-top: 0;
+    opacity: 1;
+  }
+  #app .cars-shop__result-buttons > div {
+    position: relative;
+  }
+  #app .cars-shop__result-button img {
+    display: none;
+  }
+  #app .cars-shop__result-button .text {
+    opacity: 1;
+  }
+  #app .cars-shop__info-buttons .button:hover,
+  #app .cars-shop__result-buttons > div:hover {
+    background-color: var(--buttom-active) !important;
+    color: #ffb200 !important;
+  }
+  #app .cars-shop__info-buttons .button:before,
+  #app .cars-shop__result-buttons > div:before {
+    content: '';
+    border-image-slice: 37;
+    border-image-width: 1vh;
+    border-image-source: url(oneas-img/interfaces/border-button_active.png);
+    width: 100%;
+    height: 100%;
+    transform: scale3d(1.1, 1.4, 1);
+    position: absolute;
+    opacity: 0;
+  }
+  #app .cars-shop__info-buttons .button:first-child:hover:before,
+  #app .cars-shop__info-buttons .button:last-child:hover:before,
+  #app .cars-shop__result-buttons > div:hover:before {
+    opacity: 1;
+    animation: fuel-btn-2 0.5s linear 0s infinite alternate;  
+  }
+  #app .cars-shop__info-buttons .button:last-child,
+  #app .cars-shop__result-buttons > div:last-child {
+    margin-left: 2vh;
+  }
+  #app .cars-shop__info-buttons .button:last-child::before {    
+    right: -15.7vh;
+  }
+  #app .cars-shop__info-buttons .button:last-child:after {
+    content: 'Тест-драйв';
+    margin-left: 1vh;
+  }
+  
+  #app .cars-shop__close {
+    opacity: 0;
+  }
+  #app .cars-shop__controls-close {
+    display: flex;
+    width: 15vh;
+    height: 3.7vh;
+    border: 0.1vh solid black;
+    background-image: var(--bottom-2);
+    padding-left: 2vh;
+    padding-right: 2vh;
+    top: auto;
+    bottom: 3vh;
+    right: 43%;
+    left: auto;
+  }
+  #app .cars-shop__controls-close:hover {
+    border: 0.1vh solid #ffb035;
+    box-shadow: 0 0.56vh 1.85vh #ffb20040;
+  }
+  
+  #app .cars-shop__controls-close .controls-close--text {
+    font-weight: 600;
+    background: none;
+  }
+  #app .cars-shop__controls-close:hover .controls-close--text {
+    color: #ffb200 !important;
+  }
+  #app .cars-shop__bank {    
+    z-index: 2;
+    top: 2.5vh;
+    font-size: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+    width: 44vh;
+    right: 2.5vw;
+    padding-right: 3vh;
+    border-bottom-color: var(--border-1);
+    border-bottom-style: solid;
+    border-bottom-width: 0.4630vh;
+    background-image: var(--add-bg);
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+  }
+  #app .cars-shop__bank img {    
+    margin-bottom: 0.0000vh;
+    margin-left: 0.0000vh;
+    margin-right: 1vh;
+  }
+  
+#app .cars-shop__help {
+  bottom: 3vh;
+  height: 3.7vh;
+  border: 0.1vh solid black;
+  background-image: var(--bottom-2);
+  padding-left: 2vh;
+  padding-right: 2vh;
+  left: 60%;
+}
+
+#app .cars-shop__help .text {
+  font-weight: 600;
+  font-size: 1.48vh;
+  line-height: 1.48vh;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 0.74vh;
+  line-height: 2.96vh;
+}
+#app .cars-shop__help--button {
+  width: auto;
+  background: none;
+  border-radius: 0;
+}
+#app .cars-shop__help--arrow {
+  display: none;
+}
+#app .cars-shop__help--button:before,
+#app .cars-shop__help--button:after {
+  content: "";
+  height: 2.96vh;
+  width: 2.96vh;
+  transform: rotateZ(-90deg);
+  background-image: url(/oneas-img/interfaces/arrow-f6b2f424.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80% auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app .cars-shop__help--button:before {
+  transform: rotateZ(90deg);
+  margin-right: 0.5vh;
+}
+
+#app .cars-shop__help--button:hover:before,
+#app .cars-shop__help--button:hover:after {  
+  background-image: url(/oneas-img/interfaces/arrow-f6b2f424-in.svg);
+}
+#app .cars-shop__result {
+  background: none;
+  font-family: GothamPro;
+  text-transform: initial;
+  font-weight: 700;
+  text-shadow: none;
+}
+
+#app .cars-shop__result-data {
+  background: none;
+  background-color: var(--all-bg5);
+  filter: none;
+  padding: 5vh 2vh 7vh;
+  height: auto !important;
+  position: relative;
+}
+
+#app .cars-shop__result-data .title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-indent: 0.8vh;
+  font-size: 1.5vh;
+  background-color: var(--add-bg-2);
+  padding: 0.8333vh 0 0.8333vh 0.8333vh;
+  color: transparent;
+  width: 36.11vh;
+  text-align: left;
+  height: 3.2vh;
+}
+
+#app .cars-shop__result-data .positions > div:first-child,
+#app .cars-shop__result-data .position-name {
+  display: none;
+}
+
+#app .cars-shop__result-data .positions:before,
+#app .cars-shop__result-data .positions > div:last-child:before {
+  content: "Вы действительно хотите купить этот транспорт?";
+  font-size: 1.2vh;
+  line-height: 100%;
+  color: white;
+  margin-bottom: 0.5vh;
+}
+
+#app .cars-shop__result-data .position:last-child {
+  margin-top: 0;
+  display: flex;
+  justify-content: flex-start;
+}
+
+#app .cars-shop__result-data .positions > div:last-child:before {
+  content: "Его цена составляет:";
+  margin-bottom: 0;
+  margin-right: 0.5vh;
+}
+
+#app .cars-shop__result-data .position-value {
+  font-size: 1.2vh;
+  line-height: 100%;
+  text-indent: 0.5vh;
+}
+
+#app .cars-shop__result-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -5vh;
+}
+#app .cars-shop__result-data .title:before {
+  content: "Автосалон";
+  color: #ffc600;
+}
+#app .cars-shop__result-data.long {
+  background-image: none;
+}
+
+  #app .dice-window {
+    background: none;
+    background-color: var(--all-bg5);
+    border-radius: 0;
+  }
+  #app .dice-modal {
+    background-color: #000;
+    box-shadow: 0 0 20vh var(--color-30);
+    border-radius: 0;
+  }
+  #app .dice-types__item,
+  #app .dice__input,
+  #app .dice-players__item,
+  #app .dice-queries__item,
+  #app .dice-game__player-card,
+  #app .dice-game__player-status--money,
+  #app .dice-game__player-status--text {
+    background-color: #3e3f35;
+    border-radius: 0;
+  }
+  #app .dice-types__item:hover,
+  #app .dice-players__item:hover {
+    background-color: var(--buttom);  
+  }
+  #app .dice-types__item.selected,
+  #app .dice-players__item.selected {
+    background-color: var(--color);
+    box-shadow: 0 0.5556vh 1.8519vh #ffffff40;
+  }
+  #app .dice-types__item .name,
+  #app .dice-players__item,
+  #app .dice-game__player-status--text {
+    color: #ffffff73;
+  } 
+  #app .dice-types__item.selected .name,
+  #app .dice-players__item.selected,
+  #app .dice-queries__item-players--connect .text {
+    color: var(--bg);
+  }
+  #app .dice__button,
+  #app .dice-queries__item-players--connect {
+    background: none;
+    background-color: var(--color);
+    color: var(--bg);
+    border-radius: 0;
+  }
+  #app .dice__button img {
+    filter: invert(1);
+  }
+  #app .dice__button:hover,
+  #app .dice-queries__item-players--connect:hover {
+    box-shadow: 0 0.5556vh 1.8519vh var(--color-30);
+  }
+  #app .dice-types__item .icon-hover, 
+  #app .dice-types__item .ok,
+  #app .dice-players__item .ok,
+  #app .dice__close,
+  #app .dice-queries__item-player img,
+  #app .dice-queries__item-players--connect img,
+  #app .dice-queries__item-bet .text,
+  #app .dice-game__money .data .text,
+  #app .dice-game__money__icon-balance, 
+  #app .dice-game__money__icon-bank,
+  #app .dice-game__player-icon,
+  #app .dice-game__player-card .type,
+  #app .dice-game__player-card img {
+    filter: grayscale(1);
+  }
+  #app .dice__close:hover {
+      filter: grayscale(1) drop-shadow(0 0 0.7407vh #ffffff80);
+  }
+  #app .dice-queries__item-player {
+    background-color: var(--bg-50);
+    border-radius: 0;
+  }
+
+  #app .casino-rullet-confirm-bet {
+    background-color: var(--all-bg5);
+    padding: 2vh;
+    border-radius: 0;
+  }
+  #app .casino-rullet-confirm-bet__button {  
+    border-radius: 0;
+  }
+
+  #app .roll-prizes__item--icon {
+    filter: grayscale(1) contrast(2);
+  }
+  #app .roll-lever__lever {  
+    background: none;
+    background-color: var(--bg-80);
+  }
+  #app .roll-lever__lever--main,
+  #app .roll-result__bg {
+    filter: grayscale(1);
+  }
+
+  #app .phone {
+    background-image: url(oneas-img/interfaces/bg-phone.png);
+    width: 23vh;
+  }
+  #app .phone-body {
+    background-image: url(oneas-img/interfaces/body-phone.png);
+    mask-image: url(oneas-img/interfaces/main-content-phone.png);
+    mask-repeat: no-repeat;
+    mask-size: 100%;
+    height: 106.2%;
+    width: 91%;
+    border-radius: 2.4vh;
+  }
+  #app .phone-body__head {
+    padding: 0.7vh 2vh;
+  }
+
+  #app .music,
+  #app .music-modal--container {
+    background: none;
+    background-color: var(--all-bg5);
+    border-radius: 0;
+  }
+  #app .music-modal--container {
+    box-shadow: 0 0 20vh #d59638a6;
+    background-image: linear-gradient(180deg, #151515db, #000000db);
+  }
+  #app .music-modal__button {
+    background-color: var(--color) !important;
+    color: var(--bg) !important;
+    border-radius: 0;
+  }
+  #app .music_with-hover .music-modal__button:hover {
+    box-shadow: 0 1.11vh 2.04vh #d59638a6;
+  }
+
+  #app .report__content {
+    background: none;
+    background-color: var(--bg-80);
+    border-radius: 0;
+  }
+  #app .report-appeal__item:hover,
+  #app .report-modal__button.enable {
+    background-color: var(--color) !important;
+    border-color: var(--color) !important;
+    box-shadow: none;
+  }
+  #app .report-appeal__item:hover .data-meta .name,
+  #app .report-appeal__item:hover .data-meta .online,
+  #app .report-appeal__item:hover .data-time,
+  #app .report-appeal__item:hover .text,
+  #app .report-modal__button.enable {
+    color: var(--bg) !important;
+  }
+
+  #app .admin-panel {
+    background: none;
+    background-color: var(--bg-50);
+    border-radius: 0;
+  }
+  #app .admin-menu__item,
+  #app .admin-bottom__tabs .tab {
+    border-radius: 0;
+  }
+  #app .admin-menu__item--overlay,
+  #app .admin-bottom__tabs .tab:hover {
+    background-color: var(--color-30) !important;
+    color: var(--color) !important;
+    border-radius: 0;
+  }
+  #app .admin-menu__item.active, 
+  #app .admin-menu__item.active:hover,
+  #app .admin-bottom__data .data-name .id,
+  #app .admin-bottom__tabs .tab.active,
+  #app .admin-bottom__data .button:hover {
+    background-color: var(--color) !important;
+  }
+  #app .admin-menu__item.active .text, 
+  #app .admin-menu__item.active:hover .text,
+  #app .admin-bottom__data .data-name .id,
+  #app .admin-bottom__tabs .tab.active {
+    color: var(--bg) !important;
+  }
+  #app .admin-menu__item.active svg, 
+  #app .admin-menu__item.active:hover svg, 
+  #app .admin-menu__item.active img, 
+  #app .admin-menu__item.active:hover img,
+  #app .admin-bottom__data .button:hover svg {
+    fill: var(--bg);
+  }
+
+  #app .auction--container {
+    background: none;
+    background-color: var(--bg-80);
+    border-radius: 0;
+  }
+
+  #app .black-market {
+    background: none;
+  }
+  #app .black-market__container {
+    background-color: var(--bg-60);
+    padding: 2vh;
+    border-radius: 0;
+    right: 3vh;
+  }
+  #app .black-market__button {
+    border-radius: 0;
+  }
+
+  #app .game-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    bottom: 0;
+    top: 16vh;
+    align-items: flex-end;
+    margin-left: -4vh;
+    transition: all .35s ease;
+  }
+  #app .game-text--content {
+    background-color: #00000080;
+    padding: 1vh 2vh;
+    
+    transform: scale(1) !important;
+    position: unset;
+    border-radius: 1vh;
+    display: flex;
+    justify-content: flex-end;
+    transition: all .35s ease;
+    width: auto;
+    margin-bottom: 0.3vh;
+    flex-direction: column;
+    align-items: flex-end;
+    position: relative;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+  }
+  #app .game-text--data .title {
+    text-shadow: 0 0 .5vh #00000080;
+    text-align: right;
+  }
+  #app .game-text--content .game-text--data .title > div {
+    font-size: 1.5vh !important;
+  }
+  #app .game-text--background {
+    display: none;
+  }
+  #app .game-text--data {
+    text-align: right;
+  }
+
+#app .player-interaction__container {
+  background: none;
+  background-color: var(--bg-60);
+}
+#app .player-interaction__inner {
+  background-color: var(--bg);
+}
+#app .player-interaction__container:before,
+#app .player-interaction__container:after {
+  background: none !important;
+}
+#app .player-interaction-layer {
+  background-color: var(--bg-60);
+}
+#app .player-interaction-favorite {
+  background: none;
+  background-color: var(--bg-60);
+}
+#app .player-interaction-favorite:hover {
+  background-color: var(--bg);
+}
+#app .player-interaction-favorite__title,
+#app .player-interaction-layer__item {
+  color: var(--color);
+}
+#app .player-interaction__title {
+  font-weight: 500;
+  color: var(--color);
+}
+#app .player-interaction__icon {
+  fill: var(--color);
+}
+#app .player-interaction__icon_active {
+  fill: var(--bg);
+}
+#app .player-interaction__title_active {
+  color: var(--bg);
+}
+
+#app .tuning-stage__container {
+  background: none;
+} 
+#app .main--before-overlay { 
+  background-image: url(oneas-img/interfaces/MW_GRIT_03.png);
+  background-repeat: no-repeat no-repeat;
+  background-size: contain;
+  background-position-x: 0%;
+  background-position-y: 9vh;
+  height: 100vh;
+}
+#app .tuning-stage-main {
+  padding-right: 0;
+}
+#app .tuning-stage-main__header {
+  border: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 25vh;
+  margin-top: 0.0000vh;
+  padding-top: 5vh;
+  padding-right: 4vh;
+  padding-bottom: 0.0000vh;
+  background-image: url(oneas-img/interfaces/MW_GRIT_07.png);
+  background-position-x: 106%;
+  background-position-y: -5vh;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+#app .choice__stage-list--item.active {  
+  border-image-slice: 37 37 37 37;
+  border-image-width: 2vh 2vh 2vh 2vh;
+  border-image-source: url(oneas-img/interfaces/border-button_active.png);
+  height: 12vh;
+  width: 30vh;
+}
+#app .choice__stage-stats {
+  border-top: none;
+}
+#app .choice__stage-stats--info {
+  border-bottom: none;
+  padding: 3vh 0;
+}
+#app .info__power--progress-bar,
+#app .info__consumption--progress-bar {
+  background-color: none;
+  background-image: var(--all-bg);
+  border-radius: 0;
+  border: 0.0926vh solid black;
+  width: 92%;
+}
+#app .progress-bar__volume--current {
+  background: #ffca78;
+}
+#app .progress-bar__volume--with-item {
+  background: #ff9b0073;
+}
+#app .progress-bar__volume {
+  background: #ff9b0040;
+}  
+#app .progress-bar__power {
+  background-color: var(--all-bg-2);
+  padding: 0.5vh 1vh;
+  margin-left: 1vh;
+}
+#app .choice__stage-stats--total {
+  padding: 1.93vh 0;
+}
+#app .tuning-stage-main__controls {
+  bottom: 2vh;
+  left: 10vh;
+}
+#app .tuning-stage-main__choice {  
+  margin-top: -6vh;
+}
+
+#app .springs {
+  background: none;
+}
+#app .springs-main .configuration-header {
+  border-bottom: none !important;
+  padding: 8vh 0;
+}
+#app .springs-controls {
+  bottom: 2vh;
+  left: 19vh;
+}
+  
+#app .main--after-overlay,
+#app .tuning-menu-main__container_after {
+  display: none;
+}
+
+#app .tuning-menu-categories-item:nth-child(2) {
+  background: url(oneas-img/interfaces/VISUAL_PART_PAINT.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+
+#app .tuning-menu-categories-item:nth-child(3) {
+  background: url(oneas-img/interfaces/VISUAL_PART_RIMS.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+#app .tuning-menu-categories-item:nth-child(4) {
+  background: url(oneas-img/interfaces/VISUAL_PART_VINYL.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+#app .tuning-menu-categories-item:nth-child(5) {
+  background: url(oneas-img/interfaces/VISUAL_PART_EXHAUST.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+#app .tuning-menu-categories-item:nth-child(6) {
+  background: url(oneas-img/interfaces/VISUAL_PART_HYDRA.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+#app .tuning-menu-categories-item:nth-child(7) {
+  background: url(oneas-img/interfaces/VISUAL_PART_BODY.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+#app .tuning-menu-categories-item:nth-child(8) {
+  background: url(oneas-img/interfaces/VISUAL_PART_SPOILER.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+
+#app .tuning-menu-categories-item:nth-child(9) {
+  background: url(oneas-img/interfaces/VISUAL_PART_GUDOK.png) !important;
+  background-size: 80% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  border-radius: 0 !important;
+}
+
+#app .tuning-menu-categories-item__img {
+  display: none;
+}
+#app .tuning-menu-categories-item {
+  margin-left: 0;
+  opacity: 0.5;
+}
+#app .tuning-menu-categories-item.active-item {
+  opacity: 1;
+}
+#app .tuning-menu-categories-item.active-item:before {
+  content: "";
+  border-image-slice: 40;
+  border-image-width: 2vh;
+  border-image-source: url(oneas-img/interfaces/border-button_active.png);
+  width: 100%;
+  height: 100%;
+  transform: scale3d(1.1, 1.4, 1);
+  opacity: 1;
+  animation: select-tuning 0.5s linear 0s infinite alternate;  
+}
+
+@keyframes select-tuning {
+  0% {
+      transform: scale(1);
+      opacity: 0.5;
+  }
+  to {
+      transform: scale(1.1);
+      opacity: 1;
+  }
+}
+#app .tuning-menu-categories-button:after {
+  content: "";
+  width: 11vh;
+  height: 7vh;
+  background: url(/oneas-img/interfaces/arrow-cars-shop.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  margin-left: -12vh;
+  margin-right: 1vh;
+  transform: rotateZ(180deg);
+}
+#app .tuning-menu-categories-button:last-child:after {
+  margin-left: 0vh;
+  margin-right: -11vh;
+  transform: rotateZ(0deg);
+}
+#app .tuning-menu-categories__wrapper {
+  padding-top: 2.93vh;
+}
+#app .tuning-menu-main__container_before {  
+  background-image: url(oneas-img/interfaces/MW_GRIT_05.png);
+  background-size: 75% auto;
+  background-repeat: no-repeat no-repeat;
+  background-position-y: 100%;
+  background-position-x: 23%;
+  top: -10vh;
+  transform: rotateZ(0deg);
+}
+#app .tuning-menu .main--before-overlay { 
+  background-size: 50% auto;
+  background-position-y: 20vh;
+}
+
+#app .tuning-menu-controls {
+  bottom: 2vh;
+  left: 19vh;
+}
+
+  #app .tuning-pneuma-interface__controller {
+    background: url(oneas-img/interfaces/controller.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: scale(2);
+    bottom: -30vh;
+    right: 14vh;
+  }
+  
+  #app .controller-container {
+    transform: rotate(15deg) scale(0.45);
+    bottom: 10.43vh;
+    left: 10.43vh;
+  }
+  #app .tuning-pneuma-interface__controller .controller__logo {
+    opacity: 0;
+    margin-top: 0;
+    margin-bottom: 3vh;
+  }
+  #app .tuning-pneuma-interface__controller .controller__button:hover .controller__button-icon,
+  #app .tuning-player-pneuma-main-controller .controller__button:hover .controller__button-icon {
+    fill: #ffb200;
+  }
+  #app .tuning-pneuma-interface__image {
+    display: none;
+  }
+  #app .tuning-pneuma-interface__controller .controller__button-box {
+    border: none;
+  }
+  #app .tuning-pneuma {
+    background: none;
+  }
+  
+  #app .tuning-pneuma:before {
+    z-index: -10;
+    content: "";
+    animation: pneuma-bg 2.5s ease 0s alternate;
+    background: url(oneas-img/interfaces/MW_GRIT_06.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100vh;
+    top: 27vh ;
+    position: absolute;
+    height: 80vh;
+    left: 0;
+  }
+  #app .tuning-pneuma-controls {
+    bottom: 2vh;
+    left: 19vh;
+  }
+  @keyframes pneuma-bg {
+    0%,
+    40% {
+        transform: translateX(50%) translateY(60%) rotate(90deg) scale(3);
+    }
+    100% {
+        transform: translateX(0%) translateY(0%) rotate(0deg) scale(1);
+    }
+  }
+
+  #app .tuning-player-pneuma-main-controller {
+    background-image: url(oneas-img/interfaces/controller2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 0%;
+    background-position-y: 147%;
+    width: 74.08vh;
+    height: 55.56vh;
+  }
+  #app .tuning-player-pneuma-main-controller .controller__wrapper {    
+    width: 28.04vh;
+    margin-left: -13vh;
+  }
+  #app .tuning-player-pneuma-main-controller .controller__logo {
+    opacity: 0;
+    margin-top: 6vh;
+    margin-bottom: 3vh;
+  }
+  #app .tuning-player-pneuma-main {
+    margin-left: 0;
+  }
+  #app .tuning-player-pneuma-main-controls {    
+    margin-left: -25vh;
+    margin-bottom: 3vh;
+  }
+
+  #app .death {
+    background: none;
+  }
+  #app .death-container {
+    position: absolute;
+    bottom: 16vh;
+  }
+  #app .death-desc {
+    font-size: 0;
+  }
+  #app .death-waves {
+    display: none;
+  }
+
+#app .authorization {
+  background: none;
+}
+#app .authorization__gradient {
+  background-image: url(./oneas-img/interfaces/MW_GRIT_02.png);
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -26vh;
+  left: 3vh;
+}
+#app .registration__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 6vh;
+}
+#app .registration__container:before {
+  content: '';
+  background-image: url(./oneas-img/interfaces/MW_GRIT_02.png);
+  background-size: auto;
+  background-repeat: no-repeat no-repeat;
+  background-position-x: 53%;
+  background-position-y: -20vh;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: rotateZ(-174deg);
+  top: 14vh;
+}
+#app .registration-personalization:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: url(./oneas-img/interfaces/MW_GRIT_02.png);
+  background-size: contain;
+  background-repeat: no-repeat no-repeat;
+  background-position-x: 0vh;
+  background-position-y: 7vh;
+  top: -28vh;
+  transform: rotateZ(168deg) scale3d(1.3, 1.3, 1);
+  z-index: -5;
+  left: -1vh;
+}
+#app .login-head__subtitle {
+  color: transparent;
+  opacity: 1;
+}
+#app .login-auth .login-head__subtitle:after {
+content: "Ввод данных";
+color: #fff;
+font-style: normal;
+display: block;
+font-size: 4vh;
+font-weight: 700;
+}
+#app .login-head__username,
+#app .authorization-field {
+  height: 4.63vh;
+  box-sizing: border-box;
+  border-radius: 0.3vh;
+  
+	font-size: 1.8vh;
+  width: 46.48vh;
+  position: relative;
+  font-weight: 400;
+  font-family: var(--font-famaly-all);
+	background: #00000038;
+}
+#app .login-auth .login-head__username,
+#app .login-auth .authorization-field {
+  margin-top: 7.89vh;
+}
+#app .login-head-icon {
+  display: none;
+}
+#app .login-head__username,
+#app .authorization-field__box {
+  padding: 0.5vh 1.67vh 0.4vh;
+}
+#app .authorization-field__box {
+  border: none;
+}
+#app .authorization-field__lang,
+#app .authorization-field__icon {
+  right: 1.5vh;
+}
+#app .authorization-field,
+#app .authorization-field__input,
+#app .login-head__username:before,
+#app .authorization-field:before,
+#app .authorization-field__lang,
+#app .login-form__suggestion {
+  color: #ffffffd6 !important;
+}
+#app .login-head__username,
+#app .authorization-field {
+  border: 0.19vh solid #fff;
+  background-color: #00000054;
+}
+#app .authorization-field__input {
+  font-size: 1.3vh;
+  border: none !important;
+  font-family: var(--font-famaly-all);
+  padding-bottom: 0;
+}
+#app .authorization-field__input-placeholder {
+  opacity: 0;
+}
+.login-form__suggestion-wrapper .login-form-push {
+  background-color: var(--bg-60);
+  border-radius: 0.3vh;
+}
+.login-form__suggestion-wrapper .login-form-push:before {
+  border-right-width: 1.11vh;
+  border-right-style: solid;
+  border-right-color:  var(--bg-60);
+  left: 0.05vh;
+  top: 0;
+  opacity: 1;
+}
+#app .login-form__button,
+#app .registration-form__button,
+#app .registration-personalization__button,
+#app .registration-bonuses__button {
+  padding: 0;
+  height: 6.11vh;
+  border-radius: 0;
+  font-family: var(--font-famaly-all);
+  line-height: 6.11vh;
+  font-size: 2.04vh;
+  font-weight: 500;
+  width: 17vh;
+  text-transform: inherit;
+  background-color: var(--buttom) !important;
+  position: relative;
+  opacity: 1;
+}
+#app .registration-personalization__button {
+  width: 24vh;
+}
+#app .registration-bonuses__button {
+  width: 36vh;
+}
+#app .registration-form__button-background,
+#app .registration-bonuses__button-background {  
+  display: none;
+}
+#app .login-form__button,
+#app .registration-form__button-text,
+#app .registration-bonuses__button-text,
+#app .registration-personalization__button {  
+  color: var(--text-buttom) !important;
+  opacity: 1;
+}
+
+#app .login-form__button:hover,
+#app .registration-form__button:hover .registration-form__button-text,
+#app .registration-bonuses__button:hover .registration-bonuses__button-text,
+#app .registration-personalization__button:hover {
+  color: #ffb200 !important;
+}
+
+#app .login-form__button:hover,
+#app .registration-form__button:hover,
+#app .registration-personalization__button:hover,
+#app .registration-bonuses__button:hover {
+  opacity: 1;  
+  background-color: var(--buttom-active) !important;
+}
+#app .login-form__button_active::after, 
+#app .registration-form__button_active::after, 
+#app .registration-personalization__button_active::after, 
+#app .registration-bonuses__button_active::after {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+border-image-source: url(./oneas-img/interfaces/border-button.png);
+border-image-slice: 37 26 37 26;
+border-image-width: 1vh 1vh 1vh 1vh;
+transform: scale3d(1.15, 1.35, 1);
+animation: auth-btn 0.5s linear 0s infinite alternate;  
+}
+#app .login-form__button:hover::after,
+#app .registration-form__button:hover::after,
+#app .registration-personalization__button:hover::after,
+#app .registration-bonuses__button:hover::after {
+  border-image-source: url(./oneas-img/interfaces/border-button_active.png);
+}
+
+@keyframes auth-btn {
+  0% {
+    transform: scale3d(1.15, 1.35, 1);
+    opacity: 0.5;
+  }
+  to {
+      transform: scale3d(1.25, 1.45, 1);
+      opacity: 1;
+  }
+}
+#app .login-form,
+#app .registration-form,
+#app .registration-personalization,
+#app .registration-bonuses {
+  align-items: center;
+  width: 46.48vh;
+}
+#app .registration-form {  
+  margin-bottom: -10vh;
+}
+#app .registration-form__input {
+  margin-top: 0;
+}
+#app .registration-personalization-switcher__button {
+  width: 6.11vh;
+  height: 6.11vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.74vh;
+  cursor: pointer;
+  margin-left: 1.11vh;
+  transition-duration: .25s;
+  padding: 0;
+}
+#app .registration-personalization-switcher__text {
+  display: none;
+}
+#app .registration-personalization-switcher__icon {
+  width: 2vh;
+  height: 2vh;
+  margin: 0;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button:first-child {
+  border: 0.19vh solid #527ff1;
+  background: none;
+  margin: 0;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button_active:first-child {
+  background: #527ff1 !important;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button:last-child {
+  border: 0.19vh solid #d152f1;
+  background: none;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button_active:last-child {
+  background: #d152f1 !important;
+}
+#app .registration-personalization-switcher__icon {
+  fill: white;
+}
+#app .registration-personalization-container {  
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 2vh;
+}
+#app .registration-personalization-item {
+  width: 13.33vh;
+  height: 16.85vh;
+  border-radius: 0.74vh;
+  border: 0.19vh solid #ffffff69;
+  background: none;
+  margin: 1.48vh 1.48vh 0 0;
+}
+#app .registration-personalization-item:hover {
+  border: 0.19vh solid #ffffff;
+  background: none !important;
+}
+#app .registration-personalization-item_active {
+  border: 0.19vh solid #ffb200 !important;
+  background: none !important;
+}
+#app .login-head__username:before,
+#app .authorization-field:before {
+  content: "Введите логин*";
+  position: absolute;
+  left: 0;
+  top: -3vh;
+  font-size: 1.67vh;
+  line-height: 100%;
+  color: #ffffffb3;
+  background: none;
+  width: 100%;
+  margin-bottom: 1.11vh;
+  height: auto;
+}
+#app .login-auth .authorization-field:before {
+  content: "Введите пароль*";
+}
+#app .login-code .authorization-field:before {
+  content: "Введите значение*";
+}
+#app .registration-bonuses .authorization-field:before {
+  content: "Введите ник пригласившего (или пропустите)*";
+}
+#app .registration-form > div:nth-child(1) .authorization-field:before {
+  content: "Введите e-mail*";
+}
+#app .registration-form > div:nth-child(2) .authorization-field:before {
+  content: "Придумайте пароль (мин. 6 символов)*";
+}
+#app .registration-form > div:nth-child(3) .authorization-field:before {
+  content: "Повторите пароль*";
+}
+#app .authorization .login {
+	align-items: center;
+	justify-content: center;
+}
+#app .registration__title {
+  color: #ffffff;
+  z-index: 3;
+  margin-top: 18vh;
+}
+#app .registration__title-icon {
+  display: none;
+}
+#app .registration .authorization-field {
+  margin-top: 6vh;
+}
+#app .registration-personalization-switcher {
+  margin-top: 2vh;
+}
+#app .registration-form__confirm {
+  align-items: flex-start;
+  flex-direction: column;
+}
+#app .login-auth .login-head {
+  margin: 0;
+}
+#app .login > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#app .scrollable-container-thumb_type_2.scrollable-container-thumb_horizontal,
+#app .scrollable-container-thumb_type_3.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_4.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_5.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_6.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_7.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_8.scrollable-container-thumb_horizontal,
+#app .scrollable-container-thumb_type_2.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_3.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_4.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_5.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_6.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_7.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_8.scrollable-container-thumb_vertical  {
+  background-color: var(--text-buttom-active);
+  border-radius: 0;
+}
+#app .scrollable-container_type_5 .scrollable-container__rail .scrollable-container__rail-background,
+#app .scrollable-container_type_3 .scrollable-container__rail .scrollable-container__rail-background {
+  background-color: var(--buttom-hover);
+
+}
+

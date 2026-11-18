@@ -1,0 +1,1360 @@
+
+body {
+  font-family: var(--font-famaly-all);
+}
+
+.oneas-prev-mn {
+  width: 7vh;
+  height: 7vh;
+  transform: scale3d(2, 2, 1);
+  margin-left: 2vh;
+  pointer-events: none;
+}
+
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-radmir-wanted {
+  display: none;
+}
+
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+font-weight: 900;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+font-weight: 900;
+font-style: italic;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+font-weight: 500;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+font-family: ALSRubl;
+src: url(./fonts/ALSRubl.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+
+:root {
+--bg: #000;
+  --bg-20: #00000033;
+  --bg-40: #00000066;
+  --bg-50: #00000080;
+  --bg-60: #00000099;
+  --bg-80: #000000cc;
+  
+--color: #fff;
+  --color-10: #ffffff1a;
+  --color-30: #ffffff4d;
+
+--font-famaly-all: GothamPro, "Open Sans";
+
+--overlay-interface: radial-gradient(
+  #252525a6 50%,
+  transparent 150%
+);
+--overlay-dalog: radial-gradient(#252525a6 20%, transparent 100%);
+--overlay-capt: linear-gradient(210deg,#14141400 55%,#14141499 90%);
+--overlay-capt-2: linear-gradient(139deg,#14141400 55%,#14141499 90%);
+--all-color-text: white;
+--all-color-text-2: #ffffffcc;
+--buttom-bg: #ffffff40 ;
+--buttom-bg-2: #00000066;
+--buttom-bg-active: #ffffffe6;
+--buttom-color-active: #282828;
+--input-color: #ffffff26;
+--box-shadow-bt-a: 0 0.0000vh 1.8519vh 0.0000vh #ffffff33;
+--all-bg: #252525a6;
+--filter-shadow-img: drop-shadow(0 0 0.7407vh #ffffff80);
+--text-shadow: 0 0 0.4630vh black;
+--border-1: #ffffff66;
+--border-2: #ffffff33;
+--border-3: #ffffff80;
+}
+
+.ONEAS-hud {  
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.ONEAS-hud-base {
+  position: absolute;
+  right: 2.7vh;
+  top: 2.7vh;
+  display: flex;
+  align-items: center;
+  transform-origin: right top;
+  pointer-events: none;
+  transition: all .35s ease;
+}
+.ONEAS-hud-base:before {
+  content: "";
+  position: absolute;
+  width: 60.9259vh;
+  height: 61.1111vh;
+  background-image: url(oneas-img/hud/hud_bg.png);
+  background-size: cover;
+  background-position: 50%;
+  right: -2.7778vh;
+  top: -2.7778vh;
+  opacity: .5;
+  z-index: -2;
+}
+
+.ONEAS-hud__info {
+  transition: all .35s ease;
+  position: relative;
+  right: -0.6481vh;
+}
+.ONEAS-info__line {
+  position: absolute;
+  width: 26.2963vh;
+  right: -6.4815vh;
+  top: -3.8889vh;
+  height: 2.9630vh;
+}
+
+body .hud-mobile__info-server-data__data {
+  position: absolute;
+  top: -3.7037vh;
+  right: -5.0926vh;
+  padding: 0;
+  transform: scale(0.8);
+}
+body .hud-mobile__info-server-data__data svg {
+  margin-top: -0.4630vh;
+  
+  transform: scale(1.1);
+  width: 2.9630vh;
+  height: 2.9630vh;
+}
+body .hud-mobile__info-server-data__data svg > path {
+  fill: white;
+}
+body .hud-mobile__info-server-data__data .text {
+  color: #ffffffb3;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  display: flex;
+  
+  margin-right: 1.4815vh;
+  font-size: 2.2222vh;
+  line-height: 2.2222vh;
+  font-weight: 700;
+}
+body .hud-mobile__info-server-data__data .text .value {
+  color: #fff;
+  margin-right: 0.4630vh;
+}
+
+.ONEAS-radar__images {
+  
+  width: 26.9444vh;
+  height: 26.9444vh;
+}
+
+body.radar-down .capture-table {
+  padding: 20vh 6vh 6vh 20vh;
+  right: 0;
+  background-image: var(--overlay-capt-2);
+  align-items: flex-end;
+}
+body.radar-down .capture-table__col {
+  flex-direction: row-reverse;
+  align-items: center;
+}
+body.radar-down .capture-table__timer {
+  right: 6vh;
+}
+body.radar-down .ONEAS-hud__radar-border, 
+body.radar-down .ONEAS-hud__green-zone {
+  position: absolute;
+  transform-origin: bottom left;    
+  transition: all .35s ease;
+}
+body.radar-down .radmir-chat {
+  margin-left: 0;
+}
+body.radar-down .ONEAS-hud__radar-border {
+  left: 2.6vh;
+  bottom: 2.6vh;
+}
+body.radar-down .ONEAS-hud__green-zone {
+  left: 28vh;
+  bottom: 4vh;
+}
+body.radar-down  .radmir-chat__messages {
+  width: 70vw!important;
+}
+body.radar-down .radmir-chat-input__input, 
+body.radar-down .radmir-chat-input__hints {
+  width: 100%;
+}
+
+body.radar-down .hud-radmir-radar {  
+  bottom: 5.4vh;
+  left: 3vh;
+}
+
+body.radar-up .hud-radmir-radar {  
+  left: 3vh;
+  top: 0.8vh;
+}
+body.radar-up .capture-table {
+  padding: 20vh 20vh 6vh 6vh;
+  left: 0;
+  background-image: var(--overlay-capt);
+  align-items: flex-start;
+}
+body.radar-up .capture-table__col {
+  align-items: center;
+  flex-direction: row;
+}
+body.radar-up .capture-table__timer {
+  left: 0;
+  margin-left: 6vh !important;
+}
+body.radar-up .ONEAS-hud__radar-border, 
+body.radar-up .ONEAS-hud__green-zone {
+  position: absolute;
+  transform-origin: top left;    
+  transition: all .35s ease;
+}
+body.radar-up .radmir-chat {
+  margin-left: 33vh;
+}
+body.radar-up .radmir-chat__messages {
+  width: 51.3vw!important;
+}
+body.radar-up .ONEAS-hud__radar-border {
+  left: 2.6vh;
+  top: 2.6vh;
+}
+body.radar-up .ONEAS-hud__green-zone {
+  left: 28vh;
+  top: 4vh;
+}
+body.radar-up .radmir-chat-input__input, 
+body.radar-up .radmir-chat-input__hints {
+  width: 131%;
+}
+
+.ONEAS-green-zone__image {
+  width: 5.9259vh;
+  height: 5.9259vh;
+}
+
+.ONEAS-hud__logo {
+  position: absolute;
+  bottom: 0.7407vh;
+  font-size: 1.8519vh;
+  line-height: 1.7593vh;
+  color: #000;
+}
+.ONEAS-logo__bonus {
+  font-weight: 500;
+  font-size: 1.5741vh;
+  line-height: 2.6852vh;
+  background: url(oneas-img/hud/bonus.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 12.9630vh;
+  height: 2.7778vh;
+  color: white;
+  position: absolute;
+  text-align: center;
+  bottom: 3.2407vh;
+  left: 44.5%;
+  transform: scale(0.8) translateX(-50%);
+}
+.ONEAS-logo__bonus {
+    z-index: 2;
+}
+
+.ONEAS-hud__weapon {
+  width: 19.0741vh;
+  height: 21.8519vh;
+  background-image: url(oneas-img/hud/fist-bg.svg);
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  pointer-events: auto;
+  transition: all .35s ease;
+}
+.ONEAS-weapon__icon {
+  width: 14.8148vh;
+  height: 14.8148vh;
+  transition: all .35s ease;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right; 
+}
+.ONEAS-weapon__icon-bg {
+  background-image: linear-gradient(25.55deg,#f8e901 -43.18%,#fff0 59.14%);
+  
+  position: absolute;
+  width: 14.6296vh;
+  height: 14.6296vh;
+  border-radius: 50%;
+  margin-bottom: 0.1852vh;
+  z-index: -1;
+  transition: all .35s ease;
+}
+.ONEAS-weapon__ammo {
+  transition: all .35s ease;
+  position: absolute;
+  bottom: -6.3889vh;
+  right: 0;
+  width: 6.4815vh;
+  height: 11.1111vh;
+  background-image: url(oneas-img/hud/weapon_ammo-bg.svg);
+  background-size: cover;
+  background-position: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.ONEAS-weapon__ammo #ONEAS-ammo__in-clip {
+  font-size: 2.2222vh;
+  line-height: 2.1296vh;
+  color: #fff;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  font-weight: 500;
+  bottom: 3.7037vh;
+  position: absolute;
+}
+.ONEAS-weapon__ammo #ONEAS-ammo__total {
+  color: #ffffffb3;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  font-size: 1.4815vh;
+  line-height: 1.3889vh;
+  bottom: 0.9259vh;
+  position: absolute;
+}
+
+.ONEAS-weapon__icon[data-weapon="0"] {
+  background-image: url(oneas-img/weapon/0.png);
+}
+.ONEAS-weapon__icon[data-weapon="1"] {
+  background-image: url(oneas-img/weapon/1.png);
+}
+.ONEAS-weapon__icon[data-weapon="2"] {
+  background-image: url(oneas-img/weapon/2.png);
+}
+.ONEAS-weapon__icon[data-weapon="3"] {
+  background-image: url(oneas-img/weapon/3.png);
+}
+.ONEAS-weapon__icon[data-weapon="4"] {
+  background-image: url(oneas-img/weapon/4.png);
+}
+.ONEAS-weapon__icon[data-weapon="5"] {
+  background-image: url(oneas-img/weapon/5.png);
+}
+.ONEAS-weapon__icon[data-weapon="6"] {
+  background-image: url(oneas-img/weapon/6.png);
+}
+.ONEAS-weapon__icon[data-weapon="7"] {
+  background-image: url(oneas-img/weapon/7.png);
+}
+.ONEAS-weapon__icon[data-weapon="8"] {
+  background-image: url(oneas-img/weapon/8.png);
+}
+.ONEAS-weapon__icon[data-weapon="9"] {
+  background-image: url(oneas-img/weapon/9.png);
+}
+.ONEAS-weapon__icon[data-weapon="10"] {
+  background-image: url(oneas-img/weapon/10.png);
+}
+.ONEAS-weapon__icon[data-weapon="11"] {
+  background-image: url(oneas-img/weapon/11.png);
+}
+.ONEAS-weapon__icon[data-weapon="12"] {
+  background-image: url(oneas-img/weapon/12.png);
+}
+.ONEAS-weapon__icon[data-weapon="13"] {
+  background-image: url(oneas-img/weapon/13.png);
+}
+.ONEAS-weapon__icon[data-weapon="14"] {
+  background-image: url(oneas-img/weapon/14.png);
+}
+.ONEAS-weapon__icon[data-weapon="15"] {
+  background-image: url(oneas-img/weapon/15.png);
+}
+.ONEAS-weapon__icon[data-weapon="16"] {
+  background-image: url(oneas-img/weapon/16.png);
+}
+.ONEAS-weapon__icon[data-weapon="17"] {
+  background-image: url(oneas-img/weapon/17.png);
+}
+.ONEAS-weapon__icon[data-weapon="18"] {
+  background-image: url(oneas-img/weapon/18.png);
+}
+.ONEAS-weapon__icon[data-weapon="22"] {
+  background-image: url(oneas-img/weapon/22.png);
+}
+.ONEAS-weapon__icon[data-weapon="23"] {
+  background-image: url(oneas-img/weapon/23.png);
+}
+.ONEAS-weapon__icon[data-weapon="24"] {
+  background-image: url(oneas-img/weapon/24.png);
+}
+.ONEAS-weapon__icon[data-weapon="25"] {
+  background-image: url(oneas-img/weapon/25.png);
+}
+.ONEAS-weapon__icon[data-weapon="26"] {
+  background-image: url(oneas-img/weapon/26.png);
+}
+.ONEAS-weapon__icon[data-weapon="27"] {
+  background-image: url(oneas-img/weapon/27.png);
+}
+.ONEAS-weapon__icon[data-weapon="28"] {
+  background-image: url(oneas-img/weapon/28.png);
+}
+.ONEAS-weapon__icon[data-weapon="29"] {
+  background-image: url(oneas-img/weapon/29.png);
+}
+.ONEAS-weapon__icon[data-weapon="30"] {
+  background-image: url(oneas-img/weapon/30.png);
+}
+.ONEAS-weapon__icon[data-weapon="31"] {
+  background-image: url(oneas-img/weapon/31.png);
+}
+.ONEAS-weapon__icon[data-weapon="32"] {
+  background-image: url(oneas-img/weapon/32.png);
+}
+.ONEAS-weapon__icon[data-weapon="33"] {
+  background-image: url(oneas-img/weapon/33.png);
+}
+.ONEAS-weapon__icon[data-weapon="34"] {
+  background-image: url(oneas-img/weapon/34.png);
+}
+.ONEAS-weapon__icon[data-weapon="35"] {
+  background-image: url(oneas-img/weapon/35.png);
+}
+.ONEAS-weapon__icon[data-weapon="36"] {
+  background-image: url(oneas-img/weapon/36.png);
+}
+.ONEAS-weapon__icon[data-weapon="37"] {
+  background-image: url(oneas-img/weapon/37.png);
+}
+.ONEAS-weapon__icon[data-weapon="38"] {
+  background-image: url(oneas-img/weapon/38.png);
+}
+.ONEAS-weapon__icon[data-weapon="39"] {
+  background-image: url(oneas-img/weapon/39.png);
+}
+.ONEAS-weapon__icon[data-weapon="40"] {
+  background-image: url(oneas-img/weapon/40.png);
+}
+.ONEAS-weapon__icon[data-weapon="41"] {
+  background-image: url(oneas-img/weapon/41.png);
+}
+.ONEAS-weapon__icon[data-weapon="42"] {
+  background-image: url(oneas-img/weapon/42.png);
+}
+.ONEAS-weapon__icon[data-weapon="43"] {
+  background-image: url(oneas-img/weapon/43.png);
+}
+.ONEAS-weapon__icon[data-weapon="46"] {
+  background-image: url(oneas-img/weapon/46.png);
+}
+
+.oneas-fist-2 .ONEAS-weapon__icon[data-weapon="0"] {
+  background-image: url(oneas-img/weapon/0-2.png);
+}
+
+.ONEAS-hud__wanted {
+  transition: all .35s ease;
+  margin-top: 0.5556vh;
+  margin-right: 0.5556vh;
+}
+.ONEAS-wanted__row{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: all .25s ease;
+}
+.ONEAS-wanted__row > img {
+  margin-right: 0.7407vh;
+  width: 2.1296vh;
+  height: 2.1296vh;
+  filter: drop-shadow(0.0000vh 0.1852vh 0.1852vh rgba(0, 0, 0, 0.12));
+}
+.ONEAS-wanted__row > img:last-child {
+  margin-right: 0; 
+}
+
+.ONEAS-hud__cash {
+  transition: all .35s ease;
+  text-align: right;
+  font-weight: 700;
+  margin-top: 0.5556vh;
+  margin-right: 1.7593vh;
+  font-size: 2.3148vh;
+  line-height: 2.8704vh;
+  color: #fff;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+#ONEAS-cash__value {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.ONEAS-hud__cash #ONEAS-cash__value::before {
+  content: 'u';
+  font-family: 'ALSRubl';
+  font-weight: 400;
+  margin-right: 0.5556vh;
+  margin-top: -0.2778vh;
+}
+
+.ONEAS-hud__params {
+  display: flex;
+  justify-content: flex-end;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 37.0370vh;
+}
+.ONEAS-param {
+  display: flex;
+  align-items: center;
+}
+.ONEAS-param__icon {
+  
+  margin-right: 0.7407vh;
+  height: 1.8519vh;
+}
+.ONEAS-param__progress {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.show-values .ONEAS-param__amount {
+    opacity: 1;
+}
+.ONEAS-param__amount {
+    opacity: 0;
+    font-weight: 700;
+    margin-bottom: 0.2778vh;
+    
+    font-size: 1.6667vh;
+    
+    color: #fff;
+    text-shadow: 0 0.1852vh 0.3704vh rgb(0 0 0 / 50%);
+
+    position: relative;
+    right: -8.3333vh;
+    z-index: 2;
+}
+.ONEAS-progress__value {
+  width: 50%;
+}
+
+.ONEAS-param__health {
+  margin-right: 1.2037vh;
+  margin-top: 0.4630vh;
+}
+.ONEAS-health__progress .ONEAS-param__progress {
+  width: 249px;
+  height: 33px;
+  clip-path: path("M249 5H15L0 16.5L15 28H242.939C244.759 17.4645 246.378 9.82258 249 5Z");
+  margin-bottom: -33px;
+  margin-left: 8px;
+}
+.ONEAS-param__health .ONEAS-progress__value {
+  clip-path: path("M249 5H15L0 16.5L15 28H242.939C244.759 17.4645 246.378 9.82258 249 5Z");
+  background-image: linear-gradient(-90deg, #39c83f -28.92%, #68ea6a 100.2%);
+}
+
+.ONEAS-param__hunger {
+  margin-right: 2.1296vh;
+  margin-top: 0.4630vh;
+}
+.ONEAS-hunger__progress .ONEAS-param__progress {
+  width: 211px;
+  height: 18px;
+  clip-path: path("M211 5H0.5L10 13H211C211 13 210.764 10.75 210.764 9C210.764 7.25 211 5 211 5Z");
+  margin-bottom: -18px;
+  margin-left: 14px;
+}
+.ONEAS-param__hunger .ONEAS-progress__value {
+  clip-path: path("M211 5H0.5L10 13H211C211 13 210.764 10.75 210.764 9C210.764 7.25 211 5 211 5Z");
+  background-image: linear-gradient(-90deg, #feb102 -34.2%, #feca50 100%);
+}
+
+.ONEAS-armour__progress .ONEAS-param__progress {
+  width: 229px;
+  height: 18px;
+  clip-path: path("M224 13H0L9.5 5H229C226.12 8.75 224.968 11 224 13Z");
+  margin-bottom: -18px;
+  margin-left: 15px;
+}
+.ONEAS-param__armour .ONEAS-progress__value {
+  background-image: linear-gradient(-90deg, #0d73fd 0%, #69a9ff 100%);
+  clip-path: path("M224 13H0L9.5 5H229C226.12 8.75 224.968 11 224 13Z");
+  
+}
+
+.ONEAS-param__breath {
+  position: absolute;
+  top: 3.5185vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--all-bg);
+  
+  border-radius: 50%;
+  width: 14.6296vh;
+  height: 14.6296vh;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1;
+  gap: 0.5vh;
+}
+.ONEAS-param__breath .ONEAS-param__icon {
+  width: 3.1481vh;
+  height: 3.1481vh;
+  margin: 0;
+}
+.ONEAS-param__breath .ONEAS-param__amount-2 {
+  font-family: GothamPro;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 2vh;
+  color: #fff;
+  text-align: center;
+  width: 4vh;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+
+.ONEAS-param__freeze {
+  margin-right: 1.5741vh;
+  margin-top: 0.4630vh;
+}
+.ONEAS-freeze__progress .ONEAS-param__progress {
+  width: 190px;
+  height: 18px;
+  clip-path: path(
+      "M188.363 5H0L8.6078 13H190C190 13 189.39 10.6687 189.067 9.1C188.747 7.54378 188.363 5 188.363 5Z"
+  );
+  margin-bottom: -18px;
+  margin-left: 13px;
+}
+.ONEAS-param__freeze .ONEAS-progress__value {
+  clip-path: path(
+      "M188.363 5H0L8.6078 13H190C190 13 189.39 10.6687 189.067 9.1C188.747 7.54378 188.363 5 188.363 5Z"
+  );
+  background-image: linear-gradient(90deg, #77c7d9 -33.78%, #37bfdb 98.76%);
+}
+
+.ONEAS-speedometer {
+  font-family: var(--font-famaly-all);
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: -64.8148vh;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: bottom left;
+  z-index: -1;
+
+  transition: all .35s ease;
+}
+
+@keyframes turn {
+  0% {
+    opacity: 0.5;
+  }
+ 
+  to {
+    opacity: 1;
+  }
+ }
+ 
+ @keyframes speed {
+     0% {
+       opacity: 0;
+     }
+   
+     100% {
+       opacity: 1;
+     }
+   }
+
+.ONEAS-speedometer__damage {
+    display: none;
+}
+
+.ONEAS-speedometer-bg {
+    bottom: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.ONEAS-speedometer__turns {
+  display: none;
+}
+
+.ONEAS-speedometer__speed {
+  position: relative;
+}
+.ONEAS-speedometer-speed__bar {
+  
+  z-index: 1;
+  position: absolute;
+  top: 0.8333vh;
+  left: 1.0185vh;
+}
+.ONEAS-speedometer-speed__data {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  justify-content: center;
+}
+.ONEAS-speedometer-speed__data > span {
+  margin-right: 0.4630vh;
+}
+.ONEAS-speedometer-speed__data > span:last-child {
+  margin-right: 0;
+}
+
+.ONEAS-speedometer-speed__value {
+
+  color: #f3f0dd;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  line-height: 3.7037vh;
+  font-weight: 500;
+  font-size: 2.9630vh;
+}
+
+.ONEAS-speedometer-speed__text {
+
+font-size: 2.2222vh;
+color: #f3f0ddb3;
+text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+.ONEAS-speedometer-__data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+
+.ONEAS-speedometer__params {
+  height: 100%;
+  margin: 4.4444vh 0 0 -9.2593vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-params {
+  display: flex;
+  position: absolute;
+  width: 31vh;
+  height: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ONEAS-speedometer-params> div {
+  transition: all .25s ease;
+}
+
+.ONEAS-speedometer-params > div {
+  opacity: .35;
+}
+
+.ONEAS-speedometer-param--active {
+  opacity: 1 !important;
+}
+
+.ONEAS-speedometer-data {
+  display: flex;
+  font-weight: 500;
+  font-size: 1.8519vh;
+  line-height: 100%;
+  color: #f3f0dd;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+  justify-content: center;
+  align-items: center;
+}
+.ONEAS-speedometer-data > div {
+  margin-right: 0.5556vh;
+}
+.ONEAS-speedometer-data > div:last-child {
+  margin-right: 0;
+}
+.ONEAS-speedometer-data__text {
+  font-size: 1.4815vh;
+  color: #f3f0ddb3;
+}
+
+.ONEAS-speedometer__fuel {
+  
+  margin-left: -9.2593vh;
+  position: relative;
+}
+
+.ONEAS-speedometer-fuel__bar {
+  position: absolute;
+  margin: 0.9259vh 0 0 1.0185vh;
+}
+
+.ONEAS-speedometer-fuel__data {
+  position: relative;
+  top: -8.7037vh;
+  z-index: 1;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-fuel__text {
+  line-height: 4.0741vh;
+  margin: 0 0.7407vh 0 -0.1852vh;
+}
+
+.ONEAS-speedometer__wash {
+  position: relative;
+  top: 3.9815vh;
+  left: -7.5926vh;
+}
+.ONEAS-speedometer-wash__bar {
+  position: absolute;
+  right: 0.8vh;
+  bottom: 5.9vh;
+
+}
+.ONEAS-speedometer-wash__text {
+  font-size: 1.2963vh;
+  line-height: 4.0741vh;
+}
+.ONEAS-speedometer__wash .ONEAS-speedometer-data {
+  position: relative;
+  left: 1.3889vh;
+  top: -5.0926vh;
+}
+
+.ONEAS-speedometer__mileage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1;
+  justify-content: center;
+}
+.ONEAS-speedometer__mileage > span {
+  margin-right: 0.4630vh;
+}
+.ONEAS-speedometer__mileage > span:last-child {
+  margin-right: 0;
+}
+.ONEAS-speedometer-mileage__value {
+font-size: 1.8519vh;
+line-height: normal;
+color: #f3f0dd;
+text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+.ONEAS-speedometer-mileage__text {
+line-height: 2.5000vh;
+font-size: 1.4815vh;
+color: #f3f0ddb3;
+text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+
+.ONEAS-speedometer__tachometer {
+  display: flex;
+  position: absolute;
+  bottom: 1.8519vh;
+  align-items: flex-end;
+  justify-content: center;
+  width: 100%;
+}
+.ONEAS-speedometer__tachometer > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 2.7778vh;
+}
+.ONEAS-speedometer__tachometer > div:last-child {
+  margin-right: 0;
+}
+.ONEAS-speedometer__tachometer > div > div {
+  margin-right: 0.9259vh;
+}
+.ONEAS-speedometer__tachometer > div > div:last-child {
+  margin-right: 0;
+}
+.ONEAS-tachometer-value {
+  text-transform: uppercase;
+  font-size: 2.3148vh;
+  color: #f3f0dd;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+.ONEAS-tachometer-text {
+  font-weight: 600;
+  font-size: 1.8519vh;
+  color: #f3f0ddb3;
+  text-shadow: 0 0.1852vh 0.1852vh #0000001f;
+}
+
+.ONEAS-tachometer-glow .ONEAS-tachometer-value {
+  color: #65c466;
+  text-shadow: 0 0 1.8519vh #65c466;
+}
+
+.ONEAS-speedometer-danger div {
+  color: #ea4f3e;
+}
+.ONEAS-speedometer-danger .ONEAS-speedometer-data path {
+  fill: #ea4f3e;
+}
+.ONEAS-danger-image-1,.ONEAS-danger-image {
+position: absolute;
+opacity: 0;
+}
+
+.ONEAS-speedometer-danger .ONEAS-speedometer-data__text,
+.ONEAS-speedometer-danger>svg:first-child path,
+.ONEAS-speedometer-danger>svg:nth-child(2) path:nth-child(1){
+  color: #ea4f3eb3;
+  stroke: #ea4d39;
+}
+
+.ONEAS-speedometer-danger>svg:nth-child(2) path:nth-child(2) {
+stroke: #ea4f3d59;
+}
+
+.ONEAS-speedometer__wash.ONEAS-speedometer-danger>svg:nth-child(2) path:last-child {
+stroke: none;
+fill: #ea4f3d59;
+}
+
+.ONEAS-speedometer-danger>div svg path {
+  fill: #ea4f3e;
+}
+
+#app .scrollable-container_type_1 .scrollable-container__rail_y {
+  display: none;
+}
+#app .radmir-chat-input__input {
+  padding: 0 0.9259vh;
+  border: 0.05vh solid #f4f1e126;
+  background-color: #f4f1e126;
+}
+#app .radmir-chat-input__input input {
+  color: white !important;
+}
+#app .radmir-chat-input__input-lang {
+  padding: 0 0.4630vh 0.3704vh 0.4630vh;
+  color: white !important;
+  border-left: 0.05vh solid #f4f1e126;
+}
+#app .radmir-chat-input__input {
+  padding: 0 0.93vh !important;
+}
+#app .radmir-chat_inactive {
+  opacity: 1 !important;
+}
+
+#app .vignette {
+  display: none;
+}
+
+#app .overlay-container {
+  display: none;
+}
+
+#app .info-card {
+  background: none;
+  border-radius: 0.5556vh;
+  border: 0.0926vh solid #ffffff80;
+  overflow: inherit;
+}
+
+#app .info-card:after {
+  top: -16vh;
+  right: -26vh;
+  content: '';
+  background-image: radial-gradient( rgb(37 37 37 / 65%) 20%, transparent 70% );
+  width: 70vh;
+  height: 70vh;
+  position: absolute;
+  z-index: -2;
+}
+
+#app .info-card__data {
+  background-color: var(--buttom-bg-2);
+  background: 0;
+}
+
+#app .info-card__head-data .status {
+  border-radius: 0.5556vh;
+}
+
+#app .info-card .text {
+  color: var(--all-color-text-2);
+}
+
+#app .capture-table {
+  bottom: 0;
+  flex-direction: column;
+  border-radius: 0;
+}
+#app .capture-table__col {
+  padding-top: 1vh;
+}
+#app .capture-table__col .name, 
+#app .capture-table__col-kills, 
+#app .capture-table__timer {
+  font-style: normal;
+}
+#app .capture-table__col-kills {
+  background: none;
+  background-color: #e6473d80;
+  font-size: 2vh;
+  border: 0.1vh solid #ffffff66;
+  border-radius: 0.4vh;
+}
+#app .capture-table__col-kills.my {
+  background-color: #00c80080;
+}
+#app .capture-table__col .name {
+  font-weight: 400;
+  color: var(--all-color-text-2);
+  text-transform: none;
+  letter-spacing: -.06em;
+}
+#app .capture-table__timer {
+  font-size: 2vh;
+  background: 0 0;
+  width: 15vh;
+  position: absolute;
+  bottom: 14.8vh;
+  border-bottom: 0.1852vh solid #ffffff66;
+  justify-content: flex-end;
+  padding-right: 1vh;
+  display: flex;
+  margin: 0;
+}
+.capture-table__timer::before {
+  content: 'Время:';
+  margin-right: 1vh;
+}
+
+#app .authorization,
+#app .loading {
+  background-image: url("oneas-img/interfaces/bg_auth.png");
+  background-size: cover;
+}
+#app .authorization__gradient {
+  background: none;
+}
+#app .login-head__subtitle {
+  color: transparent;
+  opacity: 1;
+}
+#app .login-auth .login-head__subtitle:before {
+  content: "Добро пожаловать";
+  display: block;
+  width: 60vh;
+  font-size: 5.74vh;
+  font-weight: 900;
+  line-height: 100%;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 4.48vh;
+  font-style: normal;
+  font-family: var(--font-famaly-all);
+  text-shadow: #70707080 0.0000vh 0.0000vh 0.9259vh;
+  max-width: 50vh;
+}
+#app .login-head__username,
+#app .authorization-field {
+  height: 7vh;
+  box-sizing: border-box;
+  border: 0.19vh solid #ffffff33;
+  
+  color: #ffffffd6;
+  font-size: 2vh;
+  width: 46.48vh;
+  position: relative;
+  font-weight: 400;
+  font-family: var(--font-famaly-all);
+}
+#app .login-auth .login-head__username,
+#app .login-auth .authorization-field {
+  margin-top: 7.89vh;
+}
+#app .login-auth .login-head-icon {
+  display: none;
+}
+#app .login-head__username,
+#app .authorization-field__box {
+  
+  margin-top: -0.01vh;
+  padding-left: 1.67vh;
+  padding-right: 1.67vh;
+}
+#app .authorization-field__box {
+  border: none;
+  height: 100%;
+}
+#app .authorization-field__lang,
+#app .authorization-field__icon {
+  right: 1.5vh;
+}
+#app .authorization-field__input {
+  color: #ffffffd6 !important;
+  font-size: 2vh;
+  
+  border: none !important;
+  font-family: var(--font-famaly-all);
+  padding-bottom: 0;
+}
+#app .authorization-field__input-placeholder {
+  opacity: 0;
+}
+.login-form__suggestion-wrapper .login-form-push {
+  background-color: var(--bg-60);
+  border-radius: 1vh;
+}
+.login-form__suggestion-wrapper .login-form-push:before {
+  border-right-width: 1.11vh;
+  border-right-style: solid;
+  border-right-color: var(--bg-60);
+  left: 0.05vh;
+  top: 0;
+  opacity: 1;
+}
+#app .login-form__button,
+#app .registration-form__button,
+#app .registration-personalization__button,
+#app .registration-bonuses__button {
+  
+  padding: 2.5vh 3.5vh !important;
+
+  box-shadow: none !important;
+}
+#app .login-form__button,
+#app .registration-form__button-background,
+#app .registration-personalization__button,
+#app .registration-bonuses__button-background {
+  border: 0.5556vh solid #ffffff33;
+  background: #ffffff !important;  
+  opacity: 0.25;
+}
+#app .login-form__button,
+#app .registration-form__button-text,
+#app .registration-personalization__button,
+#app .registration-bonuses__button-text {  
+  font-family: var(--font-famaly-all);
+  color: #000000 !important;
+  font-weight: 400 !important;
+  font-size: 2.4vh !important;
+  text-transform: capitalize;
+  opacity: 0.25;
+}
+#app .login-form__button_active,
+#app .registration-form__button_active .registration-form__button-background,
+#app .registration-form__button_active .registration-form__button-text,
+#app .registration-personalization__button,
+#app .registration-bonuses__button-background {
+  opacity: 1;
+}
+#app .login-form__button:hover,
+#app .registration-form__button:hover,
+#app .registration-personalization__button:hover,
+#app .registration-bonuses__button:hover {
+  opacity: 0.75;
+}
+#app .login-form,
+#app .registration-form,
+#app .registration-bonuses {
+  width: 46.48vh;
+}
+#app .registration-personalization {
+  width: 43vh;
+}
+#app .registration-personalization-switcher__button {
+  width: 6.11vh;
+  height: 6.11vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  margin-left: 1.11vh;
+  transition-duration: 0.25s;
+  padding: 0;
+}
+#app .registration-personalization-switcher__text {
+  display: none;
+}
+#app .registration-personalization-switcher__icon {
+  width: 2vh;
+  height: 2vh;
+  fill: white;
+  margin: 0;
+}
+#app .registration-personalization-switcher > div.registration-personalization-switcher__button:first-child {
+  border: 0.19vh solid #527ff1;
+  background: none;
+  margin: 0;
+}
+#app .registration-personalization-switcher > div.registration-personalization-switcher__button_active:first-child {
+  background-color: #527ff1 !important;
+}
+#app .registration-personalization-switcher > div.registration-personalization-switcher__button:last-child {
+  border: 0.19vh solid #d152f1;
+  background: none;
+}
+#app .registration-personalization-switcher > div.registration-personalization-switcher__button_active:last-child {
+  background-color: #d152f1 !important;
+}
+#app .registration-personalization-switcher__icon {
+  fill: white;
+}
+#app .registration-personalization-item {
+  width: 13.33vh;
+  height: 16.85vh;
+  border-radius: 0;
+  border: 0.19vh solid #ffffff33;
+  background: none;
+}
+#app .registration-personalization-item:hover {
+  border: 0.19vh solid #ffffff4d;
+  background-color: #ffffff4d !important;
+}
+#app .registration-personalization-item_active {
+  border: 0.19vh solid #ffffff80 !important;
+  background-color: var(--buttom-bg-active) !important;
+}
+#app .registration-personalization-item__skin {
+  
+  max-width: unset;
+  max-height: unset;
+}
+#app .login-head__username:before,
+#app .authorization-field:before {
+  content: "Введите логин*";
+  position: absolute;
+  left: 0;
+  top: -3vh;
+  font-size: 1.67vh;
+  line-height: 100%;
+  color: #ffffffb3;
+  background: none;
+  width: 100%;
+  margin-bottom: 1.11vh;
+  height: auto;
+}
+#app .login-auth .authorization-field:before {
+  content: "Введите пароль*";
+}
+#app .login-code .authorization-field:before {
+  content: "Введите значение*";
+}
+#app .registration-bonuses .authorization-field:before {
+  content: "Введите ник пригласившего (или пропустите)*";
+}
+#app .registration-form > div:nth-child(1) .authorization-field:before {
+  content: "Введите e-mail*";
+}
+#app .registration-form > div:nth-child(2) .authorization-field:before {
+  content: "Придумайте пароль (мин. 6 символов)*";
+}
+#app .registration-form > div:nth-child(3) .authorization-field:before {
+  content: "Повторите пароль*";
+}
+#app .authorization .login {
+  margin-top: -10vh;
+  margin-left: 10vh;
+}
+#app .registration {
+  
+  margin-left: 10vh;
+}
+#app .registration__title {
+  color: #ffffff;
+}
+#app .registration__title-icon {
+  display: none;
+}
+#app .registration .authorization-field {
+  margin-top: 6vh;
+}
+#app .registration-personalization-container {
+  width: 100%;
+  margin-top: 2vh;
+}
+#app .registration-personalization-switcher {
+  margin-top: 2vh;
+}
+#app .registration-form__confirm {
+  align-items: flex-start;
+  flex-direction: column;
+}
+#app .login-auth .login-head {
+  margin: 0;
+}
+
+#app .scrollable-container-thumb_type_2.scrollable-container-thumb_horizontal,
+#app .scrollable-container-thumb_type_3.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_4.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_5.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_6.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_7.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_8.scrollable-container-thumb_horizontal,
+#app .scrollable-container-thumb_type_2.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_3.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_4.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_5.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_6.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_7.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_8.scrollable-container-thumb_vertical  {
+  background-color: var(--color);
+}
+#app .scrollable-container_type_3 .scrollable-container__rail .scrollable-container__rail-background {
+  background-color: var(--color-30);
+}
+

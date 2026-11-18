@@ -1,0 +1,1396 @@
+
+body {
+    font-family: var(--font-famaly-all);
+  }
+
+#app .hud-radmir-radar {
+  left: 7.5vh;
+}
+
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-radmir-wanted {
+  display: none;
+}
+
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  }
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  }
+  @font-face {
+  font-family: GothamPro;
+  src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  }
+  @font-face {
+  font-family: ALSRubl;
+  src: url(./fonts/ALSRubl.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  }
+  @font-face {
+    font-family: Ubuntu;
+    font-weight: 700;
+    font-style: normal;
+    src: url(./fonts/Ubuntu-Bold.ttf) format("truetype");
+  }
+  @font-face {
+    font-family: Ubuntu;
+    font-weight: 500;
+    font-style: normal;
+    src: url(./fonts/Ubuntu-Medium.ttf) format("truetype");
+  }
+
+  :root {
+  --bg: #000;
+    --bg-20: #00000033;
+    --bg-40: #00000066;
+    --bg-50: #00000080;
+    --bg-60: #00000099;
+    --bg-80: #000000cc;
+    
+  --color: #fff;
+    --color-10: #ffffff1a;
+    --color-30: #ffffff4d;
+  
+  --font-famaly-all: GothamPro, "Open Sans";
+
+  --all-bg: rgb(0 0 0 / 70%);
+  --text-shadow: 0.1852vh 0.1389vh 0 #000000, 0 -0.0463vh 0 #000000, 0 0.0463vh 0 #000000,
+    0 -0.0463vh 0 #000000, 0.0463vh 0 0 #000000, 0.0463vh 0 0 #000000, -0.0463vh 0 0 #000000,
+    0.0463vh 0 0 #000000, -0.0463vh -0.0463vh 0 #000000, 0.0463vh -0.0463vh 0 #000000,
+    -0.0463vh 0.0463vh 0 #000000, 0.0463vh 0.0463vh 0 #000000, -0.0463vh -0.0463vh 0 #000000,
+    0.0463vh -0.0463vh 0 #000000, -0.0463vh 0.0463vh 0 #000000, 0.0463vh 0.0463vh 0 #000000;
+  --border-1: #01AB4A;
+  }
+
+  .ONEAS-hud {  
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+  }
+  .ONEAS-hud-bottom {
+    position: absolute;
+    transform-origin: bottom left;
+    left: 1.2vh;
+    bottom: 4.7vh;
+    display: flex;
+  }
+  .ONEAS-hud-base {
+    transform-origin: top right;
+    position: absolute;
+    right: 1vh;
+    top: 0;
+  }
+
+  .ONEAS-hud__info {
+    position: absolute;
+    top: 8.3333vh;
+    right: 1.7593vh;
+    transform: scale(0.85);
+    right: 0;
+    transition: all .35s ease;
+  }
+  .ONEAS-hud-info__bg {
+    width: 40.2778vh;
+    height: 18.6111vh;
+  }
+  .ONEAS-param, 
+  .ONEAS-hud__cash, 
+  .ONEAS-hud__time, 
+  #ONEAS-ammo__in-clip, 
+  .ONEAS-param__freeze .ONEAS-param__amount {
+    filter: drop-shadow(0 0 0.1852vh rgba(0, 0, 0, 0.8));
+  }
+
+  .ONEAS-hud__time {
+    position: absolute;
+    bottom: 1.2037vh;
+    left: 2.7778vh;
+    display: none;
+    align-items: center;
+}
+
+.ONEAS-data {
+display: none;
+}
+
+.ONEAS-time {
+    width: 13.8889vh;
+    margin-left: 0.4167vh;
+}
+
+body .ONEAS-hud__radar-border {
+  position: relative;
+  transform-origin: unset;
+  left: auto;
+  bottom: auto;
+  margin-bottom: -0.7vh;
+  margin-left: -0.6vh;
+  z-index: -1;
+}
+
+.ONEAS-hud__radar-border {
+  position: absolute;
+  transform-origin: bottom left;
+  left: 8.6vh;
+  bottom: 4.7vh;
+  
+}
+.ONEAS-radar__images {
+  width: 23vh;
+  height: 22.7vh;
+}
+
+  .ONEAS-hud__green-zone {
+    position: absolute;
+    transform-origin: bottom left;
+    left: 3vh;
+    bottom: 5vh;
+    transition: all .35s ease;
+  }
+  .ONEAS-green-zone__image {
+    width: 5.3704vh;
+    height: 5.3704vh;
+  }
+
+  .ONEAS-hud__logo {
+    position: absolute;
+    top: 2.9630vh;
+    right: 3.8889vh;
+    transform-origin: top right;
+  }
+  .ONEAS-logo__image {
+    width: 18.5185vh;
+    height: 6.4815vh;
+  }
+  .ONEAS-logo__bonus {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-size: 4.2637vh;
+    line-height: 6.0185vh;
+    letter-spacing: -0.02em;
+    text-shadow: 0.0463vh 0.0463vh 0.0000vh #000000;
+    background-image: url(oneas-img/hud/bonus.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 6.8519vh;
+    height: 5.9259vh;
+    transform: scale(0.8) rotate(-5deg);
+    color: white;
+    position: absolute;
+    top: -0.2778vh;
+    left: -8.7963vh;
+    text-align: center;
+  }
+
+  .ONEAS-weapon__icon {
+    width: 18.4259vh;
+    height: 18.4259vh;
+  }
+  .ONEAS-hud__weapon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+  }
+  .ONEAS-weapon__ammo {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.9630vh;
+    line-height: 3.4259vh;
+    letter-spacing: -0.02em;
+    color: white;
+    position: absolute;
+    bottom: -3.8889vh;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .ONEAS-weapon__ammo #ONEAS-ammo__in-clip {
+    margin-right: 0.2778vh;
+  }
+  .ONEAS-weapon__ammo #ONEAS-ammo__total {
+    color: #0000004d;
+    margin-left: 0.9259vh;
+  }
+  .ONEAS-weapon__ammo #ONEAS-ammo__total:before {
+    content: "/";
+    margin-right: 0.3704vh;
+  }
+
+  .ONEAS-hud__wanted {
+    transition: all .35s ease;
+    position: absolute;
+    right: 1.4815vh;
+    top: 9.6296vh;
+    top: 1.2963vh;
+    right: -3.5185vh;
+    right: -3.7037vh;
+    transform: scale(1.18);
+  }
+  .ONEAS-wanted__row {
+    display: flex;
+    flex-direction: column;
+  }
+  .ONEAS-wanted__row > img {
+    width: 2.7778vh;
+    height: 2.7778vh;
+  }
+  .ONEAS-wanted__row #ONEAS-wanted-1 {
+    margin-left: -2.1296vh;
+    margin-bottom: -0.0926vh;
+  }
+  .ONEAS-wanted__row #ONEAS-wanted-2 {
+    margin-left: -0.7407vh;
+  }
+  .ONEAS-wanted__row #ONEAS-wanted-5 {
+    margin-left: -0.7407vh;
+  }
+  .ONEAS-wanted__row #ONEAS-wanted-6 {
+    margin-left: -2.1296vh;
+    margin-top: -0.0926vh;
+  }
+  
+  .ONEAS-hud__wanted--always-show .ONEAS-wanted__inactive {
+    opacity: 0;
+  }
+
+  .ONEAS-hud__cash {
+
+    position: absolute; 
+    display: flex;
+    left: 4.9074vh;
+    bottom: 5.3704vh;
+    
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 16.0185vh;
+  }
+  
+  .ONEAS-hud__cash #ONEAS-cash__value::before {
+    content: "u";
+    font-family: "ALSRubl";
+    font-weight: 400;
+    margin-right: 0.7407vh;
+    margin-top: -0.1852vh;
+  }
+  
+  .ONEAS-hud__cash #ONEAS-cash__value, .ONEAS-hud__time {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.2222vh;
+    line-height: 2.5926vh;
+    color: #ffffff;  
+    display: flex;
+  }
+
+  .ONEAS-hud__params {
+    display: flex;
+    flex-direction: column-reverse;
+    position: absolute;
+    top: 2.1296vh;
+    left: 3.3333vh;
+    justify-content: center;
+  }
+  .ONEAS-param {
+    display: flex;
+    align-items: center;
+    
+  }
+  .ONEAS-param:last-child {
+    margin-top: 0.2vh;
+  }
+  .ONEAS-param__amount {
+    font-family: "Ubuntu", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.6861vh;
+    line-height: 1.7593vh;
+    letter-spacing: -0.02em;
+    color: white;
+    width: 5.2778vh;
+    
+    text-align: center;
+    margin-bottom: 0.1852vh;
+    display: flex;
+    justify-content: center;
+  }
+  .ONEAS-param__progress,
+  .ONEAS-progress__value {
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    transition: all .35s ease;
+    height: 100%;
+  }
+  .ONEAS-param__progress {
+    display: flex;
+    justify-content: flex-end;
+    width: 10.7407vh;
+    height: 0.8333vh;
+  }
+
+  .ONEAS-param__icon {
+    width: 2.7778vh;
+    height: 2.7778vh;
+  }
+  .show-values .ONEAS-param__amount {
+    opacity: 1;
+  }
+
+.ONEAS-param__health {
+    margin-left: 1.1111vh;
+}
+  .ONEAS-param__health .ONEAS-param__progress {  
+    background-image: url(oneas-img/hud/health-progress_bg.svg);
+  }
+  .ONEAS-param__health .ONEAS-progress__value {    
+    background-image: url(oneas-img/hud/health-progress.svg);
+  }
+
+  .ONEAS-param__hunger {
+    margin-left: 3.2407vh;
+  }
+  .ONEAS-param__hunger .ONEAS-param__progress {    
+    background-image: url(oneas-img/hud/hunger-progress_bg.svg);
+  }
+  .ONEAS-param__hunger .ONEAS-progress__value {    
+    background-image: url(oneas-img/hud/hunger-progress.svg);
+  }
+
+  .ONEAS-param__armour {
+    margin-left: 2.1296vh;
+  }
+  .ONEAS-param__armour .ONEAS-param__progress {    
+    background-image: url(oneas-img/hud/armour-progress_bg.svg);
+  }
+  .ONEAS-param__armour .ONEAS-progress__value {    
+    background-image: url(oneas-img/hud/armour-progress.svg);
+  }
+
+  .ONEAS-param__freeze {
+    margin-right: -5vh;
+    margin-top: 1.5vh;
+    background: url(oneas-img/hud/freeze-bg.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 13.3333vh;
+    height: 4.2593vh;
+    justify-content: center;
+    filter: none !important;
+  }
+  
+  .ONEAS-param__freeze .ONEAS-param__amount {
+    width: 3.6111vh;
+  }
+  
+  .ONEAS-param__freeze .ONEAS-param__icon {
+    width: 1.9444vh;
+    height: 1.9444vh;
+    margin-left: -2.3148vh;
+  }
+
+  .ONEAS-speedometer {
+    position: absolute;
+    right: 28.7037vh;
+    right: 5.7vh;
+    bottom: -64.8148vh;
+    display: flex;
+    transform-origin: bottom right;
+    transition: all .35s ease;
+    color: white;
+    font-family: var(--font-famaly-all);
+    flex-direction: row-reverse;
+    z-index: -1;
+  }
+
+  @keyframes turn {
+    0% {
+      opacity: 0.5;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes speed {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .ONEAS-speedometer-bg {
+    
+    z-index: -1;
+    width: 30.6481vh;
+    height: 15.2778vh;
+  }
+  
+  .ONEAS-speedometer__speed-params {
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    bottom: 2.4074vh;
+    right: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ONEAS-speedometer__turns {
+    display: flex;
+    margin-top: 0.2778vh;
+  }
+  
+  .ONEAS-speedometer__turns > div {
+    width: 2.3148vh;
+    height: 1.3889vh;
+    mask-image: url(oneas-img/speed/turn.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    background-color: #ffffff;
+    opacity: 0.5;
+  }
+  
+  .ONEAS-speedometer-turn__right {
+    transform: rotate(180deg);
+    margin-left: 0.4630vh;
+  }
+  
+  .ONEAS-speedometer-turn--active {
+    animation: turn 0.4s linear 0s infinite alternate;
+  }
+
+  .ONEAS-speedometer__speed {
+    position: absolute;
+  }
+  .ONEAS-speedometer-speed__bar-bg,
+  .ONEAS-speedometer-speed__bar {
+    position: absolute;
+    top: 0.2778vh;
+    right: 0.3704vh;
+  }
+  
+  .ONEAS-speedometer-speed__bar,
+  .ONEAS-speedometer-speed__bar-bg {
+    width: 14.7222vh;
+    height: 13.6111vh;
+  }
+  
+  .ONEAS-speedometer-speed__bar {
+
+    z-index: 1;
+    filter: drop-shadow(0.0000vh 0.0000vh 0.9259vh rgb(255 255 255 / 50%));
+  }
+  .ONEAS-speedometer-speed__data {
+    position: absolute;
+    text-align: center;
+    top: 4.4444vh;
+    right: 0;
+    width: 15.3704vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ONEAS-speedometer-speed__value {
+    font-weight: 700;
+    font-size: 3.7037vh;
+    line-height: 3.9815vh;
+    letter-spacing: -0.02em;
+  }
+  
+  .ONEAS-speedometer-speed__text {
+    font-weight: 300;
+    font-size: 1.4815vh;
+    line-height: 1.4815vh;
+    letter-spacing: -0.02em;
+  }
+
+  .ONEAS-speedometer__params {
+    display: flex;
+    position: absolute;
+    bottom: 0.2778vh;
+    left: 2.7778vh;
+    width: 40%;
+    justify-content: space-around;
+  }
+  .ONEAS-speedometer__params > div {
+    
+    height: 2.9630vh;
+    mask-size: contain;
+    background-color: #ffffff;
+    opacity: 0.5;
+    mask-repeat: no-repeat;
+  }
+  .ONEAS-speedometer__params > div.ONEAS-spedometer-param--active {
+    opacity: 1;
+  }
+
+  .ONEAS-spedometer-param__key {
+    mask-image: url(oneas-img/speed/engine_icon.svg);
+    width: 1.2037vh;
+  }
+
+  .ONEAS-spedometer-param__doors {
+    mask-image: url(oneas-img/speed/door_icon.svg);
+    width: 1.5741vh;
+    margin-top: 0.0926vh;
+  }
+
+  .ONEAS-spedometer-param__rem {
+    mask-image: url(oneas-img/speed/rem_icon.svg);
+    width: 1.9444vh;
+  }
+
+  .ONEAS-spedometer-param__lights {
+    mask-image: url(oneas-img/speed/light_icon.svg);
+    width: 1.9444vh;
+    margin-top: 0.2778vh;
+  }
+
+  .ONEAS-speedometer-data__text {
+    font-size: 1.6667vh;
+    line-height: 1.5741vh;
+    letter-spacing: -0.02em;
+    font-weight: 900;
+    display: flex;
+  }
+
+  .ONEAS-speedometer__fuel {
+    width: 35%;
+    position: absolute;
+    left: 3.7037vh;
+    bottom: 5.3704vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .ONEAS-speedometer-fuel__icon {
+    margin-right: 0.3704vh;
+    width: 1.4815vh;
+    height: 1.6667vh;
+    background-color: #ffffff;
+    mask-repeat: no-repeat;
+    mask-image: url(oneas-img/speed/fuel_icon.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+  }
+  .ONEAS-speedometer-fuel__value {
+    margin-right: 0.2778vh;
+  }
+
+  .ONEAS-speedometer-wash__bar,
+  .ONEAS-speedometer-wash__bar-bg {
+    width: 10.2778vh;
+    height: 11.2037vh;
+  }
+  .ONEAS-speedometer__wash {
+    bottom: 0.2778vh;
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+  }
+  .ONEAS-speedometer-wash__icon {
+    mask-image: url(oneas-img/speed/wash_icon.svg);
+    width: 1.5741vh;
+    height: 1.5741vh;
+    background-color: #ffffff;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    position: absolute;
+    right: -1.2037vh;
+    top: -0.5556vh;
+  }
+  .ONEAS-speedometer-data__wash {
+    position: relative;
+    bottom: -1.3889vh;
+    right: -1.0185vh;
+  }
+  .ONEAS-speedometer-wash__bar {
+    z-index: 1;
+    position: absolute;
+    filter: drop-shadow(0.0000vh 0.0000vh 0.9259vh rgb(255 255 255 / 50%));
+    
+  }
+
+  .ONEAS-speedometer-damage__bar,
+  .ONEAS-speedometer-damage__bar-bg {
+    width: 14.9074vh;
+    height: 4.4444vh;
+  }
+  .ONEAS-speedometer__damage {
+    top: -0.2778vh;
+    position: absolute;
+    display: flex;
+    align-items: flex-end;
+  }
+  .ONEAS-speedometer-damage__icon {
+    mask-image: url(oneas-img/speed/damage_icon.svg);
+    width: 1.5741vh;
+    height: 1.5741vh;
+    background-color: #ffffff;
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    position: absolute;
+    right: 15.0926vh;
+    top: 3.5185vh;
+  }
+  
+  .ONEAS-speedometer-data__damage {
+    position: absolute;
+    top: -1.2037vh;
+    right: 0.3704vh;
+  }
+  
+  .ONEAS-speedometer-damage__bar {
+    z-index: 1;
+    position: absolute;
+    filter: drop-shadow(0.0000vh 0.0000vh 0.9259vh rgb(255 255 255 / 50%));
+  }
+
+  .ONEAS-speedometer-mileage__value {
+    font-weight: 300;
+    font-size: 1.2037vh;
+    line-height: 1.2037vh;
+  }
+
+  .ONEAS-tachometer-glow .ONEAS-tachometer-value {
+    color: #0fa91f;
+  }
+  
+  .ONEAS-speedometer__tachometer {
+    width: 20.7407vh;
+    height: 8.7963vh;
+    background-image: url(oneas-img/speed/back-tachometer.png);
+    background-size: contain;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    right: 27.7778vh;
+    bottom: 0.2778vh;
+    flex-direction: column;
+    gap: 1.6667vh;
+  }
+  
+  #ONEAS-tachometer-gear {
+    display: flex;
+    align-items: center;
+    margin-left: 1.3889vh;
+  }
+  #ONEAS-tachometer-rpm {
+    display: flex;
+    align-items: center;
+    margin-left: -2.7778vh;
+  }
+  .ONEAS-tachometer-text {
+    color: #fff;
+    font-family: GothamPro;
+    font-size: 1.5000vh;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    letter-spacing: -0.02em;
+    margin-right: 0.5556vh;
+  }
+  .ONEAS-tachometer-value {
+    color: #fff;
+    font-family: GothamPro;
+    font-size: 1.5000vh;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    letter-spacing: -0.02em;
+  }
+
+  .ONEAS-speedometer-danger > div:first-child {
+    background-color: #ea4f3e;
+  }
+  .ONEAS-speedometer-danger .ONEAS-speedometer-data__text,
+  .ONEAS-speedometer-danger > div svg:first-child path {
+    color: #ea4f3e;
+    stroke: #ea4d39;
+  }
+  .ONEAS-speedometer-danger > div:last-child svg {
+    filter: drop-shadow(0.0000vh 0.0000vh 1.3889vh #ea4d39);
+  }
+
+  #app .scrollable-container_type_1 .scrollable-container__rail_y {
+    display: none;
+  }
+  #app .radmir-chat-input__input {
+    padding: 0 1vh;
+    border-radius: 1.2vh;
+    background-color: var(--all-bg);
+    border: 0.18vh solid #01AB4A !important;
+  }
+  #app .radmir-chat-input__input input {
+    color: white !important;
+  }
+  #app .radmir-chat-input__input-lang {
+    border-left: 0.18vh solid #01AB4A !important;
+    
+    padding: 1vh 0 1vh 1vh;
+    color: white !important;
+  }
+  #app .radmir-chat:before {
+    width: 70vw !important;
+    background-image: linear-gradient(148deg, #141414d1 10%, #14141400 50%) !important;
+  }
+  #app .radmir-chat-input__input {
+    padding: 0 0.93vh !important;
+  }
+  #app .radmir-chat_inactive {
+    opacity: 1 !important;
+  }
+
+  #app .vignette {
+    display: none;
+  }
+
+  #app .overlay-container {
+    display: none;
+  }
+
+#app .window .modal-container-wrapper {
+  background: none;
+  background-color: var(--all-bg);
+  border: 0.4vh solid #01AB4A;
+  border-radius: 1.5760vh;
+  box-shadow: none;
+  padding: 0;
+  transform: scale(0.8);
+}
+#app .window .modal-container {
+  border: none;
+  padding: 2.22vh 0;
+  border-radius: 0;
+}
+#app .window .modal__pattern-wrapper {
+  display: none;
+}
+#app .window .modal__title {
+  font-family:  var(--font-famaly-all) ;
+  font-weight: 600;
+  font-size: 2.22vh;
+  line-height: 3.33vh;
+  font-style: normal;
+  color:  var(--color) ;
+  text-transform: none;
+  margin: 0 2.96vh;
+}
+#app .window .window__subtitle {
+  font-family:  var(--font-famaly-all) ;
+  margin: 0 2.96vh;
+}
+#app .window .window__image {
+  border-radius: 0;
+}
+#app .window .scrollable-container__container {
+  mask-image: none !important;
+  width: auto;
+}
+#app .window .window__content-container {
+  min-width: 50vh;
+}
+#app .window[data-dialog-type="2"] .window__content-container {
+  border-top: 0.4vh solid #01AB4A;
+  border-bottom: 0.4vh solid #01AB4A;
+}
+#app .window .window-table__item {  
+  background: none;
+  border: 0 !important;
+  border-radius: 0;
+  margin-top: 0;
+  height: 3.78vh;
+  color: var(--color);
+  box-shadow: none;
+}
+#app .window .window-table__item:hover {
+  background: #ffffff33;
+}
+#app .window .window-table__item.selected {  
+  background-color: var(--color) !important;
+  color: var(--bg) !important;
+}
+#app .window .window-table__col {  
+  justify-content: flex-start;
+  padding-left: 2.96vh;
+}
+#app .window .window-table__item.selected p {
+  color: var(--bg) !important;
+}
+#app .window .window__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.2);
+}
+#app .window .window__buttons .controls-button__container {
+  position: relative;
+}
+#app .window .window__buttons .controls-button {
+  position: absolute;
+  width: 100%;
+}
+#app .window .window__buttons .controls-button-shadow {
+  display: none;
+}
+#app .window .window__buttons .controls-button-background,
+#app .window .window__buttons .controls-button--text,
+#app .window .window__buttons .controls-button-icon {
+  opacity: 0 !important;
+}
+#app .window .window__buttons .controls-button__container-text {
+  background: white;
+  color: #212121;
+  border-radius: 0.75vh;
+  padding: 0.1vh 1.4vh;
+  line-height: 2.31vh;
+  font-weight: 500;
+  font-size: 1.11vh;
+  font-family:  var(--font-famaly-all) ;
+}
+#app .window .window__buttons .controls-button__container:hover .controls-button__container-text {
+  background: #f3f3f3d0 !important;
+  color: #212121 !important;
+}
+#app .window .window__buttons .controls-button__container_disabled {
+  pointer-events: none;
+}
+#app .window .window__buttons .controls-button__container_disabled .controls-button__container-text {
+  opacity: .25;
+}
+#app .window .window-input__text-wrapper,
+#app .window .window-input,
+#app .window .window-text__item,
+#app .window .window__paginate,
+#app .window .window__description {
+  padding-left: 2.96vh;
+  padding-right: 2.96vh;
+}
+#app .window .input-field {
+  background:  #0e4f25cc;
+  box-shadow: 1.3889vh 1.3889vh 1.8519vh #00000033;
+  border-radius: 0.93vh;
+  border: none;
+}
+#app .window .input-field_hoverable:hover {  
+  background:  #0e5c29cc;
+}
+#app .window .input-field_focused,
+#app .window .input-field_hoverable:hover.input-field_focused  {
+  background: #02a849cc;
+}
+#app .window .input-field input,
+#app .window .input-field__placeholder {  
+  font-family:  var(--font-famaly-all);
+  font-weight: 500;
+}
+#app .window .input-field_focused input,
+#app .window .input-field_hoverable:hover.input-field_focuse input,
+#app .window .input-field_focused .input-field__placeholder,
+#app .window .input-field_hoverable:hover.input-field_focuse .input-field__placeholder {  
+  color: #ffffff;
+}
+
+  #app .inventory {
+    background: none;
+    box-sizing: border-box;
+  }
+  #app .inventory__container {
+    justify-content: center;
+  }
+  #app .inventory-main,
+  #app .inventory-extra__container,
+  #app .inventory-action__modal {
+    padding: 2vh;
+    background-color: var(--all-bg);
+    border: 0.18vh solid #01AB4A;
+    border-radius: 1vh;
+  }
+  #app .inventory-extra {
+    margin-bottom: 0;
+    margin-left: 1vh;
+  }
+  #app .inventory-main__before,
+  #app .inventory-main__after {
+    display: none;
+  }
+  #app .inventory-container__box {
+    background-color: #00000033;
+    border-radius: 1vh;
+  }
+  #app .inventory-container__slot {
+
+    background: linear-gradient(180deg, #01ab4ad4 0, #0e1a12 100%);
+    
+  }
+  
+  #app .inventory-container__slot:hover {
+    background: linear-gradient(180deg, #01ab4ad4 0, #0e1a12 100%);
+  }
+  
+  #app .inventory-capacity {
+    background: linear-gradient(180deg, #01ab4ad4 0, #0e1a12 100%);
+
+  }
+  #app .inventory-container__slot,
+  #app .inventory-capacity,
+  #app .inventory-container__slot:before,
+  #app .inventory-action__item__icon,
+  #app .inventory-capacity__bar__fill,
+  #app .inventory-wear__bar__fill {
+    border-radius: 1vh;
+  }
+  #app .inventory-player {
+    border: none;
+  }
+  #app .inventory-capacity,
+  #app .inventory-action .inventory-item-value, 
+  #app .inventory-action .inventory-wear {
+    box-sizing: border-box;
+  }
+  #app .inventory-action .inventory-wear {
+    height: 4vh;
+  }
+  #app .inventory-capacity__bar,
+  #app .inventory-wear__bar {
+    background-color: #f4f1e133;
+    border-radius: 1vh;
+    position: relative;
+    bottom: -0.5vh;
+  }
+  #app .inventory-extra__content {
+    padding-bottom: 0.833vw;
+  }
+  .inventory-container__info__container-wrapper > div {
+    padding-top: 0.8vh;
+    background-color: var(--all-bg);
+    border: 0.18vh solid #01AB4A;
+    border-radius: 1vh;
+  }
+  .inventory-container__info__container-wrapper .inventory-container__actions {
+    border-bottom-left-radius: 1vh;
+    border-bottom-right-radius: 1vh;
+    overflow: hidden;
+  }
+  #app .inventory-extra__container:not(:first-child) {
+      margin-left: 1vh;
+  }
+  #app .inventory-item-value,
+  #app .inventory-wear {
+    background: rgb(244 241 225 / 20%);
+  }
+  #app .inventory-action__item__icon {
+    
+    background: rgb(244 241 225 / 20%);
+  }
+  #app .inventory-container__slot-image,
+  #app .inventory-container__count {
+    z-index: 1;
+  }
+
+  #app .trade-items {
+    background: none;
+  }
+  #app .trade-items__container {
+    margin-bottom: 5vh;
+  }
+  #app .trade-items-main__content { 
+    background-color: var(--all-bg);
+    border: 0.18vh solid #01AB4A;
+    border-radius: 1vh;
+    padding: 2vh;
+  }
+  #app .trade-items-main__action, 
+  #app .trade-items-main__stop {
+    border-radius: 1vh;
+  }
+
+  #app .fuel__container {
+    padding: 3.33vh 2.96vh;
+    background-color: var(--all-bg);
+    border: 4.05px solid #01AB4A;
+    border-radius: 1vh;
+  }
+  #app .fuel__title {
+    font-size: 2.04vh;
+    line-height: 1.94vh;
+    color: #fff;
+    text-align: left;
+  }
+  #app .fuel__close {
+    left: auto !important;
+    top: -0.5vh !important;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  #app .controls-close--text {
+    margin-right: 0.74vh;
+  }
+
+  #app .info-card {  
+    background: none;
+    background-color: var(--all-bg);
+    border: 4.05px solid #01AB4A;
+    border-radius: 1vh;
+  }
+  #app .info-card__data {
+    filter: grayscale(1);
+  }
+  #app .info-card__head img.icon {
+    display: none;
+  }
+
+  #app .casino-rullet-confirm-bet {
+    background-color: var(--all-bg);
+    border: 0.3750vh solid #01AB4A !important;
+    padding: 2vh;
+    border-radius: 1vh;
+  }
+  #app .casino-rullet-confirm-bet__button {  
+    border-radius: 1vh;
+  }
+
+  #app .black-market {
+    background: none;
+  }
+  #app .black-market__container {
+    background-color: var(--all-bg);
+    border: 0.18vh solid #01AB4A !important;
+    padding: 2vh;
+    border-radius: 1vh;
+    right: 3vh;
+  }
+  #app .black-market__button {
+    border-radius: 1vh;
+  }
+
+  #app .death {
+    background: none;
+  }
+  #app .death-container {
+    position: absolute;
+    bottom: 16vh;
+  }
+  #app .death-desc {
+    font-size: 0;
+  }
+  #app .death-waves {
+    display: none;
+  }
+
+  #app .main-menu__header {
+    background: none !important;
+    background-color: var(--all-bg) !important;
+    border-bottom: 4.05px solid #01AB4A !important;
+  }
+  
+  #app .main-menu__footer {
+    background: none !important;
+    background-color: var(--all-bg) !important;
+    border-top: 4.05px solid #01AB4A !important;
+  }
+  
+  #app .main-menu__content {
+    background: none !important;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+  }
+
+  #app .authorization {
+    background: none;
+  }
+  #app .authorization__gradient {
+    background: linear-gradient(180deg, #01ab4ad4 0, #0e1a12 100%);
+  }
+  #app .login-head__subtitle {
+    color: transparent;
+    opacity: 1;
+  }
+  #app .login-auth .login-head__subtitle:before {
+    content: "С ВОЗВРАЩЕНИЕМ НА RADMIR";
+    display: block;
+    width: 60vh;
+    font-size: 5.74vh;
+    font-weight: 900;
+    line-height: 100%;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 4.48vh;
+    font-style: normal;
+    font-family: var(--font-famaly-all);
+  }
+  #app .login-auth .login-head__subtitle:after {
+    content: "";
+    width: 9.72vh;
+    height: 0.93vh;
+    border-radius: 0.74vh;
+    background: #ffffff;
+    display: block;
+  }
+  #app .login-head__username,
+  #app .authorization-field {
+    height: 4.63vh;
+    box-sizing: border-box;
+    border: 0.19vh solid #ffffff91;
+    border-radius: 0.74vh;
+    
+    color: #ffffffd6;
+    font-size: 1.3vh;
+    width: 46.48vh;
+    position: relative;
+    font-weight: 400;
+    background: #00000054;
+    font-family: var(--font-famaly-all);
+  }
+  #app .login-auth .login-head__username,
+  #app .login-auth .authorization-field {
+    margin-top: 7.89vh;
+  }
+  #app .login-head-icon {
+    display: none;
+  }
+  #app .login-head__username,
+  #app .authorization-field__box {
+    
+    padding: 0.5vh 1.67vh 0.4vh;
+  }
+  #app .authorization-field__box {
+    border: none;
+  }
+  #app .authorization-field__lang,
+  #app .authorization-field__icon {
+    right: 1.5vh;
+  }
+  #app .authorization-field__input {
+    color: #ffffffd6 !important;
+    font-size: 1.3vh;
+    border: none !important;
+    font-family: var(--font-famaly-all);
+    padding-bottom: 0;
+  }
+  #app .authorization-field__input-placeholder {
+    opacity: 0;
+  }
+  .login-form__suggestion-wrapper .login-form-push {
+    background-color: var(--bg-60);
+    border-radius: 1vh;
+  }
+  .login-form__suggestion-wrapper .login-form-push:before {
+    border-right-width: 1.11vh;
+    border-right-style: solid;
+    border-right-color:  var(--bg-60);
+    left: 0.05vh;
+    top: 0;
+    opacity: 1;
+  }
+  #app .login-form__button,
+  #app .registration-form__button,
+  #app .registration-personalization__button,
+  #app .registration-bonuses__button {
+    padding: 0 4.63vh;
+    height: 6.11vh;
+    border-radius: 0.74vh;
+    font-family: var(--font-famaly-all);
+    line-height: 6.11vh;
+    font-size: 2.04vh;
+    font-weight: 500;
+    width: 17vh;
+    text-transform: inherit;
+  }
+  #app .registration-personalization__button {
+    width: 24vh;
+  }
+  #app .registration-bonuses__button {
+    width: 36vh;
+  }
+  #app .registration-form__button-background,
+  #app .registration-bonuses__button-background {  
+    border-radius: 0.74vh;
+  }
+  #app .login-form,
+  #app .registration-form,
+  #app .registration-personalization,
+  #app .registration-bonuses {
+    width: 46.48vh;
+  }
+  #app .registration-personalization-switcher__button {
+    width: 6.11vh;
+    height: 6.11vh;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.74vh;
+    cursor: pointer;
+    margin-left: 1.11vh;
+    transition-duration: .25s;
+    padding: 0;
+  }
+  #app .registration-personalization-switcher__text {
+    display: none;
+  }
+  #app .registration-personalization-switcher__icon {
+    width: 2vh;
+    height: 2vh;
+    margin: 0;
+  }
+  #app
+    .registration-personalization-switcher
+    > div.registration-personalization-switcher__button:first-child {
+    border: 0.19vh solid #527ff1;
+    background: none;
+    margin: 0;
+  }
+  #app
+    .registration-personalization-switcher
+    > div.registration-personalization-switcher__button_active:first-child {
+    background: #527ff1 !important;
+  }
+  #app
+    .registration-personalization-switcher
+    > div.registration-personalization-switcher__button:last-child {
+    border: 0.19vh solid #d152f1;
+    background: none;
+  }
+  #app
+    .registration-personalization-switcher
+    > div.registration-personalization-switcher__button_active:last-child {
+    background: #d152f1 !important;
+  }
+  #app .registration-personalization-switcher__icon {
+    fill: white;
+  }
+  #app .registration-personalization-item {
+    width: 13.33vh;
+    height: 16.85vh;
+    border-radius: 0.74vh;
+    border: 0.19vh solid #ffffff69;
+    background: none;
+  }
+  #app .registration-personalization-item:hover {
+    border: 0.19vh solid #ffffff;
+    background: none !important;
+  }
+  #app .registration-personalization-item_active {
+    border: 0.19vh solid #ffb200 !important;
+    background: none !important;
+  }
+  #app .login-head__username:before,
+  #app .authorization-field:before {
+    content: "Введите логин*";
+    position: absolute;
+    left: 0;
+    top: -3vh;
+    font-size: 1.67vh;
+    line-height: 100%;
+    color: #ffffffb3;
+    background: none;
+    width: 100%;
+    margin-bottom: 1.11vh;
+    height: auto;
+  }
+  #app .login-auth .authorization-field:before {
+    content: "Введите пароль*";
+  }
+  #app .login-code .authorization-field:before {
+    content: "Введите значение*";
+  }
+  #app .registration-bonuses .authorization-field:before {
+    content: "Введите ник пригласившего (или пропустите)*";
+  }
+  #app .registration-form > div:nth-child(1) .authorization-field:before {
+    content: "Введите e-mail*";
+  }
+  #app .registration-form > div:nth-child(2) .authorization-field:before {
+    content: "Придумайте пароль (мин. 6 символов)*";
+  }
+  #app .registration-form > div:nth-child(3) .authorization-field:before {
+    content: "Повторите пароль*";
+  }
+  #app .authorization .login {
+    margin-top: -10vh;
+    margin-left: 10vh;
+  }
+  #app .registration {
+    
+    margin-left: 10vh;
+  }
+  #app .registration__title {
+    color: #ffffff;
+  }
+  #app .registration__title-icon {
+    display: none;
+  }
+  #app .registration .authorization-field {
+    margin-top: 6vh;
+  }
+  #app .registration-personalization-container {
+    width: 100%;
+    margin-top: 2vh;
+  }
+  #app .registration-personalization-switcher {
+    margin-top: 2vh;
+  }
+  #app .registration-form__confirm {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #app .login-auth .login-head {
+    margin: 0;
+  }
+
+  

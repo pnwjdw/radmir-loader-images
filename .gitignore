@@ -1,0 +1,4 @@
+/target/
+/bin/
+init.ini
+*.tmp

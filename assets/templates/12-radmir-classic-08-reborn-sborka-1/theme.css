@@ -1,0 +1,1174 @@
+
+body {
+  font-family: var(--font-famaly-all);
+}
+
+#app .jsl-select {
+  width: 36.48vh;
+}
+#app .jsl-select__value {
+  overflow: visible;
+}
+#app .hud-radmir-wanted {
+display: none;
+}
+
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+font-weight: 900;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+font-weight: 900;
+font-style: italic;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+font-weight: 500;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+font-family: ALSRubl;
+src: url(./fonts/ALSRubl.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+
+:root {
+--bg: #000;
+  --bg-20: #00000033;
+  --bg-40: #00000066;
+  --bg-50: #00000080;
+  --bg-60: #00000099;
+  --bg-80: #000000cc;
+  
+--color: #fff;
+  --color-10: #ffffff1a;
+  --color-30: #ffffff4d;
+
+--font-famaly-all: GothamPro, "Open Sans";
+
+}
+
+.ONEAS-hud {  
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.ONEAS-hud-info {
+  transform-origin: top right;
+  position: absolute;
+  right: 0vh;
+  top: 1.85vh;
+}
+
+.ONEAS-hud-bottom {
+  position: absolute;
+  transform-origin: bottom left;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#app .hud-radmir-radar {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: 0% 100% 0px;
+  width: 23vh;
+  height: 23vh;
+  left: 9.2vh;
+  bottom: 4.5vh;
+  transform: scale3d(0.9, 0.9, 1);
+  border-radius: 1vh;
+}
+#app .hud-radmir-radar__radar,
+#app .hud-hassle-map,
+#app .hud-hassle-map .map-mask {
+  border-radius: 0;
+}
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-hassle-map .map-mask {
+height: 200% !important;
+width: 200% !important;
+}
+
+.ONEAS-radar-border {
+  width: 36.4815vh;
+  height: 29.7222vh;
+  background-size: contain;
+  background-position-y: 50%;
+  background-image: url(oneas-img/hud/border-1.png);
+  transform: scale3d(0.97, 1.04, 1);
+}
+
+.ONEAS-green-zone {
+  display: flex;
+  align-items: center;
+  margin-left: 7.6296vh;
+  margin-bottom: -0.7037vh;
+}
+
+body.shape-minimap-2 .ONEAS-radar-border,
+body.shape-minimap-3 .ONEAS-radar-border {
+  background-image: url(oneas-img/hud/border-2.png);
+  transform: none;
+}
+
+body.shape-minimap-2 #app .hud-radmir-radar {
+  width: 28.7vh;
+  height: 18.5vh;
+  left: 4.9vh;
+  bottom: 3.9vh;
+  border-radius: 1.6667vh;
+  transform: none;
+}
+
+body.shape-minimap-2 .ONEAS-green-zone,
+body.shape-minimap-3 .ONEAS-green-zone {
+  margin-left: 4.5vh;
+  margin-bottom: -3.4074vh;
+}
+
+body.shape-minimap-3 #app .hud-radmir-radar {
+  width: 28.7vh;
+  height: 24vh;
+  left: 4.9vh;
+  bottom: 3.9vh;
+  border-radius: 1.6667vh;
+  transform: scale3d(1, 0.764, 1);
+}
+
+.ONEAS-green-zone__image {
+  margin-right: 0.9259vh;
+  width: 3.2407vh;
+  height: 4.1667vh;
+}
+
+.ONEAS-green-zone__text {
+  color: #fff;
+  text-shadow: 0.2778vh 0.2778vh 0.4630vh #00000080;
+}
+
+.ONEAS-green-zone__text div:first-child {
+  font-size: 1.2037vh;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.ONEAS-green-zone__text div:last-child {
+  color: #ffffffb3;
+  font-size: 1.1111vh;
+  font-weight: 500;
+  margin-top: 0.4630vh;
+}
+
+.ONEAS-logo {
+  position: absolute;
+  right: 4vh;
+  top: 3vh;
+  transform-origin: top right;
+}
+
+.ONEAS-logo__image {
+  width: 18.5185vh;
+  height: 5.0926vh;
+}
+
+.ONEAS-logo__bonus {
+  background: radial-gradient(
+      93.1% 93.1% at 126.72% 6.9%,
+      #eb00ff 0,
+      #eb00ff00 100%
+    ),
+    linear-gradient(129.39deg, #f5be09 30.88%, #e9651b 98.06%);
+  width: 2.9630vh;
+  height: 2.9630vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4815vh;
+  color: #fff;
+  font-weight: 700;
+  position: absolute;
+  bottom: -0.4630vh;
+  right: -0.1852vh;
+  border-radius: 50%;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.ONEAS-weapon__back {
+  position: absolute;
+  right: 5.5556vh;
+  top: 11.1111vh;
+  width: 37.0370vh;
+  height: 16.6667vh;
+}
+
+.ONEAS-weapon__icon {
+  position: absolute;
+  right: 6.2963vh;
+  top: 12.0370vh;
+  width: 13.9815vh;
+  height: 13.9815vh;
+}
+
+.ONEAS-weapon__ammo {
+  position: absolute;
+  right: 8.3333vh;
+  top: 22.2222vh;
+  color: #fff;
+  width: 7.4074vh;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.ONEAS-weapon__ammo #ONEAS-ammo__in-clip {
+  font-family: GothamPro;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 2.3148vh;
+  margin-right: 0.7407vh;
+  text-shadow: 0 0 0.4630vh #00000080;
+}
+
+.ONEAS-weapon__ammo #ONEAS-ammo__total {
+  font-family: GothamPro;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.6667vh;
+  text-shadow: 0 0 0.4630vh #000000b3;
+  margin-top: 0.4630vh;
+}
+
+.ONEAS-wanted {
+  position: absolute;
+  right: 4.6296vh;
+  top: 23.1481vh;
+}
+
+.ONEAS-wanted__back {
+  position: absolute;
+  right: 0;
+  top: 2.3148vh;
+}
+
+.ONEAS-wanted__row {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  right: 1.3889vh;
+  top: 2.9630vh;
+}
+
+.ONEAS-wanted__row > img {
+  width: 1.7593vh;
+  height: 1.5741vh;
+  margin: 0.1852vh 0.2778vh 0.1852vh 0.2778vh;
+}
+
+.ONEAS-wanted__inactive {
+  opacity: 0.3;
+}
+
+.ONEAS-cash {
+  position: absolute;
+  right: 22.2222vh;
+  top: 12.7778vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ONEAS-cash__icon {
+  margin-right: 1.2037vh;
+  margin-top: 0.0926vh;
+  width: 2.5926vh;
+  height: 2.5926vh;
+}
+
+.ONEAS-cash #ONEAS-cash__value {
+  font-family: GothamPro;
+  font-weight: 900;
+  font-style: italic;
+  color: #fff;
+  display: inline-block;
+  font-size: 2.5926vh;
+  text-shadow: 0 0 0.4630vh #00000080;
+}
+
+.ONEAS-params {
+  width: 17.5926vh;
+  position: absolute;
+  top: 16.6667vh;
+  right: 20.3704vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2778vh;
+}
+
+.ONEAS-param {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.ONEAS-param__icon {
+  margin-right: 1.1111vh;
+  width: 2.7778vh;
+  height: 2.7778vh;
+}
+
+.ONEAS-param__progress,
+.ONEAS-progress__value {
+  width: 9.2593vh;
+  height: 0.4630vh;
+  background-color: #0000004d;
+  border-radius: 0.4630vh;
+}
+
+.ONEAS-progress__value {
+  border-radius: 0.4630vh;    
+  display: flex;
+  justify-content: flex-end;
+}
+
+.ONEAS-param__circle {
+  margin-top: -0.2vh;
+  margin-right: -0.2778vh;
+  width: 0.8vh;
+  height: 0.8vh;
+}
+
+.ONEAS-param__amount {
+  font-family: GothamPro;
+  font-weight: 300;
+  font-style: italic;
+  margin-left: 0.9259vh;
+  width: 3.2407vh;
+  text-align: left;
+  color: #fff;
+  font-size: 1.6667vh;
+  text-shadow: 0 0 0.4630vh #000000b3;
+}
+
+.ONEAS-param__health .ONEAS-progress__value {
+  width: 50%;
+  background-color: #ed2e2e;
+  box-shadow: rgba(237, 46, 46, 0.5) 0 0 0.4630vh 0;
+}
+
+.ONEAS-param__hunger .ONEAS-progress__value {
+  width: 50%;
+  box-shadow: hsl(26deg 100% 59% / 30%) 0 0 0.4630vh 0;
+  background-color: #ff872e;
+}
+
+.ONEAS-param__armour .ONEAS-param__icon {
+  margin-right: 1.2037vh;
+}
+
+.ONEAS-param__armour .ONEAS-progress__value {
+  width: 50%;
+  background-color: #526ee6;
+  box-shadow: rgba(82, 110, 230, 0.5) 0 0 0.4630vh 0;
+}
+
+.ONEAS-param__breath .ONEAS-progress__value {
+  width: 99%;
+  background-color: #fff;
+  box-shadow: rgba(255, 255, 255, 0.5) 0 0 0.4630vh 0;
+}
+
+.ONEAS-param__freeze .ONEAS-progress__value {
+  width: 50%;
+  background-color: #8fe4ff;
+  box-shadow: rgb(143 228 255 / 50%) 0 0 0.4630vh 0;
+}
+
+.ONEAS-speedometer {
+  z-index: -1;
+  width: 30.5556vh;
+  height: 20.555519999999998vh;
+  transform-origin: bottom right;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  bottom: 5.27vh;
+  right: 3.67vh;
+}
+
+.ONEAS-speedometer__main {
+  position: absolute;
+  right: 0;
+  width: 22.222199999999997vh;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ONEAS-speedometer-bg {
+  position: absolute;
+  z-index: -1;
+  width: 21.9vh;
+  height: 19.3vh;
+  top: 0.88vh;
+  left: 0.463vh;
+}
+
+.ONEAS-speed__bar-line {
+  opacity: 0;
+}
+
+.ONEAS-speed__bar,
+.ONEAS-damage__bar,
+.ONEAS-wash__bar {
+  z-index: 2;
+  filter: drop-shadow(0vh 0vh 3.0958799999999997vh #f1a60d);
+}
+
+.ONEAS-speed__bar,
+.ONEAS-speed__bar-bg,
+.ONEAS-speed__bar-line {
+  width: 27.666719999999998vh;
+  height: 27.666719999999998vh;
+}
+.ONEAS-damage__bar,
+.ONEAS-damage__bar-bg,
+.ONEAS-wash__bar,
+.ONEAS-wash__bar-bg {
+  width: 30.88884vh;
+  height: 30.88884vh;
+}
+.ONEAS-speed__bar-bg,
+.ONEAS-damage__bar-bg,
+.ONEAS-wash__bar-bg {
+  z-index: 1;
+}
+
+.ONEAS-speed__bar-line {
+  z-index: -1;
+}
+
+.ONEAS-speed__data {
+  text-align: center;
+  color: #fff;
+  margin-top: 2.77776vh;
+  display: flex;
+  max-width: 8.88888vh;
+  justify-content: center;
+  flex-direction: column;  
+  align-items: center;
+}
+
+.ONEAS-speed__value {
+  font-weight: 900;
+  font-size: 5.000039999999999vh;
+  line-height: 4.44444vh;
+  width: 100%;
+}
+
+.ONEAS-speed__text {
+  font-size: 1.66668vh;
+  font-weight: 400;
+  color: #EE8A14;
+  line-height: 1.66668vh;
+  width: 100%;
+}
+
+.ONEAS-speed__value,
+.ONEAS-speed__text,
+.ONEAS-speed__mileage {
+  text-shadow: 0 0 1.66668vh #00000080;
+}
+
+.ONEAS-speedometer__main .main-icon {
+  filter: drop-shadow(0 0 0.5556vh rgba(0, 0, 0, 0.5));
+  width: 1.66668vh;
+  height: 1.3333199999999998vh;
+}
+
+.ONEAS-speedometer__turns {
+  height: 2.22228vh;
+  width: 7.777799999999999vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.22224vh;
+}
+
+.ONEAS-speedometer__turns img {
+  height: 1.3333199999999998vh;
+  width: 2.22228vh;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 0.5556vh #000);
+}
+
+.ONEAS-speedometer__turns .turn__right {
+  transform: rotate(-180deg);
+  margin-top: 0;
+}
+
+.ONEAS-speedometer__turns .ONEAS-speedometer-turn--active {
+  filter: drop-shadow(0 0 0.5556vh rgba(0, 0, 0, 0));
+  animation: turn 0.5s linear 0s infinite alternate;
+}
+
+@keyframes turn {
+  0% {
+    height: 1.3333199999999998vh;
+    opacity: 0.5;
+  }
+
+  to {
+    height: 2.22228vh;
+    opacity: 1;
+  }
+}
+
+.ONEAS-speedometer__speed {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.ONEAS-speedometer__speed svg {
+  position: absolute;
+  transform: scale(0.85);
+}
+
+.ONEAS-speedometer__params {
+  width: 12.22224vh;
+  height: 100%;
+  background-image: url(oneas-img/speed/params-particle.2eb001c9.png);
+  background-size: cover;
+  position: relative;
+}
+
+.icon__params {
+  position: absolute;
+  opacity: 0.35;
+  filter: drop-shadow(0 0 0.5556vh #000);
+}
+
+.ONEAS-speedometer__params > img.ONEAS-spedometer-param--active {
+  opacity: 1;
+  filter: drop-shadow(0 0 0.5556vh rgba(0, 0, 0, 0.5));
+}
+
+.icon__key {
+  top: 1.88892vh;
+  left: 6.11112vh;
+  width: 1.1110799999999998vh;
+  height: 1.88892vh;
+}
+
+.icon__doors {
+  left: 0.99996vh;
+  top: 9.88884vh;
+  width: 1.66668vh;
+  height: 1.66668vh;
+}
+
+.icon__rem {
+  top: 14.4444vh;
+  left: 2.22228vh;
+  width: 1.7778vh;
+  height: 1.7778vh;
+}
+
+.icon__lights {
+  width: 1.66668vh;
+  height: 1.1110799999999998vh;
+  top: 5.55552vh;
+  left: 1.88892vh;
+}
+
+.ONEAS-speedometer__fuel {
+  position: absolute;
+  top: 17.22228vh;
+  left: 5.77776vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.fuel__icon {
+  height: 1.88892vh;
+  width: 1.7778vh;
+  filter: drop-shadow(0 0 0.5556vh rgba(0, 0, 0, 0.5));
+  margin-right: 0.44448vh;
+}
+
+.ONEAS-speedometer-fuel__data {
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.66668vh;
+  line-height: 1.66668vh;
+  
+  bottom: -0.22224vh;
+  left: 2.55552vh;
+  text-shadow: 0 0 1.66668vh #00000080;
+}
+
+.ONEAS-speedometer__wash {
+  position: absolute;
+  top: 8.22228vh;
+  right: 0;
+}
+
+.ONEAS-speedometer__damage {
+  position: absolute;
+  bottom: 8.000039999999998vh;
+  left: 0.22224vh;
+}
+
+.ONEAS-speed__mileage {
+  font-weight: 300;
+  width: 100%;
+  font-size: 1.55556vh;
+  line-height: 1.55556vh;
+  margin-top: 0.5556vh;
+  text-shadow: 0 0 0.5556vh #00000080;
+}
+
+.ONEAS-speedometer__tachometer {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 0.77772vh;
+  bottom: 0;
+  right: 30.5556vh;
+}
+.ONEAS-speedometer__tachometer > div {
+  flex-direction: row;
+  background-image: radial-gradient(
+    90.03% 75% at -20% 50%,
+    #ff5c00b3 0%,
+    #e9651b00 100%
+  );
+  display: flex;
+  text-transform: uppercase;
+  font-size: 3.44448vh;
+  color: #fff;
+  font-weight: 900;
+  justify-content: center;
+  border-radius: 50%;
+  width: 8.88888vh;
+  height: 8.88888vh;
+  align-items: center;
+  font-style: italic;
+}
+#ONEAS-tachometer-rpm {
+  font-size: 2.22228vh !important;
+}
+.ONEAS-tachometer-glow > div {
+  color: #65c466;
+  text-shadow: 0 0 2.22228vh #65c466;
+}
+
+.ONEAS-speedometer-danger {
+  filter: drop-shadow(0vh 0vh 1.66668vh #ea4d39);
+}
+.ONEAS-speedometer-danger div {
+  color: #ea4f3e;
+}
+.ONEAS-speedometer-danger .ONEAS-speedometer-data__text {  
+  color: #ea4f3eb3;
+}
+.ONEAS-speedometer-danger path {
+  stroke: #ea4f3e;
+}
+
+#app .scrollable-container_type_1 .scrollable-container__rail_y {
+  display: none;
+}
+#app .radmir-chat-input__input {
+  padding: 0 0.9259vh;
+  border-radius: 0.8333vh;
+  background-color: #000;
+  border: 0.18vh solid #cdcdcd;
+}
+#app .radmir-chat-input__input input {
+  color: white !important;
+}
+#app .radmir-chat-input__input-lang {
+  padding: 0 0.4630vh 0.3704vh 0.4630vh;
+  color: white !important;
+  border-left: 0.18vh solid #cdcdcd;
+}
+#app .radmir-chat:before {
+  width: 70vw !important;
+  background: linear-gradient(148deg, #141414d1 10%, #14141400 50%) !important;
+}
+#app .radmir-chat-input__input {
+  padding: 0 0.93vh !important;
+}
+#app .radmir-chat_inactive {
+  opacity: 1 !important;
+}
+
+#app .vignette {
+  display: none;
+}
+
+#app .overlay-container {
+  display: none;
+}
+
+#app .window .modal-container-wrapper {
+  background: none;
+  background: linear-gradient(212.45deg, #0e1434e6 -24.84%, #7d1b1de6 130.15%);
+  border-radius: 1.85vh;
+  border: none;
+  padding: 2.22vh;
+  box-shadow: none;
+  transform: scale(0.8);
+}
+#app .window .modal-container {
+  border: none;
+  padding: 0;
+  border-radius: 0;
+}
+#app .window .modal__pattern-wrapper {
+  display: none;
+}
+#app .window .modal__title {
+  font-family:  var(--font-famaly-all) ;
+  font-weight: 600;
+  font-size: 2.22vh;
+  line-height: 3.33vh;
+  font-style: normal;
+  color:  var(--color) ;
+  text-transform: none;
+}
+#app .window .window__subtitle {
+  font-family:  var(--font-famaly-all) ;
+  margin: 0 2.96vh;
+}
+#app .window .window__image {
+  border-radius: 0;
+}
+#app .window .scrollable-container__container {
+  mask-image: none !important;
+}
+#app .window .window__content-container {
+  min-width: 45vh;
+}
+#app .window .window-table__item {  
+  background: #35121fcc;
+  border: 0 !important;
+  border-radius: 0.46vh;
+  margin-top: 0.93vh;
+  height: 5vh;
+  color: var(--color);
+  box-shadow: none;
+}
+#app .window .window-table__item:hover {
+  background: #4c1a2dcc;
+}
+#app .window .window-table__item.selected {  
+  background: #ffb200 !important;
+  color: #351321 !important;
+}
+#app .window .window-table__col {  
+  justify-content: center;
+  padding: 0 0.96vh;
+}
+#app .window .window-table__item.selected p {
+  color: #351321 !important;
+}
+#app .window .window__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1.2);
+}
+#app .window .window__buttons .controls-button__container {
+  position: relative;
+}
+#app .window .window__buttons .controls-button {
+  position: absolute;
+  width: 100%;
+}
+#app .window .window__buttons .controls-button-shadow {
+  display: none;
+}
+#app .window .window__buttons .controls-button-background,
+#app .window .window__buttons .controls-button--text,
+#app .window .window__buttons .controls-button-icon {
+  opacity: 0 !important;
+}
+#app .window .window__buttons .controls-button__container-text {
+  background: none !important;
+  background: linear-gradient(45deg, #e9651b, #f5be09) !important;
+  color: white;
+  border-radius: 0.93vh;
+  padding: 0 1.2vh;
+  line-height: 2.31vh;
+  font-weight: 500;
+  font-size: 1.11vh;
+  font-family:  var(--font-famaly-all) ;
+  opacity: 0.5;
+}
+#app .window .window__buttons .controls-button__container:hover .controls-button__container-text {
+  opacity: 1;
+  box-shadow: none;
+}
+#app .window .window__buttons .controls-button__container_disabled {
+  pointer-events: none;
+}
+#app .window .window__buttons .controls-button__container_disabled .controls-button__container-text {
+  opacity: .25;
+}
+#app .window .input-field {
+  background: #471a2bcc;
+  box-shadow: 1.39vh 1.39vh 1.85vh #0003;
+  border-radius: 0.93vh;
+  border: none;
+}
+#app .window .input-field_hoverable:hover {  
+  background-color: #471a2b93;
+}
+#app .window .input-field_focused,
+#app .window .input-field_hoverable:hover.input-field_focused  {
+  background: #61233b;
+}
+#app .window .input-field input,
+#app .window .input-field__placeholder {  
+  font-family:  var(--font-famaly-all);
+  font-weight: 500;
+}
+#app .window .input-field_focused input,
+#app .window .input-field_hoverable:hover.input-field_focuse input,
+#app .window .input-field_focused .input-field__placeholder,
+#app .window .input-field_hoverable:hover.input-field_focuse .input-field__placeholder {  
+  color: #fff;
+}
+
+#app .phone-body {
+  background-image: url(oneas-img/interfaces/body-phone.png);
+}
+
+#app .authorization {
+  background: none;
+}
+#app .authorization__gradient {
+  background: linear-gradient(69.28deg, #1414148f 26.1%, #14141400 94.95%);
+}
+#app .login-auth:before,
+#app .registration:before,
+#app .login-code:before {
+  content: "";
+  background-image: url(oneas-img/interfaces/bg-state-1.png);
+  background-size: cover;
+  
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+#app .registration:before {
+  background-image: url(oneas-img/interfaces/bg-state-2.png);
+}
+#app .login-head__subtitle {
+  color: transparent;
+  opacity: 1;
+}
+#app .login-auth .login-head__subtitle:before {
+  content: "С ВОЗВРАЩЕНИЕМ НА RADMIR";
+  display: block;
+  width: 60vh;
+  font-size: 5.74vh;
+  font-weight: 900;
+  line-height: 100%;
+  color: #ffffff;
+  position: relative;
+  padding-bottom: 4.48vh;
+  font-style: normal;
+  font-family: var(--font-famaly-all);
+}
+#app .login-auth .login-head__subtitle:after {
+  content: "";
+  width: 9.72vh;
+  height: 0.93vh;
+  border-radius: 0.74vh;
+  background: #ffffff;
+  display: block;
+}
+#app .login-head__username,
+#app .authorization-field {
+  height: 4.63vh;
+  box-sizing: border-box;
+  border: 0.19vh solid #ffffff91;
+  border-radius: 0.74vh;
+  
+  color: #ffffffd6;
+  font-size: 1.3vh;
+  width: 46.48vh;
+  position: relative;
+  font-weight: 400;
+  background: #00000054;
+  font-family: var(--font-famaly-all);
+}
+#app .login-auth .login-head__username,
+#app .login-auth .authorization-field {
+  margin-top: 7.89vh;
+}
+#app .login-head-icon {
+  display: none;
+}
+#app .login-head__username,
+#app .authorization-field__box {
+  
+  padding: 0.5vh 1.67vh 0.4vh;
+}
+#app .authorization-field__box {
+  border: none;
+}
+#app .authorization-field__lang,
+#app .authorization-field__icon {
+  right: 1.5vh;
+}
+#app .authorization-field__input {
+  color: #ffffffd6 !important;
+  font-size: 1.3vh;
+  border: none !important;
+  font-family: var(--font-famaly-all);
+  padding-bottom: 0;
+}
+#app .authorization-field__input-placeholder {
+  opacity: 0;
+}
+.login-form__suggestion-wrapper .login-form-push {
+  background-color: var(--bg-60);
+  border-radius: 1vh;
+}
+.login-form__suggestion-wrapper .login-form-push:before {
+  border-right-width: 1.11vh;
+  border-right-style: solid;
+  border-right-color:  var(--bg-60);
+  left: 0.05vh;
+  top: 0;
+  opacity: 1;
+}
+#app .login-form__button,
+#app .registration-form__button,
+#app .registration-personalization__button,
+#app .registration-bonuses__button {
+  padding: 0 4.63vh;
+  height: 6.11vh;
+  border-radius: 0.74vh;
+  font-family: var(--font-famaly-all);
+  line-height: 6.11vh;
+  font-size: 2.04vh;
+  font-weight: 500;
+  width: 17vh;
+  text-transform: inherit;
+}
+#app .registration-personalization__button {
+  width: 24vh;
+}
+#app .registration-bonuses__button {
+  width: 36vh;
+}
+#app .registration-form__button-background,
+#app .registration-bonuses__button-background {  
+  border-radius: 0.74vh;
+}
+#app .login-form,
+#app .registration-form,
+#app .registration-personalization,
+#app .registration-bonuses {
+  width: 46.48vh;
+}
+#app .registration-personalization-switcher__button {
+  width: 6.11vh;
+  height: 6.11vh;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.74vh;
+  cursor: pointer;
+  margin-left: 1.11vh;
+  transition-duration: .25s;
+  padding: 0;
+}
+#app .registration-personalization-switcher__text {
+  display: none;
+}
+#app .registration-personalization-switcher__icon {
+  width: 2vh;
+  height: 2vh;
+  margin: 0;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button:first-child {
+  border: 0.19vh solid #527ff1;
+  background: none;
+  margin: 0;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button_active:first-child {
+  background: #527ff1 !important;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button:last-child {
+  border: 0.19vh solid #d152f1;
+  background: none;
+}
+#app
+  .registration-personalization-switcher
+  > div.registration-personalization-switcher__button_active:last-child {
+  background: #d152f1 !important;
+}
+#app .registration-personalization-switcher__icon {
+  fill: white;
+}
+#app .registration-personalization-item {
+  width: 13.33vh;
+  height: 16.85vh;
+  border-radius: 0.74vh;
+  border: 0.19vh solid #ffffff69;
+  background: none;
+}
+#app .registration-personalization-item:hover {
+  border: 0.19vh solid #ffffff;
+  background: none !important;
+}
+#app .registration-personalization-item_active {
+  border: 0.19vh solid #ffb200 !important;
+  background: none !important;
+}
+#app .login-head__username:before,
+#app .authorization-field:before {
+  content: "Введите логин*";
+  position: absolute;
+  left: 0;
+  top: -3vh;
+  font-size: 1.67vh;
+  line-height: 100%;
+  color: #ffffffb3;
+  background: none;
+  width: 100%;
+  margin-bottom: 1.11vh;
+  height: auto;
+}
+#app .login-auth .authorization-field:before {
+  content: "Введите пароль*";
+}
+#app .login-code .authorization-field:before {
+  content: "Введите значение*";
+}
+#app .registration-bonuses .authorization-field:before {
+  content: "Введите ник пригласившего (или пропустите)*";
+}
+#app .registration-form > div:nth-child(1) .authorization-field:before {
+  content: "Введите e-mail*";
+}
+#app .registration-form > div:nth-child(2) .authorization-field:before {
+  content: "Придумайте пароль (мин. 6 символов)*";
+}
+#app .registration-form > div:nth-child(3) .authorization-field:before {
+  content: "Повторите пароль*";
+}
+#app .authorization .login {
+  margin-top: -10vh;
+  margin-left: 10vh;
+}
+#app .registration {
+  
+  margin-left: 10vh;
+}
+#app .registration__title {
+  color: #ffffff;
+}
+#app .registration__title-icon {
+  display: none;
+}
+#app .registration .authorization-field {
+  margin-top: 6vh;
+}
+#app .registration-personalization-container {
+  width: 100%;
+  margin-top: 2vh;
+}
+#app .registration-personalization-switcher {
+  margin-top: 2vh;
+}
+#app .registration-form__confirm {
+  align-items: flex-start;
+  flex-direction: column;
+}
+#app .login-auth .login-head {
+  margin: 0;
+}
+
+#app .scrollable-container-thumb_type_2.scrollable-container-thumb_horizontal,
+#app .scrollable-container-thumb_type_3.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_4.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_5.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_6.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_7.scrollable-container-thumb_horizontal, 
+#app .scrollable-container-thumb_type_8.scrollable-container-thumb_horizontal,
+#app .scrollable-container-thumb_type_2.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_3.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_4.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_5.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_6.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_7.scrollable-container-thumb_vertical, 
+#app .scrollable-container-thumb_type_8.scrollable-container-thumb_vertical  {
+  background-color: #feb900;
+}
+#app .scrollable-container_type_3 .scrollable-container__rail .scrollable-container__rail-background {
+  background-color: #260d16;
+
+}
+

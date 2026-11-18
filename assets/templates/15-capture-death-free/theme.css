@@ -1,0 +1,605 @@
+
+body {
+  font-family: var(--font-famaly-all);
+}
+
+#app .hud-radmir-radar__radar > img,
+#app .hud-hassle-map > img {
+  display: none;
+}
+#app .hud-radmir-wanted {
+  display: none;
+}
+
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Black/GothamPro-Black.ttf) format("truetype");
+font-weight: 900;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-BlackItalic/GothamPro-BlackItalic.ttf) format("truetype");
+font-weight: 900;
+font-style: italic;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Bold/GothamPro-Bold.ttf) format("truetype");
+font-weight: 700;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Medium/GothamPro-Medium.ttf) format("truetype");
+font-weight: 500;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Regular/GothamPro.ttf) format("truetype");
+font-weight: 400;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-Light/GothamPro-Light.ttf) format("truetype");
+font-weight: 300;
+font-style: normal;
+}
+@font-face {
+font-family: GothamPro;
+src: url(./fonts/GothamPro-LightItalic/GothamPro-LightItalic.ttf) format("truetype");
+font-weight: 300;
+font-style: italic;
+}
+@font-face {
+  font-family: Pricedown;
+  src: url(./fonts/pricedown.otf) format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+--bg: #000;
+  --bg-20: #00000033;
+  --bg-40: #00000066;
+  --bg-50: #00000080;
+  --bg-60: #00000099;
+  --bg-80: #000000cc;
+  
+--color: #fff;
+  --color-10: #ffffff1a;
+  --color-30: #ffffff4d;
+
+--font-famaly-all: GothamPro, "Open Sans";
+}
+
+.ONEAS-hud {  
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
+.ONEAS-hud__top {
+  position: absolute;
+  top: 2vh;
+  right: 3.5vh;
+  transform-origin: top right;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+}
+
+.ONEAS-logo__bonus {
+  position: absolute;
+  top: 3.4259vh;
+  right: 0;
+  width: 2.1296vh;
+  height: 2.1296vh;
+}
+.ONEAS-logo {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+
+.ONEAS-params {
+  display: flex;
+  font-family: GothamPro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.3889vh;
+  line-height: 1.2963vh;
+  color: #ffffff;
+  text-shadow: -0.0926vh -0.0926vh 0 #000, 0 -0.0926vh 0 #000, 0.0926vh -0.0926vh 0 #000, 0.0926vh 0 0 #000,
+    0.0926vh 0.0926vh 0 #000, 0 0.0926vh 0 #000, -0.0926vh 0.0926vh 0 #000, -0.0926vh 0 0 #000;
+  flex-direction: row-reverse;
+  align-items: center;
+  
+  top: 7.0370vh;
+  right: 13.4259vh;
+}
+
+.ONEAS-wanted__row {
+  display: flex;
+  
+  right: 13.0556vh;
+  top: 9.8148vh;
+}
+
+.ONEAS-hud__wanted--always-show .ONEAS-wanted__inactive {
+  opacity: 1;
+}
+
+.ONEAS-hud__bottom {
+  position: absolute;
+  transform-origin: bottom left;
+  left: 8.6vh;
+  bottom: 4.7vh;
+  z-index: -1;
+}
+
+.ONEAS-radar__images {
+  
+  width: 23vh;
+  height: 23vh;
+  margin-bottom: -0.85vh;
+  margin-left: -0.6vh;
+}
+
+.ONEAS-green-zone {
+  position: absolute;
+  bottom: 0;
+  left: -3.4259vh;
+}
+
+.ONEAS-weapon__ammo span {
+  font-family: GothamPro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.9328vh;
+  line-height: 1.8519vh;
+  color: #ffffff;
+  text-shadow: -0.0926vh -0.0926vh 0 #000, 0 -0.0926vh 0 #000, 0.0926vh -0.0926vh 0 #000, 0.0926vh 0 0 #000,
+    0.0926vh 0.0926vh 0 #000, 0 0.0926vh 0 #000, -0.0926vh 0.0926vh 0 #000, -0.0926vh 0 0 #000;
+}
+
+#ONEAS-ammo__in-clip:after {
+  content: "-";
+  margin-left: 0.4630vh;
+}
+
+.ONEAS-param {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-left: 0.4630vh;
+}
+
+.ONEAS-weapon__ammo {
+  
+  right: 2.3148vh;
+  bottom: 0.9259vh;
+  display: flex;
+  justify-content: center;
+  margin-top: -0.5556vh;
+}
+#ONEAS-ammo__in-clip {
+  margin-right: 0.6481vh;
+}
+.ONEAS-hud__top > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.ONEAS-hud__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 0.4630vh;
+}
+.ONEAS-hud__info > div {
+  margin-top: 0.4630vh;
+}
+.ONEAS-cash {
+  font-family: "Pricedown";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 3.2407vh;
+  line-height: 3.8889vh;
+  color: #4e508a;
+  text-shadow: -0.1852vh -0.1852vh 0 #000, 0 -0.1852vh 0 #000, 0.1852vh -0.1852vh 0 #000, 0.1852vh 0 0 #000,
+    0.1852vh 0.1852vh 0 #000, 0 0.1852vh 0 #000, -0.1852vh 0.1852vh 0 #000, -0.1852vh 0 0 #000;
+  margin-top: 3.0556vh !important;
+  display: flex;
+}
+
+.ONEAS-param__amount {
+  width: 2.7778vh;
+}
+
+.ONEAS-weapon__icon {
+  width: 13.4259vh;
+  height: 13.4259vh;
+}
+
+.ONEAS-speedometer {
+  position: absolute;
+  right: 28.7037vh;
+  right: 5.7vh;
+  bottom: -64.8148vh;
+  display: flex;
+  transform-origin: bottom right;
+  transition: all .35s ease;
+  color: white;
+  font-family: GothamPro, sans-serif;
+  flex-direction: row-reverse;
+  z-index: -1;
+}
+
+@keyframes turn {
+  0% {
+    opacity: 0.5;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes speed {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.ONEAS-speedometer-bg {
+  
+  z-index: -1;
+  width: 30.6481vh;
+  height: 15.2778vh;
+}
+
+.ONEAS-speedometer__speed-params {
+  align-items: center;
+  position: absolute;
+  text-align: center;
+  bottom: 2.4074vh;
+  right: 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ONEAS-speedometer__turns {
+  display: flex;
+  margin-top: 0.2778vh;
+}
+
+.ONEAS-speedometer__turns > div {
+  width: 2.3148vh;
+  height: 1.3889vh;
+  mask-image: url(oneas-img/speed/turn.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  background-color: #ffffff;
+  opacity: 0.5;
+}
+
+.ONEAS-speedometer-turn__right {
+  transform: rotate(180deg);
+  margin-left: 0.4630vh;
+}
+
+.ONEAS-speedometer-turn--active {
+  animation: turn 0.4s linear 0s infinite alternate;
+}
+
+.ONEAS-speedometer__speed {
+  position: absolute;
+}
+.ONEAS-speedometer-speed__bar-bg,
+.ONEAS-speedometer-speed__bar {
+  position: absolute;
+  top: 0.2778vh;
+  right: 0.3704vh;
+}
+
+.ONEAS-speedometer-speed__bar,
+.ONEAS-speedometer-speed__bar-bg {
+  width: 14.7222vh;
+  height: 13.6111vh;
+}
+
+.ONEAS-speedometer-speed__bar {
+
+  z-index: 1;
+  filter: drop-shadow(0.0000vh 0.0000vh 0.9259vh rgb(255 255 255 / 50%));
+}
+.ONEAS-speedometer-speed__data {
+  position: absolute;
+  text-align: center;
+  top: 4.4444vh;
+  right: 0;
+  width: 15.3704vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ONEAS-speedometer-speed__value {
+  font-weight: 900;
+  font-size: 3.7037vh;
+  line-height: 3.9815vh;
+  letter-spacing: -0.02em;
+}
+
+.ONEAS-speedometer-speed__text {
+  font-weight: 300;
+  font-size: 1.4815vh;
+  line-height: 1.4815vh;
+  letter-spacing: -0.02em;
+}
+
+.ONEAS-speedometer__params {
+  display: flex;
+  position: absolute;
+  bottom: 0.2778vh;
+  left: 2.7778vh;
+  width: 40%;
+  justify-content: space-around;
+}
+.ONEAS-speedometer__params > div {
+  
+  height: 2.9630vh;
+  mask-size: contain;
+  background-color: #ffffff;
+  opacity: 0.5;
+  mask-repeat: no-repeat;
+}
+.ONEAS-speedometer__params > div.ONEAS-spedometer-param--active {
+  opacity: 1;
+}
+
+.ONEAS-spedometer-param__key {
+  mask-image: url(oneas-img/speed/engine_icon.svg);
+  width: 1.2037vh;
+}
+
+.ONEAS-spedometer-param__doors {
+  mask-image: url(oneas-img/speed/door_icon.svg);
+  width: 1.5741vh;
+  margin-top: 0.0926vh;
+}
+
+.ONEAS-spedometer-param__rem {
+  mask-image: url(oneas-img/speed/rem_icon.svg);
+  width: 1.9444vh;
+}
+
+.ONEAS-spedometer-param__lights {
+  mask-image: url(oneas-img/speed/light_icon.svg);
+  width: 1.9444vh;
+  margin-top: 0.2778vh;
+}
+
+.ONEAS-speedometer-data__text {
+  font-size: 1.6667vh;
+  line-height: 1.5741vh;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  display: flex;
+}
+
+.ONEAS-speedometer__fuel {
+  width: 35%;
+  position: absolute;
+  left: 3.7037vh;
+  bottom: 5.3704vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.ONEAS-speedometer-fuel__icon {
+  margin-right: 0.3704vh;
+  width: 1.4815vh;
+  height: 1.6667vh;
+  background-color: #ffffff;
+  mask-repeat: no-repeat;
+  mask-image: url(oneas-img/speed/fuel_icon.svg);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+}
+.ONEAS-speedometer-fuel__value {
+  margin-right: 0.2778vh;
+}
+
+.ONEAS-speedometer-wash__bar,
+.ONEAS-speedometer-wash__bar-bg {
+  width: 10.2778vh;
+  height: 11.2037vh;
+}
+.ONEAS-speedometer__wash {
+  bottom: 0.2778vh;
+  position: absolute;
+  display: flex;
+  align-items: flex-start;
+}
+.ONEAS-speedometer-wash__icon {
+  mask-image: url(oneas-img/speed/wash_icon.svg);
+  width: 1.5741vh;
+  height: 1.5741vh;
+  background-color: #ffffff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  position: absolute;
+  right: -1.2037vh;
+  top: -0.5556vh;
+}
+.ONEAS-speedometer-data__wash {
+  position: relative;
+  bottom: -1.3889vh;
+  right: -1.0185vh;
+}
+.ONEAS-speedometer-wash__bar {
+  z-index: 1;
+  position: absolute;
+  filter: drop-shadow(0.0000vh 0.0000vh 0.9259vh rgb(255 255 255 / 50%));
+  
+}
+
+.ONEAS-speedometer-damage__bar,
+.ONEAS-speedometer-damage__bar-bg {
+  width: 14.9074vh;
+  height: 4.4444vh;
+}
+.ONEAS-speedometer__damage {
+  top: -0.2778vh;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+}
+.ONEAS-speedometer-damage__icon {
+  mask-image: url(oneas-img/speed/damage_icon.svg);
+  width: 1.5741vh;
+  height: 1.5741vh;
+  background-color: #ffffff;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  position: absolute;
+  right: 15.0926vh;
+  top: 3.5185vh;
+}
+
+.ONEAS-speedometer-data__damage {
+  position: absolute;
+  top: -1.2037vh;
+  right: 0.3704vh;
+}
+
+.ONEAS-speedometer-damage__bar {
+  z-index: 1;
+  position: absolute;
+  filter: drop-shadow(0.0000vh 0.0000vh 0.9259vh rgb(255 255 255 / 50%));
+}
+
+.ONEAS-speedometer-mileage__value {
+  font-weight: 300;
+  font-size: 1.2037vh;
+  line-height: 1.2037vh;
+}
+
+.ONEAS-tachometer-glow .ONEAS-tachometer-value {
+  color: #0fa91f;
+}
+
+.ONEAS-speedometer__tachometer {
+  width: 16.4815vh;
+  height: 7.2222vh;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  right: 29.8148vh;
+  bottom: 0.5556vh;
+  flex-direction: column;
+  gap: 1.6667vh;
+  border-radius: 1.1111vh;
+  border: 0.6481vh solid #000;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#ONEAS-tachometer-gear {
+  display: flex;
+  align-items: center;
+  margin-left: 1.3889vh;
+}
+#ONEAS-tachometer-rpm {
+  display: flex;
+  align-items: center;
+  margin-left: -2.7778vh;
+}
+.ONEAS-tachometer-text {
+  color: #fff;
+  font-family: GothamPro;
+  font-size: 1.5000vh;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: -0.02em;
+  margin-right: 0.5556vh;
+}
+.ONEAS-tachometer-value {
+  color: #fff;
+  font-family: GothamPro;
+  font-size: 1.5000vh;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+  letter-spacing: -0.02em;
+}
+
+.ONEAS-speedometer-danger > div:first-child {
+  background-color: #ea4f3e;
+}
+.ONEAS-speedometer-danger .ONEAS-speedometer-data__text,
+.ONEAS-speedometer-danger > div svg:first-child path {
+  color: #ea4f3e;
+  stroke: #ea4d39;
+}
+.ONEAS-speedometer-danger > div:last-child svg {
+  filter: drop-shadow(0.0000vh 0.0000vh 1.3889vh #ea4d39);
+}
+
+.scrolling-container::-webkit-scrollbar {
+  display: none;
+}
+.radmir-chat-input__input  {
+  padding: 0 0.9259vh;
+  border-radius: 0.7407vh;
+  border: 0.0926vh solid #4f435d;
+  
+  background: rgba(0, 0, 0, 0.4);
+  border: 0.1852vh solid rgb(0, 0, 0) !important;
+}
+
+.radmir-chat-input__input-lang  {
+  border-left: 0.0926vh solid rgb(0, 0, 0) !important;
+  margin-top: -0.0926vh;
+  padding: 0.2778vh 0 0.4630vh;
+}
+
+.radmir-chat:before {
+  width: 70vw !important;
+  background: linear-gradient(148deg, #141414d1 10%, #14141400 50%) !important;
+}
+
+.radmir-chat_inactive {
+  opacity: 1 !important;
+}
+
+.ONEAS-param__icon {
+  width: 2.3148vh;
+  height: 2.3148vh;
+  margin-right: 0.1852vh;
+}
+
+.ONEAS-wanted__row > img {
+  width: 2.5000vh;
+  height: 2.5000vh;
+}
+
+#app .vignette {
+  display: none;
+}
+
+#app .overlay-container {
+  display: none;
+}
